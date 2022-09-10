@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */; };
-		296764D728CCD65A0043A235 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D628CCD65A0043A235 /* ContentView.swift */; };
+		296764D728CCD65A0043A235 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D628CCD65A0043A235 /* FirstView.swift */; };
 		296764D928CCD65C0043A235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296764D828CCD65C0043A235 /* Assets.xcassets */; };
 		296764DC28CCD65C0043A235 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296764DB28CCD65C0043A235 /* Preview Assets.xcassets */; };
 		296764E628CCD65C0043A235 /* TimeTrackAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764E528CCD65C0043A235 /* TimeTrackAppTests.swift */; };
 		296764F028CCD65C0043A235 /* TimeTrackAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764EF28CCD65C0043A235 /* TimeTrackAppUITests.swift */; };
 		296764F228CCD65C0043A235 /* TimeTrackAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764F128CCD65C0043A235 /* TimeTrackAppUITestsLaunchTests.swift */; };
+		2967650028CCD6D80043A235 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764FF28CCD6D80043A235 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		296764D128CCD65A0043A235 /* TimeTrackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppApp.swift; sourceTree = "<group>"; };
-		296764D628CCD65A0043A235 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		296764D628CCD65A0043A235 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		296764D828CCD65C0043A235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		296764DB28CCD65C0043A235 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		296764E128CCD65C0043A235 /* TimeTrackAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		296764EB28CCD65C0043A235 /* TimeTrackAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		296764EF28CCD65C0043A235 /* TimeTrackAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppUITests.swift; sourceTree = "<group>"; };
 		296764F128CCD65C0043A235 /* TimeTrackAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		296764FF28CCD6D80043A235 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,9 @@
 		296764D328CCD65A0043A235 /* TimeTrackApp */ = {
 			isa = PBXGroup;
 			children = (
-				296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */,
-				296764D628CCD65A0043A235 /* ContentView.swift */,
-				296764D828CCD65C0043A235 /* Assets.xcassets */,
+				296764FE28CCD6660043A235 /* Recources */,
+				296764FF28CCD6D80043A235 /* SplashScreenView.swift */,
+				296764D628CCD65A0043A235 /* FirstView.swift */,
 				296764DA28CCD65C0043A235 /* Preview Content */,
 			);
 			path = TimeTrackApp;
@@ -125,6 +127,15 @@
 				296764F128CCD65C0043A235 /* TimeTrackAppUITestsLaunchTests.swift */,
 			);
 			path = TimeTrackAppUITests;
+			sourceTree = "<group>";
+		};
+		296764FE28CCD6660043A235 /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */,
+				296764D828CCD65C0043A235 /* Assets.xcassets */,
+			);
+			path = Recources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296764D728CCD65A0043A235 /* ContentView.swift in Sources */,
+				296764D728CCD65A0043A235 /* FirstView.swift in Sources */,
 				296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */,
+				2967650028CCD6D80043A235 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
