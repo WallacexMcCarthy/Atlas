@@ -20,37 +20,43 @@ struct SplashScreenView: View
         {
             LoginView()
         }else{
-            VStack
+            ZStack
             {
+                Color.blue
+                    .ignoresSafeArea(.all)
                 VStack
                 {
-                    Image(systemName: "hare.fill")
-                        .font(.system(size: 80))
-                        .foregroundColor(.red)
-                    Text("Time Track")
-                        .font(Font.custom("Baskerville-Bold", size: 26))
-                        .foregroundColor(.black.opacity(0.80))
+                    VStack
+                    {
+//                        Image(systemName: "hare.fill")
+//                            .font(Font.custom("hare", size: 80))
+//                            .foregroundColor(.white)
+                        Image("icon")
+                        Text("Time Track")
+                            .font(Font.custom("Baskerville-Bold", size: 26))
+                            .foregroundColor(.black.opacity(0.80))
+                    }
+                    .scaleEffect(size)
+                    .opacity(ocacity)
+                    .onAppear
+                    {
+                        withAnimation(.easeIn(duration: 1.2))
+                        {
+                            self.size = 1.7
+                            self.ocacity = 1.0
+                        }
+                    }
                 }
-                .scaleEffect(size)
-                .opacity(ocacity)
                 .onAppear
                 {
-                    withAnimation(.easeIn(duration: 1.2))
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2)
                     {
-                        self.size = 1.7
-                        self.ocacity = 1.0
+                        withAnimation
+                        {
+                            self.isActive = true
+                        }
                     }
-                }
             }
-            .onAppear
-            {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2)
-                {
-                    withAnimation
-                    {
-                        self.isActive = true
-                    }
-                }
             }
             
         }

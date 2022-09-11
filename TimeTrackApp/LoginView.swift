@@ -28,21 +28,33 @@ struct LoginView: View
                 Circle()
                     .scale(1.35)
                     .foregroundColor(.white)
+                VStack
+                {
+                    // the only way i can get the logo at the top
+                    Image("logo")
+                    Text("")
+                        .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
+                    Text("")
+                        .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
+                    Text("")
+                        .padding()
+                    
+                }
                 
                 VStack
                 {
-                    Text("Time Track")
-                        .font(Font.custom("NewFont", size: 50))
-                        .bold()
+//                    Text("Time Track")
+//                        .font(Font.custom("NewFont", size: 50))
+//                        .bold()
                     Text("Login")
                         .font(.largeTitle)
                         .bold()
-                        .padding()
                     TextField("Username", text: $username)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.07))
                         .cornerRadius(10)
+                    // if the password is wrong, it will be highlighted with a red border
                         .border(.red, width: CGFloat(wrongUsername))
                     
                     SecureField("Password", text: $password)
@@ -50,6 +62,7 @@ struct LoginView: View
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.07))
                         .cornerRadius(10)
+                    // if the password is wrong it will be highlighted with a red border
                         .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Login")
@@ -63,9 +76,13 @@ struct LoginView: View
                     .background(Color.blue)
                     .cornerRadius(10)
                     
+                    // used for alignment
+                    Text("")
+                        .padding()
+                        
                     NavigationLink(destination: TabBarView(), isActive: $showingLoginScreen)
                     {
-                        
+                      
                     }
                     
                 }
@@ -74,6 +91,7 @@ struct LoginView: View
         }
         .navigationBarHidden(true)
     }
+    // Checks username and passsword
     func checkCredientals() -> Void
     {
         if username == "Wallace"

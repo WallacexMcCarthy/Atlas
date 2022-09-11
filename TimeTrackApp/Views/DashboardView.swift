@@ -19,7 +19,7 @@ struct DashboardView: View
             {
                 Color.white
                     .edgesIgnoringSafeArea(.all)
-                HStack
+                VStack
                 {
                     Text("Welcome \(user)")
                         .fontWeight(.light)

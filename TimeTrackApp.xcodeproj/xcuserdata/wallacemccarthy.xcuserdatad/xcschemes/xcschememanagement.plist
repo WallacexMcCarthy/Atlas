@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TimeTrackApp 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>TimeTrackApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>296764D028CCD65A0043A235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>296764E028CCD65C0043A235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>296764EA28CCD65C0043A235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
