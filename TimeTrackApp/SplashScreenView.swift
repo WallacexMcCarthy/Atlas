@@ -7,20 +7,23 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
+struct SplashScreenView: View
+{
     @State private var isActive = false
     @State private var size = 0.8
     @State private var ocacity = 0.5
     
-    var body: some View {
+    var body: some View
+    {
         
         if isActive
         {
-            FirstView()
+            LoginView()
         }else{
             VStack
             {
-                VStack {
+                VStack
+                {
                     Image(systemName: "hare.fill")
                         .font(.system(size: 80))
                         .foregroundColor(.red)
@@ -43,7 +46,10 @@ struct SplashScreenView: View {
             {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2)
                 {
-                    self.isActive = true
+                    withAnimation
+                    {
+                        self.isActive = true
+                    }
                 }
             }
             
@@ -52,8 +58,10 @@ struct SplashScreenView: View {
     }
 }
 
-struct SplashScreenView_Previews: PreviewProvider {
-    static var previews: some View {
+struct SplashScreenView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         SplashScreenView()
     }
 }

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct FirstView: View {
+struct LoginView: View
+{
     @State private var username = ""
     @State private var password = ""
     @State private var wrongUsername = 0
@@ -30,6 +31,9 @@ struct FirstView: View {
                 
                 VStack
                 {
+                    Text("Time Track")
+                        .font(Font.custom("NewFont", size: 50))
+                        .bold()
                     Text("Login")
                         .font(.largeTitle)
                         .bold()
@@ -58,9 +62,9 @@ struct FirstView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("You are logged in @\(username)"), isActive: $showingLoginScreen)
+                    NavigationLink(destination: TabBarView(), isActive: $showingLoginScreen)
                     {
-                        EmptyView()
+                        
                     }
                     
                 }
@@ -71,8 +75,10 @@ struct FirstView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstView()
+struct ContentView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
+        LoginView()
     }
 }
