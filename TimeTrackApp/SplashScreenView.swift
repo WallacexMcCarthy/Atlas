@@ -37,7 +37,7 @@ struct SplashScreenView: View
                 {
                     withAnimation(.easeIn(duration: 1.2))
                     {
-                        self.size = 1.3
+                        self.size = 1.7
                         self.ocacity = 1.0
                     }
                 }

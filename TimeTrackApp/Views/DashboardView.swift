@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct DashboardView: View
 {
+    @State private var user = "Dheeraj"
     var body: some View
     {
         NavigationView
@@ -17,10 +19,17 @@ struct DashboardView: View
             {
                 Color.white
                     .edgesIgnoringSafeArea(.all)
-                VStack
+                HStack
                 {
-                    
+                    Text("Welcome \(user)")
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
+                        .font(.body)
+                        .padding()
                 }
+                .offset(y: 0)
+                .frame(minWidth: 0, maxHeight: 800, alignment: .topLeading)
             }
             .navigationTitle("Dashboard")
         }
