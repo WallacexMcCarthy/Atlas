@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View
 {
+    @State var isNavigationBarHidden: Bool = true
     @State private var username = ""
     @State private var password = ""
     @State private var wrongUsername = 0
@@ -35,9 +36,10 @@ struct LoginView: View
                     Text("")
                         .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                     Text("")
-                        .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
+                        .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                     Text("")
                         .padding()
+                    
                     
                 }
                 
@@ -79,17 +81,16 @@ struct LoginView: View
                     // used for alignment
                     Text("")
                         .padding()
+                    
                         
                     NavigationLink(destination: TabBarView(), isActive: $showingLoginScreen)
                     {
-                      
+                        
                     }
                     
                 }
-                
             }
         }
-        .navigationBarHidden(true)
     }
     // Checks username and passsword
     func checkCredientals() -> Void

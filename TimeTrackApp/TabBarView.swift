@@ -11,47 +11,50 @@ struct TabBarView: View
 {
     var body: some View
     {
-        TabView
-            {
-                DashboardView()
-                    .tabItem
-                    {
-                        //Image("icon")
-                        Image(systemName: "house")
-                        Text("Dashboard")
-                    }
+        ZStack {
+            TabView
+                {
+                    DashboardView()
+                        .tabItem
+                        {
+                            //Image("icon")
+                            Image(systemName: "house")
+                            Text("Dashboard")
+                        }
 
-               UpcomingEventsView()
-                    .tabItem
-                    {
-                        Image(systemName: "calendar")
-                        Text("Upcoming Events")
-                    }
-                
-                SocialView()
-                     .tabItem
-                     {
-                         Image(systemName: "text.bubble.fill")
-                         Text("Social")
-                     }
-                
-                SchoolInfoView()
-                     .tabItem
-                     {
-                         Image(systemName: "info.circle.fill")
-                         Text("School Info")
-                     }
-                
-                AttendanceView()
-                     .tabItem
-                     {
-                         Image(systemName: "person.badge.clock")
-                         Text("Attendance")
-                     }
-                
-            }
-        .accentColor(.red)
-        .navigationBarBackButtonHidden(true)
+                   UpcomingEventsView()
+                        .tabItem
+                        {
+                            Image(systemName: "calendar")
+                            Text("Upcoming Events")
+                        }
+                    
+                    SocialView()
+                         .tabItem
+                         {
+                             Image(systemName: "text.bubble.fill")
+                             Text("Social")
+                         }
+                    
+                    SchoolInfoView()
+                         .tabItem
+                         {
+                             Image(systemName: "info.circle.fill")
+                             Text("School Info")
+                         }
+                    
+                    AttendanceView()
+                         .tabItem
+                         {
+                             Image(systemName: "person.badge.clock")
+                             Text("Attendance")
+                         }
+                    
+                }
+            .accentColor(.red)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+        }
     }
 }
 
