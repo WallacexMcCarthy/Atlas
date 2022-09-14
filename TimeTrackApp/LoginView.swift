@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct LoginView: View
 {
     @State var isNavigationBarHidden: Bool = true
@@ -48,6 +50,7 @@ struct LoginView: View
                         
                         
                     }
+                    .navigationBarHidden(true)
                     
                     VStack
                     {
