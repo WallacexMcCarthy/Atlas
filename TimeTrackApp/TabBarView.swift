@@ -11,7 +11,8 @@ struct TabBarView: View
 {
     var body: some View
     {
-        ZStack {
+        ZStack
+        {
             TabView
                 {
                     DashboardView()
