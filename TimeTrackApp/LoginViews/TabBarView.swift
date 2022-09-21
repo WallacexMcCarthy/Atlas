@@ -22,12 +22,12 @@ struct TabBarView: View
                             Image(systemName: "house")
                             Text("Dashboard")
                         }
-
-                   UpcomingEventsView()
+                    
+                    MapView(impact: loadMapData()[0])
                         .tabItem
                         {
-                            Image(systemName: "calendar")
-                            Text("Upcoming Events")
+                            Image(systemName: "mappin.circle")
+                            Text("Map")
                         }
                     
                     SocialView()

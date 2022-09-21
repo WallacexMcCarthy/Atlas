@@ -2,7 +2,7 @@
 //  MapView.swift
 //  TimeTrackApp
 //
-//  Created by Mccarthy, Wallace on 9/20/22.
+//  Created by Wallace McCarthy on 9/21/22.
 //
 
 import SwiftUI

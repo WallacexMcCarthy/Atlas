@@ -22,9 +22,9 @@
 		2967650A28CD5B2B0043A235 /* AttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967650928CD5B2B0043A235 /* AttendanceView.swift */; };
 		2967650C28CD5B410043A235 /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967650B28CD5B410043A235 /* SocialView.swift */; };
 		2967650E28CD5CAE0043A235 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967650D28CD5CAE0043A235 /* ProfileView.swift */; };
+		29DDC35E28DB9D4B00FCC3F0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */; };
 		944B28F328DA0E98003C52DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F228DA0E98003C52DD /* Maps.swift */; };
 		944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F428DA0EC5003C52DD /* MapsData.swift */; };
-		944B28F728DA0F75003C52DD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F628DA0F75003C52DD /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +63,9 @@
 		2967650928CD5B2B0043A235 /* AttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
 		2967650B28CD5B410043A235 /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
 		2967650D28CD5CAE0043A235 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		944B28F228DA0E98003C52DD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		944B28F428DA0EC5003C52DD /* MapsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsData.swift; sourceTree = "<group>"; };
-		944B28F628DA0F75003C52DD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,12 +163,12 @@
 			isa = PBXGroup;
 			children = (
 				2967650328CD5A180043A235 /* DashboardView.swift */,
-				944B28F628DA0F75003C52DD /* MapView.swift */,
 				2967650728CD5A600043A235 /* UpcomingEventsView.swift */,
 				2967650528CD5A290043A235 /* SchoolInfoView.swift */,
 				2967650B28CD5B410043A235 /* SocialView.swift */,
 				2967650928CD5B2B0043A235 /* AttendanceView.swift */,
 				2967650D28CD5CAE0043A235 /* ProfileView.swift */,
+				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				296764D728CCD65A0043A235 /* LoginView.swift in Sources */,
 				2967650A28CD5B2B0043A235 /* AttendanceView.swift in Sources */,
 				2967650E28CD5CAE0043A235 /* ProfileView.swift in Sources */,
-				944B28F728DA0F75003C52DD /* MapView.swift in Sources */,
+				29DDC35E28DB9D4B00FCC3F0 /* MapView.swift in Sources */,
 				2967650228CD570F0043A235 /* TabBarView.swift in Sources */,
 				2967650628CD5A290043A235 /* SchoolInfoView.swift in Sources */,
 				2967650428CD5A180043A235 /* DashboardView.swift in Sources */,
