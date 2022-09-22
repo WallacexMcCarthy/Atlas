@@ -12,6 +12,11 @@ struct Maps : Identifiable
     let id = UUID()      
     let title: String
     let details: String
-    var location: MKCoordinateRegion
+    let year: Int
+    let month: Int
+    let day: Int
+    let address: String
+    var location: CLLocationCoordinate2D
+    var regions: MKCoordinateRegion
     
 }

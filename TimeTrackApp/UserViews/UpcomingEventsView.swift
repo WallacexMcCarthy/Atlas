@@ -8,16 +8,54 @@
 import SwiftUI
 
 struct UpcomingEventsView: View {
+    let impacts = loadMapData()
+    @State private var toMaps = false
+    @State private var indexs = 0
     var body: some View {
         NavigationView
         {
-            ZStack
+            
+            if toMaps
             {
-                Color.white
-                    .ignoresSafeArea(.all)
+                EventsView(impact:loadMapData()[indexs])
+            }else
+            {
+                List
+                {
+                    Section(header: Text("Upcoming Events"))
+                    {
+                        ForEach(impacts.indices)
+                        {
+                            index in
+                            
+                            Button(impacts[index].title)
+                            {
+                                toMaps = true
+                                indexs = index
+                            }
+                        }
+                    }
+                }
+                
+                
+                
+                //            ScrollView
+                //            {
+                //                List
+                //                {
+                //                    Section(header: Text("Upcoming Events"))
+                //                    {
+                //                        Text("Hello")
+                //                    }
+                //                }
+                //                    .border(Color.yellow, width: 3)
+                //                    .background(Color.blue)
+                //
+                
+                
             }
-            .navigationTitle("Upcoming Events")
         }
+        .navigationBarHidden(true)
     }
 }
 

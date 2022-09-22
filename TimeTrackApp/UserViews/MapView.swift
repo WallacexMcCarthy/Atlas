@@ -12,11 +12,21 @@ struct MapView: View {
     @State var impact : Maps
     var body: some View
     {
-        VStack {
-            Text(impact.title)
-            Map(coordinateRegion: $impact.location)
-                .frame(height: 400)
-            Text(impact.details)
+        NavigationView {
+            ZStack {
+                VStack {
+                    Text(impact.title)
+                    Text("\(impact.month)/\(impact.day)/\(impact.year)")
+                    Map(coordinateRegion: $impact.regions)
+                        .frame(height: 400)
+//                    {
+//                    
+//                        MapMarker(coordinate: impact.location, tint: Color.blue)
+//                    }
+                    Text(impact.details)
+                }
+            }
+            .navigationTitle("Maps")
         }
     }
 }
