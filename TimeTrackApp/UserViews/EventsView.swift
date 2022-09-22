@@ -25,18 +25,24 @@ struct EventsView: View {
                         {
                             toDashboard = true
                         }
+                        .padding(50)
+                        Text("")
+                            .padding()
+                        
                         Text(impact.title)
                         Text("\(impact.month)/\(impact.day)/\(impact.year)")
+                        Text(impact.details)
+
                         Map(coordinateRegion: $impact.regions)
-                            .frame(height: 400)
+                            .frame(height: 600)
+                            .ignoresSafeArea(.all)
     //                    {
     //
     //                        MapMarker(coordinate: impact.location, tint: Color.blue)
     //                    }
-                        Text(impact.details)
-                    }
+                                            }
                 }
-    //            .navigationTitle("Event Map")
+//                .navigationTitle("Event Map")
             }
             
         }

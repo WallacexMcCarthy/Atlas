@@ -15,15 +15,13 @@ struct MapView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    Text(impact.title)
-                    Text("\(impact.month)/\(impact.day)/\(impact.year)")
                     Map(coordinateRegion: $impact.regions)
-                        .frame(height: 400)
+                        .frame(height: 960)
 //                    {
 //                    
 //                        MapMarker(coordinate: impact.location, tint: Color.blue)
 //                    }
-                    Text(impact.details)
+                    
                 }
             }
             .navigationTitle("Maps")

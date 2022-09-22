@@ -44,6 +44,7 @@ struct SplashScreenView: View
                         {
                             self.size = 1.7
                             self.ocacity = 1.0
+                            
                         }
                     }
                 }
@@ -56,7 +57,7 @@ struct SplashScreenView: View
                             isActive = true
                         }
                     }
-            }
+                }
             }
             
         }

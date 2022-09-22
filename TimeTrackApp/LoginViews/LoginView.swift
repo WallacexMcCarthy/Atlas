@@ -79,7 +79,7 @@ struct LoginView: View
                         Button("Login")
                         {
                             // allows access to past login
-                            // checkCredientals()
+//                            checkCredientals()
                             showingLoginScreen = true
                         }
                         .foregroundColor(.white)
