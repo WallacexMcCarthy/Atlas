@@ -10,29 +10,54 @@ import SwiftUI
 
 struct DashboardView: View
 {
-    @State private var user = "Dheeraj"
-    var body: some View
-    {
+    let impacts = loadMapData()
+    @State private var toMaps = false
+    @State private var indexs = 0
+    var body: some View {
         NavigationView
         {
-            ZStack
+            
+            if toMaps
             {
-                Color.white
-                    .edgesIgnoringSafeArea(.all)
-                VStack
+                EventsView(impact:loadMapData()[indexs])
+            }else
+            {
+                List
                 {
-                    Text("Welcome \(user)")
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
-                        .font(.body)
-                        .padding()
+                    Section(header: Text("Upcoming Events"))
+                    {
+                        ForEach(impacts.indices)
+                        {
+                            index in
+                            
+                            Button(impacts[index].title)
+                            {
+                                toMaps = true
+                                indexs = index
+                            }
+                        }
+                    }
                 }
-                .offset(y: 0)
-                .frame(minWidth: 0, maxHeight: 800, alignment: .topLeading)
+                
+                
+                
+                //            ScrollView
+                //            {
+                //                List
+                //                {
+                //                    Section(header: Text("Upcoming Events"))
+                //                    {
+                //                        Text("Hello")
+                //                    }
+                //                }
+                //                    .border(Color.yellow, width: 3)
+                //                    .background(Color.blue)
+                //
+                
+                
             }
-            .navigationTitle("Dashboard")
         }
+        .navigationBarHidden(true)
     }
 }
 

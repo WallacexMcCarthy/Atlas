@@ -6,7 +6,6 @@
 //
 
 import MapKit
-import SQLite3
 
 
 let definitions = Bundle.main.url(forResource: "Placeholder", withExtension: "pdf")

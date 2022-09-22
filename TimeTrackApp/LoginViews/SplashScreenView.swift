@@ -53,7 +53,7 @@ struct SplashScreenView: View
                     {
                         withAnimation
                         {
-                            self.isActive = true
+                            isActive = true
                         }
                     }
             }
