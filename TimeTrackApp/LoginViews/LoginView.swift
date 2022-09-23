@@ -79,8 +79,8 @@ struct LoginView: View
                         Button("Login")
                         {
                             // allows access to past login
-//                            checkCredientals()
-                            showingLoginScreen = true
+                            checkCredientals()
+//                            showingLoginScreen = true
                         }
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
@@ -101,9 +101,10 @@ struct LoginView: View
     // Checks username and passsword
     func checkCredientals() -> Void
     {
-        if username == "Wallace"
+        @State var userData = loadUserData()
+        if (username == userData[1].emailAddress)
         {
-            if password == "123"
+            if (password == userData[1].password)
             {
                 showingLoginScreen = true
             }else

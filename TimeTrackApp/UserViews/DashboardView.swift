@@ -30,11 +30,14 @@ struct DashboardView: View
                         {
                             index in
                             
-                            Button(impacts[index].title)
-                            {
-                                toMaps = true
-                                indexs = index
-                            }
+                            NavigationLink(impacts[index].title, destination: EventsView(impact:loadMapData()[indexs]))
+                            
+                            
+//                            Button(impacts[index].title)
+//                            {
+//                                toMaps = true
+//                                indexs = index
+//                            }
                         }
                     }
                 }

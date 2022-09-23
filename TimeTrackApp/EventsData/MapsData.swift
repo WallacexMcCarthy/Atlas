@@ -7,9 +7,6 @@
 
 import MapKit
 
-
-let definitions = Bundle.main.url(forResource: "Placeholder", withExtension: "pdf")
-
 func loadMapData() -> [Maps]
 {
     var mapsItems : [Maps] = []

@@ -21,13 +21,13 @@ struct EventsView: View {
             {
                 ZStack {
                     VStack {
-                        Button("Back to Dashboard")
-                        {
-                            toDashboard = true
-                        }
-                        .padding(50)
-                        Text("")
-                            .padding()
+//                        Button("Back to Dashboard")
+//                        {
+//                            toDashboard = true
+//                        }
+//                        .padding(50)
+//                        Text("")
+//                            .padding()
                         
                         Text(impact.title)
                         Text("\(impact.month)/\(impact.day)/\(impact.year)")
@@ -46,7 +46,7 @@ struct EventsView: View {
             }
             
         }
-        .navigationBarHidden(true)
+//        .navigationBarHidden(true)
     }
     
 }
