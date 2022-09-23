@@ -101,7 +101,10 @@ struct LoginView: View
     // Checks username and passsword
     func checkCredientals() -> Void
     {
+        
         @State var userData = loadUserData()
+        
+        
         if (username == userData[1].emailAddress)
         {
             if (password == userData[1].password)

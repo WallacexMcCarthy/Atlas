@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: View {
     @State var impact : Maps
+    @State var mapsData = loadMapData()
     var body: some View
     {
         NavigationView {
@@ -17,10 +18,12 @@ struct MapView: View {
                 VStack {
                     Map(coordinateRegion: $impact.regions)
                         .frame(height: 960)
-//                    {
-//                    
-//                        MapMarker(coordinate: impact.location, tint: Color.blue)
-//                    }
+                    ForEach(mapsData.indices)
+                    {
+                        index in
+                        
+                        MapMarker(coordinate: mapsData[index].location, tint: Color.cyan)
+                    }
                     
                 }
             }
