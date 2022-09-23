@@ -28,6 +28,7 @@
 		29FE3B0F28DD4F320026B8E3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE3B0E28DD4F320026B8E3 /* UserData.swift */; };
 		944B28F328DA0E98003C52DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F228DA0E98003C52DD /* Maps.swift */; };
 		944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F428DA0EC5003C52DD /* MapsData.swift */; };
+		94979E6128DDFAFC00105B3C /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94979E6028DDFAFC00105B3C /* CreateAccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		29FE3B0E28DD4F320026B8E3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		944B28F228DA0E98003C52DD /* Maps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps.swift; sourceTree = "<group>"; };
 		944B28F428DA0EC5003C52DD /* MapsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsData.swift; sourceTree = "<group>"; };
+		94979E6028DDFAFC00105B3C /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				2967650D28CD5CAE0043A235 /* ProfileView.swift */,
 				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
 				29DDC36028DC10DD00FCC3F0 /* EventsView.swift */,
+				94979E6028DDFAFC00105B3C /* CreateAccountView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				2967650428CD5A180043A235 /* DashboardView.swift in Sources */,
 				2967650C28CD5B410043A235 /* SocialView.swift in Sources */,
 				296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */,
+				94979E6128DDFAFC00105B3C /* CreateAccountView.swift in Sources */,
 				944B28F328DA0E98003C52DD /* Maps.swift in Sources */,
 				2967650828CD5A600043A235 /* UpcomingEventsView.swift in Sources */,
 				2967650028CCD6D80043A235 /* SplashScreenView.swift in Sources */,

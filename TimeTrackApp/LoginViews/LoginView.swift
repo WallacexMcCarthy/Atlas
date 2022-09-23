@@ -75,7 +75,12 @@ struct LoginView: View
                             .cornerRadius(10)
                         // if the password is wrong it will be highlighted with a red border
                             .border(.red, width: CGFloat(wrongPassword))
-                        
+                        Button("Create Account")
+                        {
+                            createNewAccount()
+                        }
+                            .foregroundColor(.red)
+                            .padding()
                         Button("Login")
                         {
                             // allows access to past login
@@ -118,6 +123,11 @@ struct LoginView: View
         {
             wrongUsername = 2
         }
+    }
+    
+    func createNewAccount() -> Void
+    {
+        CreateAccountView()
     }
 }
 
