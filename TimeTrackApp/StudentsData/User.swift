@@ -15,7 +15,7 @@ struct Users : Identifiable
     let securityAnswer: String
     let emailAddress: String
     let password: String
-    let grade: Int
+    let grade: String
     let birthday: String
     let school: String
     let imageLinkSource: String

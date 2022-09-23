@@ -46,11 +46,11 @@ func loadUserData() -> [Users]
         "h"
     ]
     
-    let grade: [Int] =
+    let grade: [String] =
     [
-        11,
-        11,
-        11
+        "11",
+        "11",
+        "11"
     ]
     
     let birthday: [String] =

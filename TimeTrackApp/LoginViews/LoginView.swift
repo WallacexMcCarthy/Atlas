@@ -18,6 +18,7 @@ struct LoginView: View
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
+    @State private var showingCreateAccountScreen = false
     var body: some View
     {
         NavigationView
@@ -25,6 +26,9 @@ struct LoginView: View
             if showingLoginScreen
             {
                 TabBarView()
+            }else if showingCreateAccountScreen
+            {
+                CreateAccountView()
             }else
             {
                 ZStack
@@ -77,7 +81,7 @@ struct LoginView: View
                             .border(.red, width: CGFloat(wrongPassword))
                         Button("Create Account")
                         {
-                            createNewAccount()
+                            showingCreateAccountScreen = true
                         }
                             .foregroundColor(.red)
                             .padding()

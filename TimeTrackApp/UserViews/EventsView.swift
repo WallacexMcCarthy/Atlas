@@ -42,7 +42,8 @@ struct EventsView: View {
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                         {
                             pin in
-                            MapMarker(coordinate: pin.location, tint: Color.cyan)
+                            // fix ****************************************
+                            MapMarker(coordinate: pin.regions.center, tint: Color.cyan)
                         }
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
