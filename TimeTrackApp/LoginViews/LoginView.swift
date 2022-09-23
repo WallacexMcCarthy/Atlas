@@ -64,7 +64,7 @@ struct LoginView: View
                         Text("Login")
                             .font(.largeTitle)
                             .bold()
-                        TextField("Username", text: $username)
+                        TextField("Email Address", text: $username)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
@@ -129,10 +129,7 @@ struct LoginView: View
         }
     }
     
-    func createNewAccount() -> Void
-    {
-        CreateAccountView()
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider

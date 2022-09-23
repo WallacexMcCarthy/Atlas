@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// no longer using this view
 struct UpcomingEventsView: View {
     let impacts = loadMapData()
     @State private var toMaps = false
