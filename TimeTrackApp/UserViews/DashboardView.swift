@@ -19,7 +19,7 @@ struct DashboardView: View
             
             if toMaps
             {
-                EventsView(impact:loadMapData()[indexs])
+                EventsView(with:loadMapData()[indexs])
             }else
             {
                 List
@@ -30,7 +30,7 @@ struct DashboardView: View
                         {
                             index in
                             
-                            NavigationLink(impacts[index].title, destination: EventsView(impact:loadMapData()[indexs]))
+                            NavigationLink(impacts[index].title, destination: EventsView(with:loadMapData()[indexs]))
                             
                             
 //                            Button(impacts[index].title)

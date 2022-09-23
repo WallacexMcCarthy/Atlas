@@ -11,6 +11,12 @@ import MapKit
 struct EventsView: View {
     @State var impact : Maps
     @State private var toDashboard: Bool = false
+    public var mapItems : [Maps]
+    init (with impact: Maps)
+    {
+        _impact = State(initialValue: impact)
+        self.mapItems = [currentLocation, impact]
+    }
     var body: some View
     {
         NavigationView {
@@ -33,7 +39,11 @@ struct EventsView: View {
                         Text("\(impact.month)/\(impact.day)/\(impact.year)")
                         Text(impact.details)
 
-                        Map(coordinateRegion: $impact.regions)
+                        Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
+                        {
+                            pin in
+                            MapMarker(coordinate: pin.location, tint: Color.cyan)
+                        }
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
     //                    {
@@ -53,6 +63,6 @@ struct EventsView: View {
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView(impact: loadMapData()[0])
+        EventsView(with: loadMapData()[0])
     }
 }

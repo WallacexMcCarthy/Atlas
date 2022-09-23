@@ -7,6 +7,8 @@
 
 import MapKit
 
+let currentLocation = Maps(title: "Current Location", details: "This is the current location of the user", year: 2022, month: 9, day: 23, address: "7350 S 900 E, Midvale, UT 84047", location: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), regions: MKCoordinateRegion (center: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))))
+
 func loadMapData() -> [Maps]
 {
     var mapsItems : [Maps] = []

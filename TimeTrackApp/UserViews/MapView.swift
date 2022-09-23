@@ -11,19 +11,29 @@ import MapKit
 struct MapView: View {
     @State var impact : Maps
     @State var mapsData = loadMapData()
+    public var mapItems : [Maps]
+    init (with impact: Maps)
+    {
+        _impact = State(initialValue: impact)
+        self.mapItems = [currentLocation, impact]
+    }
     var body: some View
     {
         NavigationView {
             ZStack {
                 VStack {
-                    Map(coordinateRegion: $impact.regions)
-                        .frame(height: 960)
-                    ForEach(mapsData.indices)
+
+                    Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                     {
-                        index in
+                        pin in
                         
-                        MapMarker(coordinate: mapsData[index].location, tint: Color.cyan)
+                        MapMarker(coordinate: pin.location, tint: Color.cyan)
+                        
                     }
+                        .frame(height: 960)
+                        
+                    
+                    
                     
                 }
             }
@@ -34,6 +44,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(impact: loadMapData()[0])
+        MapView(with: loadMapData()[0])
     }
 }

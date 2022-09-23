@@ -17,7 +17,7 @@ struct UpcomingEventsView: View {
             
             if toMaps
             {
-                EventsView(impact:loadMapData()[indexs])
+                EventsView(with:loadMapData()[indexs])
             }else
             {
                 List

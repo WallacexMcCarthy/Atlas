@@ -23,7 +23,7 @@ struct TabBarView: View
                             Text("Dashboard")
                         }
                     
-                    MapView(impact: loadMapData()[0])
+                    MapView(with: loadMapData()[0])
                         .tabItem
                         {
                             Image(systemName: "mappin.circle")
