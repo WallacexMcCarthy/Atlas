@@ -11,6 +11,7 @@ import SwiftUI
 struct DashboardView: View
 {
     let impacts = loadMapData()
+    let announcements = loadAnnouncementData()
     @State private var toMaps = false
     @State private var indexs = 0
     var body: some View {
@@ -22,24 +23,37 @@ struct DashboardView: View
                 EventsView(with:loadMapData()[indexs])
             }else
             {
-                List
+                VStack
                 {
-                    Section(header: Text("Upcoming Events"))
+                    Form
                     {
-                        ForEach(impacts.indices)
+                        Section(header: Text("Announcements"))
                         {
-                            index in
-                            
-                            NavigationLink(impacts[index].title, destination: EventsView(with:loadMapData()[indexs]))
-                            
-                            
-//                            Button(impacts[index].title)
-//                            {
-//                                toMaps = true
-//                                indexs = index
-//                            }
+                            Text(" Date: \(announcements[0].date) \n Details: \(announcements[0].announcement) \n Type: \(announcements[0].type)")
+                            Text(" Date: \(announcements[1].date) \n Details: \(announcements[1].announcement) \n Type: \(announcements[1].type)")
+                            Text(" Date: \(announcements[2].date) \n Details: \(announcements[2].announcement) \n Type: \(announcements[2].type)")
                         }
                     }
+                    Form
+                    {
+                        Section(header: Text("Upcoming Events"))
+                        {
+                            ForEach(impacts.indices)
+                            {
+                                index in
+                                
+                                NavigationLink(impacts[index].title, destination: EventsView(with:loadMapData()[indexs]))
+                                
+                                
+    //                            Button(impacts[index].title)
+    //                            {
+    //                                toMaps = true
+    //                                indexs = index
+    //                            }
+                            }
+                        }
+                }
+                    .ignoresSafeArea(.all)
                 }
                 
                 
