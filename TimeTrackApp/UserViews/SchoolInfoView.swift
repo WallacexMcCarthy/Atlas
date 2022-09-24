@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-struct SchoolInfoView: View {
-    var body: some View {
-        NavigationView
-        {
-            ZStack
-            {
-                Color.white
-                    .ignoresSafeArea(.all)
-            }
-            .navigationTitle("School Information")
-        }
+struct SchoolInfoView: View
+{
+    var body: some View
+    {
+        Text("School Info")
     }
 }
 

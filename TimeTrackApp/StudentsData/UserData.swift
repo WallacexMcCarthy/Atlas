@@ -35,7 +35,7 @@ func loadUserData() -> [Users]
     let emailAddress: [String] =
     [
         "Vislawath.21@gmail.com",
-        "t",
+        "T",
         "h"
     ]
     
@@ -69,7 +69,7 @@ func loadUserData() -> [Users]
     
     let imageLinkSource: [String] =
     [
-        "link",
+        "profilepicDheeraj",
         "link",
         "link"
     ]

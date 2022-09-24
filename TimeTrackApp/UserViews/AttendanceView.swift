@@ -21,12 +21,12 @@ struct ConfirmationView: View
 //    @State private var attendanceInfo = getAttendanceInformation()
     var body: some View
     {
-        NavigationView
+        if toAttendanceView
         {
-            if toAttendanceView
-            {
-                AttendanceView()
-            }else
+            AttendanceView()
+        }else
+        {
+            NavigationView
             {
                 Form
                 {
@@ -37,8 +37,8 @@ struct ConfirmationView: View
                     }
                 }
             }
-
         }
+    
     }
 }
 
@@ -56,10 +56,10 @@ struct AttendanceView: View
         {
             if toStudentProfile
             {
-                ProfileView()
+                ProfileView(studentInfo: loadUserData()[0])
             }else if toConfirmationView
             {
-                AttendanceConfirmationView()
+                ConfirmationView()
             }else
             {
                 ZStack

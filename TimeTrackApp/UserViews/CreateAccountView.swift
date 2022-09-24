@@ -10,11 +10,13 @@ import SwiftUI
 struct CreateAccountView: View {
     @State var userData = loadUserData()
     @State private var displayLoginScreen = false
+    @State private var displayFailure = false
     @State private var fullName = ""
     @State private var securityQuestion = ""
     @State private var securityAnswer = ""
     @State private var emailAddress = ""
     @State private var password = ""
+    @State private var checkPassword = ""
     @State private var grade = ""
     @State private var birthdate = ""
     @State private var school = ""
@@ -86,15 +88,36 @@ struct CreateAccountView: View {
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
                             .cornerRadius(10)
-                        Button("Create Account")
+                        SecureField("Confirm Password", text: $checkPassword)
+                            .padding()
+                            .frame(width: 300, height: 50)
+                            .background(Color.black.opacity(0.07))
+                            .cornerRadius(10)
+                        
+                        VStack
                         {
-                            displayLoginScreen = true
+                            if displayFailure
+                            {
+                                Text("Passwords do not match!")
+                                    .font(Font.title3)
+                                    .foregroundColor(.red)
+                            }
+                            Button("Create Account")
+                            {
+                                if checkPassword == password
+                                {
+                                    displayLoginScreen = true
+                                }else
+                                {
+                                    displayFailure = true
+                                }
+                            }
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            
                         }
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        Text("")
                         
 
                     }

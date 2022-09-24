@@ -8,9 +8,12 @@
 import SwiftUI
 
 @main
-struct TimeTrackAppApp: App {
-    var body: some Scene {
-        WindowGroup {
+struct TimeTrackAppApp: App
+{
+    var body: some Scene
+    {
+        WindowGroup
+        {
             SplashScreenView()
         }
     }
