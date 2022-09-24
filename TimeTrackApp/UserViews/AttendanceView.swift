@@ -71,43 +71,66 @@ struct AttendanceView: View
                         Text("Recent Attendance Entries")
                             .font(.title)
                             .bold()
-                        
-                        Button("User Profile")
-                        {
-                            toStudentProfile = true
-                        }
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color.red)
-                        .cornerRadius(50)
-                        Text("Enter Attendance")
-                            .font(.largeTitle)
-                            .bold()
+                    
                         Form
                         {
-                            DatePicker("Select start date", selection: $selectedStartDate, displayedComponents: [.date])
-                            DatePicker("Select end date", selection: $selectedEndDate, displayedComponents: [.date])
-                            Text("Details:")
-                            TextField("Reason for Abasence or Tardy", text: $reasonForAttendance)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.07))
-                                .cornerRadius(10)
-                            Button("Update Attendance")
+                            Section(header: Text("Recent Attendance Entries")
+                                .font(Font.title3)
+                                .bold()
+                            )
                             {
-                                toConfirmationView = true
+                                Text("Attendance Entry 1")
+                                Text("Attendance Entry 2")
+                                Text("Attendance Entry 3")
+                                Text("Attendance Entry 4")
+                                Text("Attendance Entry 5")
                             }
-                            .foregroundColor(.white)
-                            .frame(width: 300, height: 50)
-                            .background(Color.red)
-                            .cornerRadius(10)
+                            Section(header: Text("Enter Attendance Data")
+                                .font(Font.title3)
+                                .bold()
+                            )
+                            {
+//                                Text("Enter Attendance")
+//                                    .font(.largeTitle)
+//                                    .bold()
+                                DatePicker("Select start date", selection: $selectedStartDate, displayedComponents: [.date])
+                                DatePicker("Select end date", selection: $selectedEndDate, displayedComponents: [.date])
+                                Text("Details:")
+                                TextField("Reason for Abasence or Tardy", text: $reasonForAttendance)
+                                    .padding()
+                                    .frame(width: 300, height: 50)
+                                    .background(Color.black.opacity(0.07))
+                                    .cornerRadius(10)
+                                Button("Update Attendance")
+                                {
+                                    toConfirmationView = true
+                                }
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 50)
+                                .background(Color.red)
+                                .cornerRadius(10)
+                                Button("User Profile")
+                                {
+                                    toStudentProfile = true
+                                }
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 50)
+                                .background(Color.red)
+                                .cornerRadius(50)
+                            }
+                            
+                            
                             
                         }
                         
                     }
                     
                 }
-            .navigationTitle("Attandence")
+//            .navigationTitle("Attandence")
+                
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+//            .navigationBarBackButtonHidden()
             }
         }
 
