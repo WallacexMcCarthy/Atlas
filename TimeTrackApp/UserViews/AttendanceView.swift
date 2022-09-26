@@ -18,7 +18,7 @@ struct Attendance: Identifiable
 struct ConfirmationView: View
 {
     @State private var toAttendanceView = false
-//    @State private var attendanceInfo = getAttendanceInformation()
+    @State private var attendanceInfo = AttendanceView().getAttendanceInformation()
     var body: some View
     {
         if toAttendanceView
@@ -30,7 +30,7 @@ struct ConfirmationView: View
             {
                 Form
                 {
-                    Text("tester")
+                    Text("\(attendanceInfo[2].startDate)")
                     Button("Confirm")
                     {
                         toAttendanceView = true
