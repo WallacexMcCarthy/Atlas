@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-// no longer using this view
+/*
+ I am no longer using this View but i am saving it just in case i need it later.
+ */
 struct UpcomingEventsView: View {
     let impacts = loadMapData()
     @State private var toMaps = false
@@ -22,6 +24,9 @@ struct UpcomingEventsView: View {
             {
                 List
                 {
+                    /*
+                     It creates a for loop that for every things in impacts whcih is just really loadMapsData, it will display a navigationLink that looks simmilar to a button and from this it will connect you to the respective event's maps page.
+                     */
                     Section(header: Text("Upcoming Events"))
                     {
                         ForEach(impacts.indices)

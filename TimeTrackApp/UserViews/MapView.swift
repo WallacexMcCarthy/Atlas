@@ -8,6 +8,11 @@
 import SwiftUI
 import MapKit
 
+
+/*
+ Creates a map with all of the events shown as pins as well as the current location of the user.
+ */
+
 struct MapView: View {
     @State var impact : Maps
     @State var mapsData = loadMapData()

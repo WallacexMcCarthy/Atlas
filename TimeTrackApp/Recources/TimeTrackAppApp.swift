@@ -14,6 +14,7 @@ struct TimeTrackAppApp: App
     {
         WindowGroup
         {
+            // the first screen that will be shown or loaded is SplashScreenView().
             SplashScreenView()
         }
     }

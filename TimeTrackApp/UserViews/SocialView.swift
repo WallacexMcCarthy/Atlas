@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/*
+ This view will allow everyone who has access to this app to send and recieve messgae and pictures much like social media.
+ */
+
 struct SocialView: View {
     var body: some View {
         NavigationView

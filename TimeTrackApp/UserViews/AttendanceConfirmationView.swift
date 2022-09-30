@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+ This view is not in use at the moment.
+ */
 struct AttendanceConfirmationView: View {
     @State private var toAttendanceView = false
     @State private var attendanceInfo = AttendanceView().getAttendanceInformation()

@@ -29,27 +29,32 @@ struct DashboardView: View
                     {
                         Section(header: Text("Announcements"))
                         {
-                            Text(" Date: \(announcements[0].date) \n Details: \(announcements[0].announcement) \n Type: \(announcements[0].type)")
-                            Text(" Date: \(announcements[1].date) \n Details: \(announcements[1].announcement) \n Type: \(announcements[1].type)")
-                            Text(" Date: \(announcements[2].date) \n Details: \(announcements[2].announcement) \n Type: \(announcements[2].type)")
+                            /*
+                             Creates a loop where it calls the data file announcements which is loadAnnouncementData and for each element in announcements it displays text that shows the date, details and the type (Achedemic, sports etc).
+                             */
+                            ForEach(announcements.indices)
+                            {
+                                index in
+                                
+                                Text(" Date: \(announcements[index].date) \n Details: \(announcements[index].announcement) \n Type: \(announcements[index].type)")
+                                
+                            }
                         }
                     }
                     Form
                     {
                         Section(header: Text("Upcoming Events"))
                         {
+                            /*
+                             It creates a for loop that for every things in impacts whcih is just really loadMapsData, it will display a navigationLink that looks simmilar to a button and from this it will connect you to the respective event's maps page.
+                             */
                             ForEach(impacts.indices)
                             {
                                 index in
                                 
                                 NavigationLink(impacts[index].title, destination: EventsView(with:loadMapData()[indexs]))
                                 
-                                
-    //                            Button(impacts[index].title)
-    //                            {
-    //                                toMaps = true
-    //                                indexs = index
-    //                            }
+                        
                             }
                         }
                 }
@@ -57,24 +62,8 @@ struct DashboardView: View
                 }
                 
                 
-                
-                //            ScrollView
-                //            {
-                //                List
-                //                {
-                //                    Section(header: Text("Upcoming Events"))
-                //                    {
-                //                        Text("Hello")
-                //                    }
-                //                }
-                //                    .border(Color.yellow, width: 3)
-                //                    .background(Color.blue)
-                //
-                
-                
             }
         }
-        .navigationBarHidden(true)
     }
 }
 

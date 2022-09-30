@@ -7,6 +7,10 @@
 
 import Foundation
 
+/*
+ It calls the data file Announcements and uses the variabels creeated there to make an array and it will return an array that has new information.
+ */
+
 func loadAnnouncementData() -> [Announcments]
 {
     var announcementItems : [Announcments] = []

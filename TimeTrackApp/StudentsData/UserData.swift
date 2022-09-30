@@ -7,6 +7,10 @@
 
 import Foundation
 
+/*
+ It calls the data file Users and uses the variabels creeated there to make an array and it will return an array that has new information. 
+ */
+
 func loadUserData() -> [Users]
 {
     var userItems : [Users] = []
@@ -78,6 +82,7 @@ func loadUserData() -> [Users]
     {
        
         userItems.append(Users(fullName: fullName[index], securityQuestion: securityQuestion[index], securityAnswer: securityAnswer[index], emailAddress: emailAddress[index], password: password[index], grade: grade[index], birthday: birthday[index], school: school[index], imageLinkSource: imageLinkSource[index]))
+        userItems.append(Users(fullName: CreateAccountView().fullName, securityQuestion: CreateAccountView().securityQuestion, securityAnswer: CreateAccountView().securityAnswer, emailAddress: CreateAccountView().emailAddress, password: CreateAccountView().password, grade: CreateAccountView().grade, birthday: CreateAccountView().birthdate, school: CreateAccountView().school, imageLinkSource: CreateAccountView().imageLink))
     }
     
     return userItems

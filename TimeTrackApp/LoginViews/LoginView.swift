@@ -23,16 +23,17 @@ struct LoginView: View
     {
         NavigationView
         {
-            if showingLoginScreen
+            if showingLoginScreen // will direct the user to the TabBarView if showingLoginScreen is true.
             {
                 TabBarView()
-            }else if showingCreateAccountScreen
+            }else if showingCreateAccountScreen // will direct the user to the confirmation view if showingCreateAccountScreen is true.
             {
                 CreateAccountView()
             }else
             {
                 ZStack
                 {
+                    // the visuals - circles of differant opacity.
                     Color.blue
                         .ignoresSafeArea()
                     Circle()
@@ -43,7 +44,7 @@ struct LoginView: View
                         .foregroundColor(.white)
                     VStack
                     {
-                        // the only way i can get the logo at the top
+                        // the only way i can get the logo at the top. This is how i am using spacing but ther is definatly a better way.
                         Image("logo")
                         Text("")
                             .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
@@ -58,9 +59,10 @@ struct LoginView: View
                     
                     VStack
                     {
-    //                    Text("Time Track")
-    //                        .font(Font.custom("NewFont", size: 50))
-    //                        .bold()
+                        /*
+                         Creation of all of the textFields, buttosn and nagigationLinks.
+                         */
+                        
                         Text("Login")
                             .font(.largeTitle)
                             .bold()
@@ -69,15 +71,15 @@ struct LoginView: View
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
                             .cornerRadius(10)
-                        // if the password is wrong, it will be highlighted with a red border
+                        // if the password is wrong, it will be highlighted with a red border.
                             .border(.red, width: CGFloat(wrongUsername))
-                        
+                        // a SecureField does not allow the user to visuallt see that they are typing.
                         SecureField("Password", text: $password)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
                             .cornerRadius(10)
-                        // if the password is wrong it will be highlighted with a red border
+                        // if the password is wrong it will be highlighted with a red border.
                             .border(.red, width: CGFloat(wrongPassword))
                         Button("Create Account")
                         {
@@ -88,8 +90,8 @@ struct LoginView: View
                         Button("Login")
                         {
                             // allows access to past login
-                            checkCredientals()
-//                            showingLoginScreen = true
+//                            checkCredientals()
+                            showingLoginScreen = true
                         }
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
@@ -107,7 +109,7 @@ struct LoginView: View
             
         }
     }
-    // Checks username and passsword
+    // Checks username and passsword to all of the usernames and passwordsd in the data files (UserData).
     func checkCredientals() -> Void
     {
         

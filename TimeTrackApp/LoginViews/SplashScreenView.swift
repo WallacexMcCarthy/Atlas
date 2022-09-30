@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/*
+ Creates a splash screen that is really an annimated screen with text and a logo. Once the time delay finoishes it will bring us to the login screen.
+ */
+
 struct SplashScreenView: View
 {
     @State private var isActive = false
@@ -15,7 +19,7 @@ struct SplashScreenView: View
     
     var body: some View
     {
-        
+        // if isActive is true then it will direct thte user to the login screen.
         if isActive
         {
             LoginView()
@@ -31,6 +35,9 @@ struct SplashScreenView: View
 //                        Image(systemName: "hare.fill")
 //                            .font(Font.custom("hare", size: 80))
 //                            .foregroundColor(.white)
+                        /*
+                         Calls the logo and creates the text area with specific pararmeters.
+                         */
                         Image("icon")
                         Text("Time Track")
                             .font(Font.custom("Baskerville-Bold", size: 26))
@@ -40,6 +47,7 @@ struct SplashScreenView: View
                     .opacity(ocacity)
                     .onAppear
                     {
+                        // this is hte annimation part. it will increace by a size of 170 %
                         withAnimation(.easeIn(duration: 1.2))
                         {
                             self.size = 1.7
@@ -50,6 +58,7 @@ struct SplashScreenView: View
                 }
                 .onAppear
                 {
+                    // after doing the annimation the program will sleep for 2 seconds thn set isActive to be true.
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2)
                     {
                         withAnimation

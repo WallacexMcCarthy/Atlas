@@ -7,24 +7,31 @@
 
 import SwiftUI
 
+/*
+ This view allows the user to create an account and the information that is crreated in thsi view will be stored in the user data file / array.
+ */
+
 struct CreateAccountView: View {
-    @State var userData = loadUserData()
     @State private var displayLoginScreen = false
     @State private var displayFailure = false
-    @State private var fullName = ""
-    @State private var securityQuestion = ""
-    @State private var securityAnswer = ""
-    @State private var emailAddress = ""
-    @State private var password = ""
-    @State private var checkPassword = ""
-    @State private var grade = ""
-    @State private var birthdate = ""
-    @State private var school = ""
-    @State private var imageLink = ""
+    @State private var confirmationView = false
+    @State public var fullName = ""
+    @State public var securityQuestion = ""
+    @State public var securityAnswer = ""
+    @State public var emailAddress = ""
+    @State public var password = ""
+    @State public var checkPassword = ""
+    @State public var grade = ""
+    @State public var birthdate = ""
+    @State public var school = ""
+    @State public var imageLink = ""
     var body: some View {
         if displayLoginScreen
         {
             LoginView()
+        }else if confirmationView
+        {
+            CreateAccountConfirmationView()
         }else
         {
             VStack
@@ -47,6 +54,7 @@ struct CreateAccountView: View {
                     
                     VStack
                     {
+                        // Creates the text fields that the user can type in.
                         TextField("Full Name", text: $fullName)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -102,11 +110,13 @@ struct CreateAccountView: View {
                                     .font(Font.title3)
                                     .foregroundColor(.red)
                             }
+                            // the button that will bring the user to the confirmation create account view.
                             Button("Create Account")
                             {
                                 if checkPassword == password
                                 {
-                                    displayLoginScreen = true
+//                                    displayLoginScreen = true
+                                    confirmationView = true
                                 }else
                                 {
                                     displayFailure = true
@@ -122,7 +132,7 @@ struct CreateAccountView: View {
 
                     }
                 }
-    //            userData.append(Users(fullName: fullName, securityQuestion: securityQuestion, securityAnswer: securityAnswer, emailAddress: emailAddress, password: password, grade: grade, birthday: birthdate, school: school, imageLinkSource: imageLink))
+//                userData.append(Users(fullName: fullName, securityQuestion: securityQuestion, securityAnswer: securityAnswer, emailAddress: emailAddress, password: password, grade: grade, birthday: birthdate, school: school, imageLinkSource: imageLink))
                 
         }
         }

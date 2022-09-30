@@ -14,10 +14,16 @@ struct Attendance: Identifiable
     let endDate: String
     let reason: String
 }
-
+/*
+ Confirmation view will dislay all of the data entered by the user and make the user confir it and if the data is wrong it will direct the user back to attendance view to restart.
+ */
 struct ConfirmationView: View
 {
+    
     @State private var toAttendanceView = false
+    /*
+     Gets the array of information that is created by filling out the Enter Atendance Data information.
+     */
     @State private var attendanceInfo = AttendanceView().getAttendanceInformation()
     var body: some View
     {

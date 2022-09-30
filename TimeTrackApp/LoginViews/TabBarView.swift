@@ -15,6 +15,7 @@ struct TabBarView: View
         {
             TabView
                 {
+                    // creates a tab bar on the bottom of the screen that allows the user to click on differnt icons and those icons will direct the user to differnt views/ pages.
                     DashboardView()
                         .tabItem
                         {
@@ -52,7 +53,7 @@ struct TabBarView: View
                          }
                     
                 }
-            .accentColor(.red)
+            .accentColor(.red) // highlights the icon red if clicked.
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
         }

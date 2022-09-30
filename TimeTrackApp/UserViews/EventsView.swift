@@ -8,6 +8,10 @@
 import SwiftUI
 import MapKit
 
+/*
+ Shows the event thatwas clicked on in Dashboard View and it will display its coordiantes on a map as well as a little informatiomn about the event. 
+ */
+
 struct EventsView: View {
     @State var impact : Maps
     @State private var toDashboard: Bool = false
@@ -38,7 +42,7 @@ struct EventsView: View {
                         Text(impact.title)
                         Text("\(impact.month)/\(impact.day)/\(impact.year)")
                         Text(impact.details)
-
+                        // creates the map and calls the event region.
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                         {
                             pin in

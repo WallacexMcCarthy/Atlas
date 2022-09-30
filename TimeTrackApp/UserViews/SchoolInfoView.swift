@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// this view will display all school info about Hillcrest Higshhcool or the respective highschool to the user.
+
 struct SchoolInfoView: View
 {
     var body: some View

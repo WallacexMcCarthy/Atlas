@@ -7,7 +7,13 @@
 
 import MapKit
 
+
+// our current location which is just the coordinates for Hillcrest Highschool.
 let currentLocation = Maps(title: "Current Location", details: "This is the current location of the user", year: 2022, month: 9, day: 23, address: "7350 S 900 E, Midvale, UT 84047", location: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), regions: MKCoordinateRegion (center: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))))
+
+/*
+ It calls the data file Maps and uses the variabels creeated there to make an array and it will return an array that has new information.
+ */
 
 func loadMapData() -> [Maps]
 {

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+ Profile Confirmation view will dislay all of the data entered by the user and make the user confirm it and if the data is wrong it will direct the user back to Profile view to restart.
+ */
 struct ProfileConfirmationView: View
 {
     @State private var toProfileView = false
@@ -49,7 +52,9 @@ struct ProfileView: View {
         {
             
             VStack {
-                
+                /*
+                 displays all of the user's data in a form.
+                 */
                 Form
                 {
     //                Text("User Info")
@@ -64,7 +69,7 @@ struct ProfileView: View {
                     Text("Security Answer: \(studentInfo.securityAnswer)")
                     Text("Email: \(studentInfo.emailAddress)")
                     
-                    
+                    // directs the user to a eddit profiel page
                     Button("Edit User Profile Information")
                     {
                         toConfirmationView = true
@@ -73,6 +78,8 @@ struct ProfileView: View {
                     .frame(width: 300, height: 50)
                     .background(Color.red)
                     .cornerRadius(10)
+                    
+                    // directs the user back to AttendanceView
                     Button("Return to Attendance")
                     {
                         toAttendanceView = true
