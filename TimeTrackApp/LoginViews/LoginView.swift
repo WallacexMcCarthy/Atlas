@@ -117,8 +117,8 @@ struct LoginView: View
         
         for index in 0 ... userData.count - 1
         {
-            var userUsername = userData[index].emailAddress
-            var userPassword = userData[index].password
+            let userUsername = userData[index].emailAddress
+            let userPassword = userData[index].password
             
             if(username != "" && password != "")
             {

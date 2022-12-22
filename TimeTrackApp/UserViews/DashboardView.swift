@@ -33,7 +33,7 @@ struct DashboardView: View
                         
                         Form
                         {
-                            Section(header: Text("Welcome "))
+                            Section(header: Text("Welcome \(userData[0].fullName)"))
                             {
                                 
                             }
