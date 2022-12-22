@@ -60,12 +60,12 @@ struct AttendanceView: View
     var body: some View {
         NavigationView
         {
-            if toStudentProfile
+            if toStudentProfile == true
             {
                 ProfileView(studentInfo: loadUserData()[0])
-            }else if toConfirmationView
+            }else if toConfirmationView == true
             {
-                ConfirmationView()
+                AttendanceConfirmationView()
             }else
             {
                 ZStack

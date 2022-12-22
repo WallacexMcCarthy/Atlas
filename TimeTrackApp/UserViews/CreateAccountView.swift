@@ -31,7 +31,7 @@ struct CreateAccountView: View {
             LoginView()
         }else if confirmationView
         {
-            CreateAccountConfirmationView()
+            LoginView()
         }else
         {
             VStack
@@ -55,22 +55,25 @@ struct CreateAccountView: View {
                     VStack
                     {
                         // Creates the text fields that the user can type in.
-                        TextField("Full Name", text: $fullName)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Email Address", text: $emailAddress)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Grade", text: $grade)
-                            .keyboardType(.numberPad)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
+                        VStack
+                        {
+                            TextField("Full Name", text: $fullName)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Email Address", text: $emailAddress)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Grade", text: $grade)
+                                .keyboardType(.numberPad)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                        }
                         TextField("Birthday (00/00/0000)", text: $birthdate)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -91,12 +94,12 @@ struct CreateAccountView: View {
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
                             .cornerRadius(10)
-                        SecureField("Password", text: $password)
+                        TextField("Password", text: $password)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
                             .cornerRadius(10)
-                        SecureField("Confirm Password", text: $checkPassword)
+                        TextField("Confirm Password", text: $checkPassword)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
@@ -115,8 +118,8 @@ struct CreateAccountView: View {
                             {
                                 if checkPassword == password
                                 {
-//                                    displayLoginScreen = true
                                     confirmationView = true
+                                    appendData(name: fullName, email: emailAddress, grade: grade, birthdate: birthdate, school: school, securityQuestion: securityQuestion, securityAnswer: securityAnswer, password: password)
                                 }else
                                 {
                                     displayFailure = true
@@ -132,10 +135,18 @@ struct CreateAccountView: View {
 
                     }
                 }
-//                userData.append(Users(fullName: fullName, securityQuestion: securityQuestion, securityAnswer: securityAnswer, emailAddress: emailAddress, password: password, grade: grade, birthday: birthdate, school: school, imageLinkSource: imageLink))
+               
                 
         }
         }
+    }
+    
+    func appendData(name : String, email : String, grade: String, birthdate: String, school: String, securityQuestion: String, securityAnswer : String, password: String)
+    {
+        var userData = loadUserData()
+        
+        userData.append(Users(fullName: name, securityQuestion: securityQuestion, securityAnswer: securityAnswer, emailAddress: email, password: password, grade: grade, birthday: birthdate, school: school, imageLinkSource: ""))
+        
     }
 }
 

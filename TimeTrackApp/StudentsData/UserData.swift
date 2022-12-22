@@ -87,3 +87,9 @@ func loadUserData() -> [Users]
     
     return userItems
 }
+
+func loadCurrentUserData() -> [Users]
+{
+    var currentUserInformation : [Users] = []
+    return currentUserInformation
+}

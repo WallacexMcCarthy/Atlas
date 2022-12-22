@@ -90,8 +90,7 @@ struct LoginView: View
                         Button("Login")
                         {
                             // allows access to past login
-//                            checkCredientals()
-                            showingLoginScreen = true
+                            checkCredientals()
                         }
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
@@ -114,21 +113,63 @@ struct LoginView: View
     {
         
         @State var userData = loadUserData()
+        @State var currentUserData = loadCurrentUserData()
         
-        
-        if (username == userData[1].emailAddress)
+        for index in 0 ... userData.count - 1
         {
-            if (password == userData[1].password)
+            var userUsername = userData[index].emailAddress
+            var userPassword = userData[index].password
+            
+            if(username != "" && password != "")
             {
-                showingLoginScreen = true
-            }else
+                if(username == userUsername)
+                {
+                    if(password == userPassword)
+                    {
+                        currentUserData.append(Users(fullName: userData[index].fullName, securityQuestion:  userData[index].securityQuestion, securityAnswer:  userData[index].securityAnswer, emailAddress:  userData[index].emailAddress, password:  userData[index].password, grade:  userData[index].grade, birthday:  userData[index].birthday, school:  userData[index].school, imageLinkSource:  userData[index].imageLinkSource))
+                        showingLoginScreen = true
+                    } else
+                    {
+                        wrongPassword = 2
+                    }
+                } else
+                {
+                    wrongUsername = 2
+                }
+            } else
             {
                 wrongPassword = 2
+                wrongUsername = 2
             }
-        }else
-        {
-            wrongUsername = 2
         }
+        
+//        ForEach(userData.indices, id: \.self)
+//        {
+//            index in
+//            var userUsername = userData[index].emailAddress
+//            var userPassword = userData[index].password
+//
+//            if(username == userUsername && password == userPassword)
+//            {
+//                userData
+//            }
+//        }
+        
+//        if (username == userData[1].emailAddress)
+//        {
+//            if (password == userData[1].password)
+//            {
+//                showingLoginScreen = true
+//
+//            }else
+//            {
+//                wrongPassword = 2
+//            }
+//        }else
+//        {
+//            wrongUsername = 2
+//        }
+        
     }
     
     
