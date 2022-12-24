@@ -10,7 +10,8 @@ import SwiftUI
 
 struct DashboardView: View
 {
-    let userData = loadCurrentUserData()
+    let userData = loadUserData()
+    let currentUserData = loadCurrentUserData()
     let impacts = loadMapData()
     let announcements = loadAnnouncementData()
     @State private var toMaps = false
@@ -31,50 +32,58 @@ struct DashboardView: View
                     VStack
                     {
                         
-                        Form
-                        {
-                            Section(header: Text("Welcome \(userData[0].fullName)"))
-                            {
-                                
-                            }
-                        }
-                        Form
+                        ScrollView
                         {
                             
-                            Section(header: Text("Announcements"))
-                            {
-                                /*
-                                 Creates a loop where it calls the data file announcements which is loadAnnouncementData and for each element in announcements it displays text that shows the date, details and the type (Achedemic, sports etc).
-                                 */
-                                ForEach(announcements.indices)
+                            
+                            
+//                            Section(header: Text("Announcements")
+//                                .font(.largeTitle))
+//
+//                            {
+                                ZStack
                                 {
-                                    index in
-                                    
-                                    Text(" Date: \(announcements[index].date) \n Details: \(announcements[index].announcement) \n Type: \(announcements[index].type)")
-                                    
+                                    /*
+                                     Creates a loop where it calls the data file announcements which is loadAnnouncementData and for each element in announcements it displays text that shows the date, details and the type (Achedemic, sports etc).
+                                     */
+                                    VStack
+                                    {
+                                        Text(" ")
+                                            .padding(5)
+                                        Text(" Wellcome \(userData[currentUserIndexValue].fullName)")
+                                            .font(.title3)
+                                        Text("Announcements")
+                                            .font(.largeTitle)
+                                        ForEach(announcements.indices)
+                                        {
+                                            index in
+                                            Image(announcements[index].immageLinkSource)
+                                                .resizable()
+                                                .frame(width: 400, height: 200)
+                                            Text(announcements[index].title)
+                                                .frame(width: 390)
+                                                .padding(.horizontal, 10)
+                                                .padding(15)
+                                                .cornerRadius(10)
+                                            Text(announcements[index].announcment)
+                                                .frame(width: 360)
+                                                .padding(.horizontal, 10)
+                                                .padding(15)
+                                                .cornerRadius(10)
+                                            
+                                            
+                                            
+                                    }
+                                        Text(" ")
+                                            .padding(30)
+                                        
+                                    }
                                 }
-                            }
+//                            }
+                            
                             
                         }
-                        .padding(.vertical, 50)
-    //                    Form
-                        
-    //                    {
-    //                        Section(header: Text("Upcoming Events"))
-    //                        {
-    //                            /*
-    //                             It creates a for loop that for every things in impacts whcih is just really loadMapsData, it will display a navigationLink that looks simmilar to a button and from this it will connect you to the respective event's maps page.
-    //                             */
-    //                            ForEach(impacts.indices)
-    //                            {
-    //                                index in
-    //
-    //                                NavigationLink(impacts[index].title, destination: EventsView(with:loadMapData()[indexs]))
-    //
-    //
-    //                            }
-    //                        }
-    //                }
+                        .background(Color.blue.opacity(0.15))
                         .ignoresSafeArea(.all)
                 }
                 }

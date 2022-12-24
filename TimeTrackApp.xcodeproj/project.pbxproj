@@ -24,6 +24,7 @@
 		2967650E28CD5CAE0043A235 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2967650D28CD5CAE0043A235 /* ProfileView.swift */; };
 		2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */; };
 		2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */; };
+		2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */; };
 		29DDC35E28DB9D4B00FCC3F0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */; };
 		29DDC36128DC10DD00FCC3F0 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDC36028DC10DD00FCC3F0 /* EventsView.swift */; };
 		29FE3B0D28DD4F220026B8E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE3B0C28DD4F220026B8E3 /* User.swift */; };
@@ -74,6 +75,7 @@
 		2967650D28CD5CAE0043A235 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountConfirmationView.swift; sourceTree = "<group>"; };
 		2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
+		2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationView.swift; sourceTree = "<group>"; };
 		29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		29DDC36028DC10DD00FCC3F0 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		29FE3B0C28DD4F220026B8E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -134,12 +136,10 @@
 		296764D328CCD65A0043A235 /* TimeTrackApp */ = {
 			isa = PBXGroup;
 			children = (
-				29FE3B1A28DF96BD0026B8E3 /* AnnouncementData */,
-				29FE3B0B28DD4EE20026B8E3 /* StudentsData */,
-				944B28F128DA0D9A003C52DD /* EventsData */,
+				2999BEC629575ED200DEF6F6 /* Data */,
 				944B28F028DA0D89003C52DD /* LoginViews */,
-				296764FE28CCD6660043A235 /* Recources */,
 				2967650F28CD62620043A235 /* UserViews */,
+				296764FE28CCD6660043A235 /* Recources */,
 				296764DA28CCD65C0043A235 /* Preview Content */,
 			);
 			path = TimeTrackApp;
@@ -182,17 +182,14 @@
 		2967650F28CD62620043A235 /* UserViews */ = {
 			isa = PBXGroup;
 			children = (
-				2999BEBE2954C3C000DEF6F6 /* Messages */,
 				2967650328CD5A180043A235 /* DashboardView.swift */,
 				2967650728CD5A600043A235 /* UpcomingEventsView.swift */,
+				2999BEC329560D4900DEF6F6 /* Profile */,
+				2999BEBE2954C3C000DEF6F6 /* Messages */,
+				2999BEC429560D6400DEF6F6 /* Attendance */,
 				2967650528CD5A290043A235 /* SchoolInfoView.swift */,
-				2967650928CD5B2B0043A235 /* AttendanceView.swift */,
-				2967650D28CD5CAE0043A235 /* ProfileView.swift */,
 				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
 				29DDC36028DC10DD00FCC3F0 /* EventsView.swift */,
-				94979E6028DDFAFC00105B3C /* CreateAccountView.swift */,
-				29FE3B1128DE52AB0026B8E3 /* AttendanceConfirmationView.swift */,
-				2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -204,6 +201,43 @@
 				2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		2999BEC329560D4900DEF6F6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2967650D28CD5CAE0043A235 /* ProfileView.swift */,
+				2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2999BEC429560D6400DEF6F6 /* Attendance */ = {
+			isa = PBXGroup;
+			children = (
+				2967650928CD5B2B0043A235 /* AttendanceView.swift */,
+				29FE3B1128DE52AB0026B8E3 /* AttendanceConfirmationView.swift */,
+			);
+			path = Attendance;
+			sourceTree = "<group>";
+		};
+		2999BEC529560D7D00DEF6F6 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */,
+				94979E6028DDFAFC00105B3C /* CreateAccountView.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		2999BEC629575ED200DEF6F6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				944B28F128DA0D9A003C52DD /* EventsData */,
+				29FE3B1A28DF96BD0026B8E3 /* AnnouncementData */,
+				29FE3B0B28DD4EE20026B8E3 /* StudentsData */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		29FE3B0B28DD4EE20026B8E3 /* StudentsData */ = {
@@ -227,6 +261,7 @@
 		944B28F028DA0D89003C52DD /* LoginViews */ = {
 			isa = PBXGroup;
 			children = (
+				2999BEC529560D7D00DEF6F6 /* CreateAccount */,
 				296764FF28CCD6D80043A235 /* SplashScreenView.swift */,
 				296764D628CCD65A0043A235 /* LoginView.swift */,
 				2967650128CD570F0043A235 /* TabBarView.swift */,
@@ -373,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */,
 				944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */,
 				29DDC36128DC10DD00FCC3F0 /* EventsView.swift in Sources */,
 				29FE3B1228DE52AB0026B8E3 /* AttendanceConfirmationView.swift in Sources */,

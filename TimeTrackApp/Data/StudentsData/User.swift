@@ -26,3 +26,18 @@ struct Users : Identifiable
     let imageLinkSource: String
     
 }
+struct CurrentUsers : Identifiable
+{
+    // creates a origional id every time every time it is used / called.
+    let id = UUID()
+    var fullName: String
+    var securityQuestion: String
+    var securityAnswer: String
+    var emailAddress: String
+    var password: String
+    var grade: String
+    var birthday: String
+    var school: String
+    var imageLinkSource: String
+    
+}

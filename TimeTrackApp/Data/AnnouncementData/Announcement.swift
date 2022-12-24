@@ -14,8 +14,8 @@ struct Announcments : Identifiable
 {
     // creates a origional id every time every time it is used / called.
     let id = UUID()
-    let announcement: String
-    let date: String
-    let type: String
+    let title: String
+    let announcment: String
+    let immageLinkSource: String
     
 }

@@ -11,6 +11,8 @@ import SwiftUI
 
 struct LoginView: View
 {
+    @State public var indexValue = -1
+    @State public var userUsername = ""
     @State var isNavigationBarHidden: Bool = true
     @State var isAcvive: Bool = true
     @State private var username = ""
@@ -86,11 +88,12 @@ struct LoginView: View
                             showingCreateAccountScreen = true
                         }
                             .foregroundColor(.red)
-                            .padding()
                         Button("Login")
                         {
                             // allows access to past login
+//                            something fucked
                             checkCredientals()
+//                            showingLoginScreen = true
                         }
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
@@ -117,31 +120,60 @@ struct LoginView: View
         
         for index in 0 ... userData.count - 1
         {
-            let userUsername = userData[index].emailAddress
-            let userPassword = userData[index].password
+            let usersUsername = String(userData[index].emailAddress)
             
-            if(username != "" && password != "")
+            if(username == usersUsername)
             {
-                if(username == userUsername)
-                {
-                    if(password == userPassword)
-                    {
-                        currentUserData.append(Users(fullName: userData[index].fullName, securityQuestion:  userData[index].securityQuestion, securityAnswer:  userData[index].securityAnswer, emailAddress:  userData[index].emailAddress, password:  userData[index].password, grade:  userData[index].grade, birthday:  userData[index].birthday, school:  userData[index].school, imageLinkSource:  userData[index].imageLinkSource))
-                        showingLoginScreen = true
-                    } else
-                    {
-                        wrongPassword = 2
-                    }
-                } else
-                {
-                    wrongUsername = 2
-                }
-            } else
+                indexValue = index
+                currentUserIndexValue = index
+                userUsername = usersUsername
+            }else
             {
-                wrongPassword = 2
                 wrongUsername = 2
             }
         }
+        
+        if(userData[indexValue].password == password)
+        {
+            currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))
+            showingLoginScreen = true
+        }else
+        {
+            wrongPassword = 2
+        }
+        
+        if(userUsername == "" || userUsername == " ")
+        {
+            showingLoginScreen = false
+        }
+    
+        
+        
+//        for index in 0 ... userData.count - 1
+//        {
+//            let usersUsername = userData[index].emailAddress
+//            let usersPassword = userData[index].password
+//
+//            if(username == usersUsername)
+//            {
+//                if(password == usersPassword)
+//                {
+//                    currentUserData.append(CurrentUsers(fullName: userData[index].fullName, securityQuestion:  userData[index].securityQuestion, securityAnswer:  userData[index].securityAnswer, emailAddress:  userData[index].emailAddress, password:  userData[index].password, grade:  userData[index].grade, birthday:  userData[index].birthday, school:  userData[index].school, imageLinkSource:  userData[index].imageLinkSource))
+//                    showingLoginScreen = true
+//                } else
+//                {
+//                    wrongPassword = 2
+//
+//                }
+//            } else
+//            {
+//                wrongUsername = 2
+//
+//            }
+//
+//
+//
+//        }
         
 //        ForEach(userData.indices, id: \.self)
 //        {
