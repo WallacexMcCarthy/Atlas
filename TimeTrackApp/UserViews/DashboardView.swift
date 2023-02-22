@@ -28,7 +28,7 @@ struct DashboardView: View
             {
                 ZStack
                 {
-                    Color.gray.opacity(0.1)
+                    Color.blue.opacity(0.1)
                         .ignoresSafeArea()
                     
                     VStack
@@ -105,11 +105,11 @@ struct DashboardView: View
                                         buttonIndex = buttonIndex - 1
                                     }
                                 }
-                                .font(.title)
+                                .font(.title.bold())
                                 .foregroundColor(Color.black.opacity(0.5))
                                 .foregroundColor(.white)
                                 .frame(width: 20, height: 595)
-                                .background(Color.blue.opacity(0.3))
+                                .background(Color.blue.opacity(0.0))
                                 Spacer()
                                     .frame(width: 355)
                                 Button(">")
@@ -123,11 +123,11 @@ struct DashboardView: View
                                     }
                                     
                                 }
-                                .font(.title)
+                                .font(.title.bold())
                                 .foregroundColor(Color.black.opacity(0.5))
                                 .foregroundColor(.white)
                                 .frame(width: 20, height: 595)
-                                .background(Color.blue.opacity(0.3))
+                                .background(Color.blue.opacity(0.0))
                             }
                             Spacer()
                                 .frame(height: 7)

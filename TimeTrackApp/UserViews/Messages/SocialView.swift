@@ -14,7 +14,7 @@ import SwiftUI
 struct SocialView: View
 {
     @State private var messageText = ""
-    @State var messages : [String] = ["Welcome to chatbot 2.0"]
+    @State var messages : [String] = ["Welcome to the Help Desk"]
     var body: some View
     {
         VStack
@@ -82,6 +82,7 @@ struct SocialView: View
                     sendMessage(message: messageText)
                 }label: {
                     Image(systemName: "paperplane.fill")
+                        .foregroundColor(Color.blue.opacity(1))
                 }
                 .font(.system(size: 26))
                 .padding(.horizontal, 10)

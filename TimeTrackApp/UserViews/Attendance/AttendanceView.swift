@@ -85,11 +85,11 @@ struct AttendanceView: View
                                 .bold()
                             )
                             {
-                                Text("Attendance Entry 1")
-                                Text("Attendance Entry 2")
-                                Text("Attendance Entry 3")
-                                Text("Attendance Entry 4")
-                                Text("Attendance Entry 5")
+                                Text("01/12/2023: Abasent periods: 5, 7, 8")
+                                Text("01/20/2023: Tardy periods: 2")
+                                Text("01/28/2023: Tardy periods: 1, 4")
+                                Text("02/07/2023: Truent periods: 8")
+                                Text("02/14/2023: Abasent periods: 2, 3")
                             }
                             Section(header: Text("Enter Attendance Data")
                                 .font(Font.title3)
@@ -109,11 +109,12 @@ struct AttendanceView: View
                                     .cornerRadius(10)
                                 Button("Update Attendance")
                                 {
+                                    
                                     toConfirmationView = true
                                 }
                                 .foregroundColor(.white)
                                 .frame(width: 300, height: 50)
-                                .background(Color.red)
+                                .background(Color.blue.opacity(0.85))
                                 .cornerRadius(10)
                                 Button("User Profile")
                                 {
@@ -121,8 +122,8 @@ struct AttendanceView: View
                                 }
                                 .foregroundColor(.white)
                                 .frame(width: 300, height: 50)
-                                .background(Color.red)
-                                .cornerRadius(50)
+                                .background(Color.blue.opacity(0.85))
+                                .cornerRadius(10)
                             }
                             
                             

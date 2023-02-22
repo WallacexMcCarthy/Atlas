@@ -21,7 +21,7 @@ struct AttendanceConfirmationView: View {
         {
             Form
             {
-                Text(attendanceInfo[2].startDate)
+//                Text(attendanceInfo[2].startDate)
                 Button("Confirm")
                 {
                     toAttendanceView = true

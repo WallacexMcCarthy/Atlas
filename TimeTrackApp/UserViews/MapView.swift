@@ -31,7 +31,6 @@ struct MapView: View {
                     Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                     {
                         pin in
-                        
                         MapMarker(coordinate: pin.location, tint: Color.cyan)
                         
                     }

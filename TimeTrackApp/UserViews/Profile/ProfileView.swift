@@ -52,7 +52,7 @@ struct ProfileView: View {
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.red)
+                    .background(Color.blue.opacity(0.85))
                     .cornerRadius(10)
                     
                     // directs the user back to AttendanceView
@@ -62,7 +62,7 @@ struct ProfileView: View {
                     }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.red)
+                    .background(Color.blue.opacity(0.85))
                     .cornerRadius(10)
                     
             }
