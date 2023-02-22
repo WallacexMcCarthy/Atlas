@@ -22,24 +22,28 @@ struct UpcomingEventsView: View {
                 EventsView(with:loadMapData()[indexs])
             }else
             {
-                List
+                ZStack
                 {
-                    /*
-                     It creates a for loop that for every things in impacts whcih is just really loadMapsData, it will display a navigationLink that looks simmilar to a button and from this it will connect you to the respective event's maps page.
-                     */
-                    Section(header: Text("Upcoming Events"))
+                    Color.gray.opacity(0.1)
+                    List
                     {
-                        ForEach(impacts.indices)
+                        /*
+                         It creates a for loop that for every things in impacts whcih is just really loadMapsData, it will display a navigationLink that looks simmilar to a button and from this it will connect you to the respective event's maps page.
+                         */
+                        Section(header: Text("Upcoming Events"))
                         {
-                            index in
-                            
-                            Button(impacts[index].title)
+                            ForEach(impacts.indices)
                             {
-                                toMaps = true
-                                indexs = index
+                                index in
+                                
+                                Button(impacts[index].title)
+                                {
+                                    toMaps = true
+                                    indexs = index
+                                }
                             }
                         }
-                    }
+                }
                 }
                 
                 

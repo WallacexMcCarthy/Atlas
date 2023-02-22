@@ -61,7 +61,17 @@ struct SplashScreenView: View
                     // after doing the annimation the program will sleep for 2 seconds thn set isActive to be true.
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2)
                     {
-                        withAnimation
+                        withAnimation(.easeIn(duration: 0.3))
+                        {
+                            self.size = 50
+                            self.ocacity = 0
+                            
+                        }
+                    }
+                    DispatchQueue.main
+                        .asyncAfter(deadline: .now() + 3)
+                    {
+                        withAnimation(.easeIn(duration: 0.2))
                         {
                             isActive = true
                         }

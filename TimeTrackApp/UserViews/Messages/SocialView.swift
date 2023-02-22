@@ -21,7 +21,7 @@ struct SocialView: View
         {
             HStack
             {
-                Text("IBot")
+                Text("Help Desk")
                     .font(.largeTitle)
                     .bold()
                 Image(systemName: "buble.left.fill")
@@ -70,7 +70,7 @@ struct SocialView: View
             .background(Color.gray.opacity(0.10))
             HStack
             {
-                TextField("Type Something", text: $messageText)
+                TextField("Question or Request", text: $messageText)
                     .padding()
                     .background(Color.green.opacity(0.1))
                     .cornerRadius(10)
