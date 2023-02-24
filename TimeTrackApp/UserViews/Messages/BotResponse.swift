@@ -17,9 +17,12 @@ func getBotResponse(message: String) -> String
         }else if (tempMessage.contains("friday"))
         {
             return "It will be an early out day! \n PERIOD 1 OR 5: 7:45 – 8:45 | 60 Minutes \n PERIOD 2 OR 6: 8:51 – 9:51 | 60 Minutes \n PERIOD 3 OR 7: 9:57 – 10:57 | 60 Minutes \n PERIOD 4 OR 8: 11:03 – 12:03 | 60 Minutes \n LUNCH: 12:03 – 12:43 | 40 Minutes \n PLC: 12:43 – 2:20 | 97 Minutes"
+        }else if(tempMessage.contains("saturday") || tempMessage.contains("sunday"))
+        {
+            return "There is no school Sunday or Saturday, it's the weekend."
         }else
         {
-            return "There will be no school that day."
+            return "Schedule for which day? \n Please use the following as a inpout guide: \n \"DAY\" Schedule or Schedule \"DAY\""
         }
     }
     else if tempMessage.contains("hello")

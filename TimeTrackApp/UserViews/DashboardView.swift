@@ -76,13 +76,33 @@ struct DashboardView: View
                                             .cornerRadius(10)
                                             .background(Color.blue.opacity(0.1))
                                             .ignoresSafeArea()
-                                        Text(" ")
-                                            .padding(30)
+                                            .lineLimit(nil)
+                                        Section(header: Text("Upcoming Events").font(.title).frame(width: 400, height: 50).background(Color.white.opacity(0.2)))
+                                        {
+                                            ForEach(impacts.indices)
+                                            {
+                                                index in
+                                                
+                                                Button(impacts[index].title)
+                                                {
+                                                    toMaps = true
+                                                    indexs = index
+                                                }
+                                                .frame(width: 330, height: 50)
+                                                .background(Color.blue.opacity(0.5))
+                                                .cornerRadius(20)
+                                                .foregroundColor(Color.black)
+                                            }
+                                        }
                                         
+                                        
+
                                     }
                                 }
                             
 //                            }
+                            
+                            
                             
                             
                         }
@@ -132,7 +152,10 @@ struct DashboardView: View
                             Spacer()
                                 .frame(height: 7)
                             
+                            
+                            
                         }
+                        
                         
                     }
                 }

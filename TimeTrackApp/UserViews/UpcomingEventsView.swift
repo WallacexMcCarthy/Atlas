@@ -43,7 +43,7 @@ struct UpcomingEventsView: View {
                                 }
                             }
                         }
-                }
+                    }
                 }
                 
                 
