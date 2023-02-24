@@ -14,7 +14,7 @@ import SwiftUI
 struct SocialView: View
 {
     @State private var messageText = ""
-    @State var messages : [String] = ["Welcome to the Help Desk"]
+    @State var messages : [String] = ["Welcome to the Help Desk. \n If you need to report a bug, type \"report a bug\""]
     var body: some View
     {
         VStack

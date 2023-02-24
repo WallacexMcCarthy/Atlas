@@ -25,24 +25,18 @@ func getBotResponse(message: String) -> String
             return "Schedule for which day? \n Please use the following as a inpout guide: \n \"DAY\" Schedule or Schedule \"DAY\""
         }
     }
-    else if tempMessage.contains("hello")
+    else if tempMessage.contains("report a bug")
     {
-        return "Hey there!"
+        return "Please provuide a detailed discription of the bug and we will fix it ASAP."
     }
     
-    else  if tempMessage.contains("goodbye")
+    else  if tempMessage.contains("close")
     {
-        return "Tatlk to you later!"
-    }else if tempMessage.contains("how are you")
-    {
-        return "Good how about you?"
-    }else if tempMessage.contains(" ")
-    {
-        return "Thats cool."
+        return "Thank you for using the help desk!"
     }
     
     else
     {
-        return " "
+        return "A assistant will be right with you! \n Current wait time: 7 minutes. \n If you would like to end your request or exit this conversation type \"Close\"."
     }
 }

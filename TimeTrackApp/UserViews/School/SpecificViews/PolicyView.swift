@@ -11,8 +11,7 @@ struct PolicyView: View
 {
     var body: some View
     {
-        NavigationView
-        {
+       
             List
             {
                 Section(header: Text("School Policies"))
@@ -23,7 +22,7 @@ struct PolicyView: View
                     NavigationLink("District Policy", destination: CustomPDFView(displayedPDFURL: District_Policy_URL))
                 }
             }
-        }
+        
     }
 }
 
