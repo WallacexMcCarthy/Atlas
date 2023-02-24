@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29420E9C29A854E0000FDE9C /* AB-Calendar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420E9A29A854E0000FDE9C /* AB-Calendar.pdf */; };
+		29420E9F29A85545000FDE9C /* CustomPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420E9E29A85545000FDE9C /* CustomPDFView.swift */; };
+		29420EA329A855A5000FDE9C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420EA229A855A5000FDE9C /* Utilities.swift */; };
+		29420EA629A859E0000FDE9C /* Lunch-Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */; };
+		29420EA929A85A02000FDE9C /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420EA829A85A02000FDE9C /* SchedulesView.swift */; };
+		29420EAC29A85BA0000FDE9C /* Friday_Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */; };
+		29420EAD29A85BA0000FDE9C /* Weekday_Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */; };
 		296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */; };
 		296764D728CCD65A0043A235 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D628CCD65A0043A235 /* LoginView.swift */; };
 		296764D928CCD65C0043A235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296764D828CCD65C0043A235 /* Assets.xcassets */; };
@@ -55,6 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29420E9A29A854E0000FDE9C /* AB-Calendar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "AB-Calendar.pdf"; sourceTree = "<group>"; };
+		29420E9E29A85545000FDE9C /* CustomPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPDFView.swift; sourceTree = "<group>"; };
+		29420EA229A855A5000FDE9C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Lunch-Schedule.pdf"; sourceTree = "<group>"; };
+		29420EA829A85A02000FDE9C /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
+		29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Friday_Schedule.png; sourceTree = "<group>"; };
+		29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weekday_Schedule.png; sourceTree = "<group>"; };
 		296764D128CCD65A0043A235 /* TimeTrackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppApp.swift; sourceTree = "<group>"; };
 		296764D628CCD65A0043A235 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -113,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29420EA429A8599B000FDE9C /* School */ = {
+			isa = PBXGroup;
+			children = (
+				29420EA729A859E9000FDE9C /* SpecificViews */,
+				2967650528CD5A290043A235 /* SchoolInfoView.swift */,
+				29420E9E29A85545000FDE9C /* CustomPDFView.swift */,
+				29420EA229A855A5000FDE9C /* Utilities.swift */,
+			);
+			path = School;
+			sourceTree = "<group>";
+		};
+		29420EA729A859E9000FDE9C /* SpecificViews */ = {
+			isa = PBXGroup;
+			children = (
+				29420EA829A85A02000FDE9C /* SchedulesView.swift */,
+			);
+			path = SpecificViews;
+			sourceTree = "<group>";
+		};
 		296764C828CCD65A0043A235 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +206,10 @@
 		296764FE28CCD6660043A235 /* Recources */ = {
 			isa = PBXGroup;
 			children = (
+				29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */,
+				29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */,
+				29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */,
+				29420E9A29A854E0000FDE9C /* AB-Calendar.pdf */,
 				296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */,
 				296764D828CCD65C0043A235 /* Assets.xcassets */,
 			);
@@ -187,7 +224,7 @@
 				2999BEC329560D4900DEF6F6 /* Profile */,
 				2999BEBE2954C3C000DEF6F6 /* Messages */,
 				2999BEC429560D6400DEF6F6 /* Attendance */,
-				2967650528CD5A290043A235 /* SchoolInfoView.swift */,
+				29420EA429A8599B000FDE9C /* School */,
 				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
 				29DDC36028DC10DD00FCC3F0 /* EventsView.swift */,
 			);
@@ -382,7 +419,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29420E9C29A854E0000FDE9C /* AB-Calendar.pdf in Resources */,
 				296764DC28CCD65C0043A235 /* Preview Assets.xcassets in Resources */,
+				29420EA629A859E0000FDE9C /* Lunch-Schedule.pdf in Resources */,
+				29420EAC29A85BA0000FDE9C /* Friday_Schedule.png in Resources */,
+				29420EAD29A85BA0000FDE9C /* Weekday_Schedule.png in Resources */,
 				296764D928CCD65C0043A235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +456,7 @@
 				29FE3B0F28DD4F320026B8E3 /* UserData.swift in Sources */,
 				296764D728CCD65A0043A235 /* LoginView.swift in Sources */,
 				2967650A28CD5B2B0043A235 /* AttendanceView.swift in Sources */,
+				29420EA929A85A02000FDE9C /* SchedulesView.swift in Sources */,
 				2967650E28CD5CAE0043A235 /* ProfileView.swift in Sources */,
 				29DDC35E28DB9D4B00FCC3F0 /* MapView.swift in Sources */,
 				2967650228CD570F0043A235 /* TabBarView.swift in Sources */,
@@ -422,6 +464,7 @@
 				29FE3B1E28DF96EC0026B8E3 /* AnnouncementData.swift in Sources */,
 				29FE3B0D28DD4F220026B8E3 /* User.swift in Sources */,
 				2967650428CD5A180043A235 /* DashboardView.swift in Sources */,
+				29420E9F29A85545000FDE9C /* CustomPDFView.swift in Sources */,
 				2967650C28CD5B410043A235 /* SocialView.swift in Sources */,
 				29FE3B1C28DF96DE0026B8E3 /* Announcement.swift in Sources */,
 				296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */,
@@ -430,6 +473,7 @@
 				944B28F328DA0E98003C52DD /* Maps.swift in Sources */,
 				2967650828CD5A600043A235 /* UpcomingEventsView.swift in Sources */,
 				2967650028CCD6D80043A235 /* SplashScreenView.swift in Sources */,
+				29420EA329A855A5000FDE9C /* Utilities.swift in Sources */,
 				2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
