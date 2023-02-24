@@ -84,7 +84,7 @@ struct SchoolInfoView: View
                         {
                             Text("Policies:      ")
                                 .font(.title2.bold())
-                            NavigationLink("School Policies", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
+                            NavigationLink("School Policies", destination: PolicyView())
                             .frame(width: 230, height: 25)
                             .background(Color.blue.opacity(0.5))
                             .foregroundColor(Color.black)
