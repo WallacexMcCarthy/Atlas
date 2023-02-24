@@ -12,8 +12,11 @@
 		29420EA329A855A5000FDE9C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420EA229A855A5000FDE9C /* Utilities.swift */; };
 		29420EA629A859E0000FDE9C /* Lunch-Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */; };
 		29420EA929A85A02000FDE9C /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420EA829A85A02000FDE9C /* SchedulesView.swift */; };
-		29420EAC29A85BA0000FDE9C /* Friday_Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */; };
-		29420EAD29A85BA0000FDE9C /* Weekday_Schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */; };
+		29420EB029A8E8B4000FDE9C /* School_Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAE29A8E8B3000FDE9C /* School_Schedule.pdf */; };
+		29420EB129A8E8B4000FDE9C /* Friday_Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EAF29A8E8B3000FDE9C /* Friday_Schedule.pdf */; };
+		29420EB329A8EA23000FDE9C /* Fee_Schedules.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EB229A8EA23000FDE9C /* Fee_Schedules.pdf */; };
+		29420EB529A8EA92000FDE9C /* School_Disclosure.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EB429A8EA92000FDE9C /* School_Disclosure.pdf */; };
+		29420EB729A8EAF1000FDE9C /* PolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420EB629A8EAF1000FDE9C /* PolicyView.swift */; };
 		296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */; };
 		296764D728CCD65A0043A235 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D628CCD65A0043A235 /* LoginView.swift */; };
 		296764D928CCD65C0043A235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296764D828CCD65C0043A235 /* Assets.xcassets */; };
@@ -67,8 +70,11 @@
 		29420EA229A855A5000FDE9C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Lunch-Schedule.pdf"; sourceTree = "<group>"; };
 		29420EA829A85A02000FDE9C /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
-		29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Friday_Schedule.png; sourceTree = "<group>"; };
-		29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weekday_Schedule.png; sourceTree = "<group>"; };
+		29420EAE29A8E8B3000FDE9C /* School_Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = School_Schedule.pdf; sourceTree = "<group>"; };
+		29420EAF29A8E8B3000FDE9C /* Friday_Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Friday_Schedule.pdf; sourceTree = "<group>"; };
+		29420EB229A8EA23000FDE9C /* Fee_Schedules.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Fee_Schedules.pdf; sourceTree = "<group>"; };
+		29420EB429A8EA92000FDE9C /* School_Disclosure.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = School_Disclosure.pdf; sourceTree = "<group>"; };
+		29420EB629A8EAF1000FDE9C /* PolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyView.swift; sourceTree = "<group>"; };
 		296764D128CCD65A0043A235 /* TimeTrackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppApp.swift; sourceTree = "<group>"; };
 		296764D628CCD65A0043A235 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				29420EA829A85A02000FDE9C /* SchedulesView.swift */,
+				29420EB629A8EAF1000FDE9C /* PolicyView.swift */,
 			);
 			path = SpecificViews;
 			sourceTree = "<group>";
@@ -206,8 +213,10 @@
 		296764FE28CCD6660043A235 /* Recources */ = {
 			isa = PBXGroup;
 			children = (
-				29420EAB29A85BA0000FDE9C /* Weekday_Schedule.png */,
-				29420EAA29A85BA0000FDE9C /* Friday_Schedule.png */,
+				29420EB429A8EA92000FDE9C /* School_Disclosure.pdf */,
+				29420EB229A8EA23000FDE9C /* Fee_Schedules.pdf */,
+				29420EAF29A8E8B3000FDE9C /* Friday_Schedule.pdf */,
+				29420EAE29A8E8B3000FDE9C /* School_Schedule.pdf */,
 				29420EA529A859E0000FDE9C /* Lunch-Schedule.pdf */,
 				29420E9A29A854E0000FDE9C /* AB-Calendar.pdf */,
 				296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */,
@@ -420,10 +429,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				29420E9C29A854E0000FDE9C /* AB-Calendar.pdf in Resources */,
+				29420EB529A8EA92000FDE9C /* School_Disclosure.pdf in Resources */,
 				296764DC28CCD65C0043A235 /* Preview Assets.xcassets in Resources */,
+				29420EB329A8EA23000FDE9C /* Fee_Schedules.pdf in Resources */,
 				29420EA629A859E0000FDE9C /* Lunch-Schedule.pdf in Resources */,
-				29420EAC29A85BA0000FDE9C /* Friday_Schedule.png in Resources */,
-				29420EAD29A85BA0000FDE9C /* Weekday_Schedule.png in Resources */,
+				29420EB029A8E8B4000FDE9C /* School_Schedule.pdf in Resources */,
+				29420EB129A8E8B4000FDE9C /* Friday_Schedule.pdf in Resources */,
 				296764D928CCD65C0043A235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +478,7 @@
 				29420E9F29A85545000FDE9C /* CustomPDFView.swift in Sources */,
 				2967650C28CD5B410043A235 /* SocialView.swift in Sources */,
 				29FE3B1C28DF96DE0026B8E3 /* Announcement.swift in Sources */,
+				29420EB729A8EAF1000FDE9C /* PolicyView.swift in Sources */,
 				296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */,
 				2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */,
 				94979E6128DDFAFC00105B3C /* CreateAccountView.swift in Sources */,

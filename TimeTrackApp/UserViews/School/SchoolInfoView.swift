@@ -74,7 +74,7 @@ struct SchoolInfoView: View
                         {
                             Text("Discloure:   ")
                                 .font(.title2.bold())
-                            NavigationLink("School Discloure", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
+                            NavigationLink("School Discloure", destination: CustomPDFView(displayedPDFURL: School_Disclosure_URL))
                             .frame(width: 230, height: 25)
                             .background(Color.blue.opacity(0.5))
                             .foregroundColor(Color.black)
