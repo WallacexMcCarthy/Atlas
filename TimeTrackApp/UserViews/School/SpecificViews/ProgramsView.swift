@@ -18,10 +18,10 @@ struct ProgramsView: View
                 Section(header: Text("School Programs"))
                 {
                     NavigationLink("International Baccalaureate", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                    NavigationLink("Sterling Scholar", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                    NavigationLink("Career and Technical Education (CTE)", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
+                    NavigationLink("Sterling Scholar", destination: CustomPDFView(displayedPDFURL: Sterling_Scholar_URL))
+                    NavigationLink("Career and Technical Education (CTE)", destination: CustomPDFView(displayedPDFURL: CTE_Classes_URL))
                     NavigationLink("Work Based Learning", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                    NavigationLink("AP Programs", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
+                    NavigationLink("AP Programs", destination: CustomPDFView(displayedPDFURL: AP_Courses_URL))
                     NavigationLink("Concurrent Enrollment", destination: CustomPDFView(displayedPDFURL: Concurrent_Enrollment_URL))
                 }
             }

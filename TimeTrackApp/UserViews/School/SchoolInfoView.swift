@@ -94,7 +94,7 @@ struct SchoolInfoView: View
                         {
                             Text("Programs:  ")
                                 .font(.title2.bold())
-                            NavigationLink("School Programs", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
+                            NavigationLink("School Programs", destination: ProgramsView())
                             .frame(width: 230, height: 25)
                             .background(Color.blue.opacity(0.5))
                             .foregroundColor(Color.black)

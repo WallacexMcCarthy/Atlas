@@ -22,6 +22,10 @@ let Technology_Policy_URL = Bundle.main.url(forResource: "Technology_Policy", wi
 let District_Policy_URL = Bundle.main.url(forResource: "District_Policy", withExtension: "pdf")!
 
 let Concurrent_Enrollment_URL = Bundle.main.url(forResource: "Concurrent_Enrollment", withExtension: "pdf")!
+let CTE_Classes_URL = Bundle.main.url(forResource: "CTE_Classes", withExtension: "pdf")!
+let Sterling_Scholar_URL = Bundle.main.url(forResource: "Sterling_Scholar", withExtension: "pdf")!
+let AP_Courses_URL = Bundle.main.url(forResource: "AP_Courses", withExtension: "pdf")!
 
 let Fridays = Bundle.main.url(forResource: "Friday_Schedule", withExtension: "pdf")
+
 
