@@ -24,18 +24,18 @@ struct TabBarView: View
                             Text("Dashboard")
                         }
                     
-                    MapView(with: loadMapData()[0])
+                    PicturesView()
                         .tabItem
                         {
-                            Image(systemName: "mappin.circle")
-                            Text("Map")
+                            Image(systemName: "person.3.fill")
+                            Text("Social")
                         }
                     
                     SocialView()
                          .tabItem
                          {
                              Image(systemName: "text.bubble.fill")
-                             Text("Social")
+                             Text("Help Desk")
                          }
                     
                     SchoolInfoView()

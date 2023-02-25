@@ -6,6 +6,7 @@
 //
 
 import Foundation
+var count = 0
 func getBotResponse(message: String) -> String
 {
     let tempMessage = message.lowercased()
@@ -27,6 +28,7 @@ func getBotResponse(message: String) -> String
     }
     else if tempMessage.contains("report a bug")
     {
+//        count = 1
         return "Please provuide a detailed discription of the bug and we will fix it ASAP."
     }
     
@@ -39,4 +41,10 @@ func getBotResponse(message: String) -> String
     {
         return "A assistant will be right with you! \n Current wait time: 7 minutes. \n If you would like to end your request or exit this conversation type \"Close\"."
     }
+    if(count == 1)
+    {
+        // bug reporting system
+    }
 }
+
+
