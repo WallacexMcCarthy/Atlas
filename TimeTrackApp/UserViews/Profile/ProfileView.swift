@@ -42,7 +42,8 @@ struct ProfileView: View {
                     Text("School: \(studentInfo.school)")
                     Text("Grade: \(studentInfo.grade)")
                     Text("Security Question: \(studentInfo.securityQuestion)")
-                    Text("Security Answer: \(studentInfo.securityAnswer)")
+//                    Text("Security Answer: \(studentInfo.securityAnswer)")
+                    Text("Security Answer: *****")
                     Text("Email: \(studentInfo.emailAddress)")
                     
                     // directs the user to a eddit profiel page

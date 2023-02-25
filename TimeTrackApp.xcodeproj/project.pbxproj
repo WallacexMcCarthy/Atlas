@@ -268,12 +268,12 @@
 		2967650F28CD62620043A235 /* UserViews */ = {
 			isa = PBXGroup;
 			children = (
-				29420ECC29AA8C2F000FDE9C /* ShareImages */,
 				2967650328CD5A180043A235 /* DashboardView.swift */,
 				2967650728CD5A600043A235 /* UpcomingEventsView.swift */,
-				2999BEC329560D4900DEF6F6 /* Profile */,
 				2999BEBE2954C3C000DEF6F6 /* Messages */,
 				2999BEC429560D6400DEF6F6 /* Attendance */,
+				2999BEC329560D4900DEF6F6 /* Profile */,
+				29420ECC29AA8C2F000FDE9C /* ShareImages */,
 				29420EA429A8599B000FDE9C /* School */,
 				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
 				29DDC36028DC10DD00FCC3F0 /* EventsView.swift */,

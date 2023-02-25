@@ -12,8 +12,17 @@ struct PicturesView: View
     @State var newImagePickerOne = false
     @State var newImagePickerTwo = false
     @State var changeProfileIamge = false
+    @State var changeProfileIamgeOne = false
+    @State var changeProfileIamgeTwo = false
     @State var openCameraRoll = false
-    @State var imageSelected = UIImage()
+    @State var imageSelectedOne = UIImage()
+    @State var imageSelectedTwo = UIImage()
+    @State var imageDate = ""
+    @State var imageTitle = ""
+    @State var imageOneTitle = ""
+    @State var imageTwoTitle = ""
+    @State var imageOneDate = ""
+    @State var imageTwoDate = ""
     var body: some View {
         ScrollView
         {
@@ -27,43 +36,76 @@ struct PicturesView: View
                         {
                             ZStack(alignment: .bottomTrailing)
                             {
-                                Button(action:
+                                HStack
+                                {
+                                    Button(action:
+                                            {
+                                        changeProfileIamge = true
+                                        openCameraRoll = true
+//                                        pictureProperties()
+                                    }, label:
+                                            {
+                                        if(changeProfileIamgeOne)
                                         {
-                                    changeProfileIamge = true
-                                    openCameraRoll = true
-                                    if(newImagePickerOne)
-                                    {
-                                        newImagePickerTwo = true
-                                    }
-                                    newImagePickerOne = true                                }, label:
+                                            Image(uiImage: imageSelectedTwo)
+                                                .resizable()
+                                                .frame(width: 200,height: 150)
+                                            
+                                        }else if(changeProfileIamge)
                                         {
-                                    if(changeProfileIamge)
-                                    {
-                                        Image(uiImage: imageSelected)
-                                            .resizable()
-                                            .frame(width: 200,height: 150)
-                                        
-                                    }else
-                                    {
-                                        
-                                        Image(systemName: "photo.on.rectangle.angled")
-                                            .resizable()
-                                            .frame(width: 200,height: 150)
+                                            Image(uiImage: imageSelectedOne)
+                                                .resizable()
+                                                .frame(width: 200,height: 150)
+                                        }else
+                                        {
+                                            Image(systemName: "photo")
+                                                .resizable()
+                                                .frame(width: 180,height: 130)
                                             .foregroundColor(Color.black)
+                                        }
+                                        
+                                        
+    //                                Image(systemName: "plus")
+    //                                    .frame(width: 30, height: 30)
+    //                                    .foregroundColor(Color.white)
+    //                                    .background(Color.gray)
+    //                                    .clipShape(Circle())
+                                        
                                     }
-                                    
-//                                Image(systemName: "plus")
-//                                    .frame(width: 30, height: 30)
-//                                    .foregroundColor(Color.white)
-//                                    .background(Color.gray)
-//                                    .clipShape(Circle())
-                                    
+                                           
+                                    )
+                                    VStack
+                                    {
+                                        TextField("  Date (00/00/0000)", text: $imageDate)
+                                            .frame(width: 200, height: 50)
+                                            .background(Color.gray.opacity(0.1))
+                                            .cornerRadius(10)
+                                        TextField("  Title", text: $imageTitle)
+                                            .frame(width: 200, height: 50)
+                                            .background(Color.gray.opacity(0.1))
+                                            .cornerRadius(10)
+                                        
+                                        Button("Enter")
+                                        {
+                                            if(newImagePickerOne)
+                                            {
+                                                newImagePickerTwo = true
+                                            }
+                                            newImagePickerOne = true
+                                            transferImageInfo()
+                                            count += 1
+                                        }
+                                        .frame(width: 200, height: 30)
+                                        .background(Color.blue.opacity(0.5))
+                                        .cornerRadius(20)
+                                    }
                                 }
-                                )
+                                
                             }
                             .sheet(isPresented: $openCameraRoll)
                             {
-                                ImagePicker(selectedImage: $imageSelected, sourceType: .photoLibrary)
+                                ImagePicker(selectedImage: $imageSelectedOne, sourceType: .photoLibrary)
+                                
                             }
                         }
                         VStack
@@ -75,49 +117,33 @@ struct PicturesView: View
                     {
                         if(newImagePickerOne)
                         {
-                            VStack
-                            {
-                                Image(uiImage: imageSelected)
-                                    .resizable()
-                                    .frame(width: 200,height: 150)
-                            }
                             if(newImagePickerTwo)
                             {
-                                Image(uiImage: imageSelected)
+                                VStack
+                                {
+                                    Text(imageTwoDate).frame(width: 190, height: 30)
+                                        .background(Color.gray.opacity(0.1))
+                                    Image(uiImage: imageSelectedTwo)
+                                        .resizable()
+                                        .frame(width: 200,height: 150)
+                                    Text(imageTwoTitle)
+                                        .frame(width: 190, height: 50)
+                                        .background(Color.gray.opacity(0.1))
+                            }
+                            }
+                            VStack
+                            {
+                                Text(imageOneDate).frame(width: 190, height: 30)
+                                    .background(Color.gray.opacity(0.1))
+                                Image(uiImage: imageSelectedOne)
                                     .resizable()
                                     .frame(width: 200,height: 150)
+                                Text(imageOneTitle)
+                                    .frame(width: 190, height: 50)
+                                    .background(Color.gray.opacity(0.1))
                             }
+                            
                         }
-                    }
-                    HStack
-                    {
-                        VStack
-                        {
-                            Text("02/25/2023").frame(width: 190, height: 30)
-                                .background(Color.gray.opacity(0.1))
-                            Image("BBall-Uintah")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 180, height: 130)
-                            Text("Uintah Basketball Game")
-                                .frame(width: 190, height: 50)
-                                .background(Color.gray.opacity(0.1))
-                        }
-                        Spacer()
-                            .frame(width: 10)
-                        VStack
-                        {
-                            Text("02/14/2023").frame(width: 190, height: 30)
-                                .background(Color.gray.opacity(0.1))
-                            Image("BBall-Uintah_Crowd")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 180, height: 130)
-                            Text("Uintah Basketball Game")
-                                .frame(width: 190, height: 50)
-                                .background(Color.gray.opacity(0.1))
-                        }
-                        
                     }
                     HStack
                     {
@@ -129,7 +155,7 @@ struct PicturesView: View
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 180, height: 130)
-                            Text("       Hillcrest theater presents \"A Winters Tale")
+                            Text("       Hillcrest theater presents A Winters Tale")
                                 .frame(width: 190, height: 50)
                                 .background(Color.gray.opacity(0.1))
                         }
@@ -212,6 +238,40 @@ struct PicturesView: View
                     
                 }
             }
+        }
+    }
+    func transferImageInfo()
+    {
+        if(count != 0)
+        {
+            imageTwoDate = imageDate
+            imageTwoTitle = imageTitle
+            imageDate = ""
+            imageTitle = ""
+            changeProfileIamge = false
+        }else
+        {
+            imageOneDate = imageDate
+            imageOneTitle = imageTitle
+            imageDate = ""
+            imageTitle = ""
+            changeProfileIamge = false
+        }
+    }
+    func pictureProperties()
+    {
+        if(count == 1)
+        {
+            changeProfileIamgeOne = true
+            openCameraRoll = true
+        }else if(count == 2)
+        {
+            changeProfileIamgeOne = true
+            openCameraRoll = true
+        }else
+        {
+            changeProfileIamge = true
+            openCameraRoll = true
         }
     }
 }
