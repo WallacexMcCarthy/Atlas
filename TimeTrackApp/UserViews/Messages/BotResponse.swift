@@ -10,6 +10,11 @@ var count = 0
 func getBotResponse(message: String) -> String
 {
     let tempMessage = message.lowercased()
+    if(count == 1)
+    {
+        count = 0
+        return "Thank you for reporting this bug! A representitive will review it ASAP."
+    }
     if tempMessage.contains("schedule")
     {
         if(tempMessage.contains("monday") || tempMessage.contains("tuesday") || tempMessage.contains("wednesday") || tempMessage.contains("thursday"))
@@ -28,7 +33,7 @@ func getBotResponse(message: String) -> String
     }
     else if tempMessage.contains("report a bug")
     {
-//        count = 1
+        count = 1
         return "Please provuide a detailed discription of the bug and we will fix it ASAP."
     }
     
@@ -41,10 +46,7 @@ func getBotResponse(message: String) -> String
     {
         return "A assistant will be right with you! \n Current wait time: 7 minutes. \n If you would like to end your request or exit this conversation type \"Close\"."
     }
-    if(count == 1)
-    {
-        // bug reporting system
-    }
+    
 }
 
 

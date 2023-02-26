@@ -53,7 +53,7 @@ struct LoginView: View
                         Text("")
                             .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                         Text("")
-                            .padding()
+                            .padding(40)
                         
                         
                     }
@@ -68,6 +68,40 @@ struct LoginView: View
                         Text("Login")
                             .font(.largeTitle)
                             .bold()
+                        HStack
+                        {
+                            Button {
+                                
+                            } label: {
+                                Image("Apple_ID_Icon")
+                                    .resizable()
+                                    .frame(width: 75, height: 75)
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image("Facebook_Icon")
+                                    .resizable()
+                                    .frame(width: 75, height: 75)
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image("Twitter_Icon")
+                                    .resizable()
+                                    .frame(width: 75, height: 75)
+                            }
+                            Button {
+                                
+                            } label: {
+                                Image("Google_Icon")
+                                    .resizable()
+                                    .frame(width: 75, height: 75)
+                            }
+                        }
+                        Text("or")
+                        Text("Login Using a Personal Email")
+                            .font(.title3)
                         TextField("Email Address", text: $username)
                             .padding()
                             .frame(width: 300, height: 50)
