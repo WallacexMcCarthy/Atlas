@@ -53,7 +53,7 @@ struct LoginView: View
                         Text("")
                             .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                         Text("")
-                            .padding(40)
+                            .padding()
                         
                         
                     }
