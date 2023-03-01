@@ -63,7 +63,7 @@ struct AttendanceView: View
             if toStudentProfile == true
             {
                 ProfileView(studentInfo: loadUserData()[0])
-            }else if toConfirmationView == true
+            }else if toConfirmationView == true && 0 == 1
             {
                 AttendanceConfirmationView()
             }else
@@ -90,6 +90,10 @@ struct AttendanceView: View
                                 Text("01/28/2023: Tardy periods: 1, 4")
                                 Text("02/07/2023: Truent periods: 8")
                                 Text("02/14/2023: Abasent periods: 2, 3")
+                                if (toConfirmationView)
+                                {
+                                    Text("\(selectedStartDate): \(reasonForAttendance)")
+                                }
                             }
                             Section(header: Text("Enter Attendance Data")
                                 .font(Font.title3)
@@ -109,7 +113,6 @@ struct AttendanceView: View
                                     .cornerRadius(10)
                                 Button("Update Attendance")
                                 {
-                                    
                                     toConfirmationView = true
                                 }
                                 .foregroundColor(.white)

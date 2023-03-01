@@ -83,15 +83,11 @@ struct DashboardView: View
                                             {
                                                 index in
                                                 
-                                                Button(impacts[index].title)
-                                                {
-                                                    toMaps = true
-                                                    indexs = index
-                                                }
-                                                .frame(width: 330, height: 50)
-                                                .background(Color.blue.opacity(0.5))
-                                                .cornerRadius(20)
-                                                .foregroundColor(Color.black)
+                                                NavigationLink("\(impacts[index].title)", destination: EventsView(with:loadMapData()[index]))
+                                                    .frame(width: 330, height: 50)
+                                                    .background(Color.blue.opacity(0.5))
+                                                    .cornerRadius(20)
+                                                    .foregroundColor(Color.black)
                                             }
                                         }
                                         
@@ -162,6 +158,10 @@ struct DashboardView: View
             }
             
         }
+    }
+    func findIndex(index: Int)
+    {
+        indexs = index
     }
 }
 

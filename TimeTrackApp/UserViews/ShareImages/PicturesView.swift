@@ -34,6 +34,8 @@ struct PicturesView: View
                     {
                         VStack
                         {
+                            Text("Share a Picture")
+                                .font(.largeTitle)
                             ZStack(alignment: .bottomTrailing)
                             {
                                 HStack

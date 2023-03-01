@@ -33,19 +33,7 @@ struct EventsView: View {
                 {
                     
                     VStack {
-                        Spacer()
-                            .frame(height: 40)
-                        Button("Back to Dashboard")
-                        {
-                            toDashboard = true
-                        }
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue.opacity(0.15))
-                        .foregroundColor(Color.black)
-                        .cornerRadius(20)
-                        .ignoresSafeArea()
-                        Spacer()
-                            .frame(height: 10)
+                        
                         
                         Text(impact.title)
                         Text("\(impact.month)/\(impact.day)/\(impact.year)")
@@ -59,6 +47,16 @@ struct EventsView: View {
                         }
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
+                        
+                        Button("Back to Dashboard")
+                        {
+                            toDashboard = true
+                        }
+                        .frame(width: 300, height: 50)
+                        .background(Color.blue.opacity(0.15))
+                        .foregroundColor(Color.black)
+                        .cornerRadius(20)
+                        .ignoresSafeArea()
     //                    {
     //
     //                        MapMarker(coordinate: impact.location, tint: Color.blue)
@@ -69,7 +67,7 @@ struct EventsView: View {
             }
             
         }
-//        .navigationBarHidden(true)
+        .navigationBarHidden(true)
     }
     
 }
