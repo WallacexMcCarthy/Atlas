@@ -101,7 +101,7 @@ struct PicturesView: View
                                             count += 1
                                         }
                                         .frame(width: 200, height: 30)
-                                        .background(Color("DarkBlue"))
+                                        .background(Color("Clay"))
                                         .foregroundColor(Color.white)
                                         .cornerRadius(20)
                                     }
