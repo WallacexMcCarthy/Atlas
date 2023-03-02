@@ -39,13 +39,15 @@ struct CreateAccountView: View {
                 
                 ZStack
                 {
+                    Color("Beige")
+                        .ignoresSafeArea()
 
                     VStack
                     {
                         Text("Create Account")
                             .font(.largeTitle)
                             .bold()
-                            .padding()
+                            .padding().padding()
                         Text("")
                             .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                         Text("")
@@ -127,7 +129,7 @@ struct CreateAccountView: View {
                             }
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
-                            .background(Color.blue)
+                            .background(Color("Clay"))
                             .cornerRadius(10)
                             
                         }

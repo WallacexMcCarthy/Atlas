@@ -28,7 +28,7 @@ struct DashboardView: View
             {
                 ZStack
                 {
-                    Color.blue.opacity(0.1)
+                    Color("Beige")
                         .ignoresSafeArea()
                     
                     VStack
@@ -58,8 +58,8 @@ struct DashboardView: View
                                             .font(.largeTitle)
                                         Image(announcements[buttonIndex].immageLinkSource)
                                             .resizable()
-                                            .frame(width: 400, height: 200)
-                                            .background(Color.blue.opacity(0.8))
+                                            .frame(width: 375, height: 200)
+                                            .background(Color("Beige").opacity(0.8))
                                             .ignoresSafeArea()
                                             .padding(.horizontal, 20)
                                         Text(announcements[buttonIndex].title)
@@ -67,17 +67,17 @@ struct DashboardView: View
                                             .padding(.horizontal, 30)
                                             .cornerRadius(10)
                                             .font(.title3)
-                                            .background(Color.blue.opacity(0.1))
+                                            .background(Color("Beige").opacity(0.8))
                                             .ignoresSafeArea()
                                             
                                         Text(announcements[buttonIndex].announcment)
                                             .frame(width: 330, height: 300)
                                             .padding(.horizontal, 30)
                                             .cornerRadius(10)
-                                            .background(Color.blue.opacity(0.1))
+                                            .background(Color("Beige").opacity(0.8))
                                             .ignoresSafeArea()
                                             .lineLimit(nil)
-                                        Section(header: Text("Upcoming Events").font(.title).frame(width: 400, height: 50).background(Color.white.opacity(0.2)))
+                                        Section(header: Text("Upcoming Events").font(.title).frame(width: 400, height: 50).background(Color("Beige").opacity(0.8)))
                                         {
                                             ForEach(impacts.indices)
                                             {
@@ -85,9 +85,9 @@ struct DashboardView: View
                                                 
                                                 NavigationLink("\(impacts[index].title)", destination: EventsView(with:loadMapData()[index]))
                                                     .frame(width: 330, height: 50)
-                                                    .background(Color.blue.opacity(0.5))
+                                                    .background(Color("Clay"))
                                                     .cornerRadius(20)
-                                                    .foregroundColor(Color.black)
+                                                    .foregroundColor(Color("DarkBlue"))
                                             }
                                         }
                                         
@@ -102,7 +102,6 @@ struct DashboardView: View
                             
                             
                         }
-                        .background(Color.blue.opacity(0.15))
                         .ignoresSafeArea(.all)
                 }
                     ZStack
@@ -122,7 +121,7 @@ struct DashboardView: View
                                     }
                                 }
                                 .font(.title.bold())
-                                .foregroundColor(Color.black.opacity(0.5))
+                                .foregroundColor(Color("DarkBlue"))
                                 .foregroundColor(.white)
                                 .frame(width: 20, height: 595)
                                 .background(Color.blue.opacity(0.0))
@@ -140,7 +139,7 @@ struct DashboardView: View
                                     
                                 }
                                 .font(.title.bold())
-                                .foregroundColor(Color.black.opacity(0.5))
+                                .foregroundColor(Color("DarkBlue"))
                                 .foregroundColor(.white)
                                 .frame(width: 20, height: 595)
                                 .background(Color.blue.opacity(0.0))

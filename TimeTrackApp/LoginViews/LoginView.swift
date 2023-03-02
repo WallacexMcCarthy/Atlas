@@ -35,15 +35,8 @@ struct LoginView: View
             {
                 ZStack
                 {
-                    // the visuals - circles of differant opacity.
-                    Color.blue
+                    Color("Beige")
                         .ignoresSafeArea()
-                    Circle()
-                        .scale(1.7)
-                        .foregroundColor(.white.opacity(0.17))
-                    Circle()
-                        .scale(1.35)
-                        .foregroundColor(.white)
                     VStack
                     {
                         // the only way i can get the logo at the top. This is how i am using spacing but ther is definatly a better way.
@@ -100,8 +93,11 @@ struct LoginView: View
                             }
                         }
                         Text("or")
+                            .padding(.top, 30)
+                            .padding(.bottom, 10)
                         Text("Login Using a Personal Email")
-                            .font(.title3)
+                            .font(.title2)
+                            .padding(.bottom, 30)
                         TextField("Email Address", text: $username)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -121,7 +117,7 @@ struct LoginView: View
                         {
                             showingCreateAccountScreen = true
                         }
-                            .foregroundColor(.red)
+                            .foregroundColor(Color("DarkBlue"))
                         Button("Login")
                         {
                             // allows access to past login
@@ -131,7 +127,7 @@ struct LoginView: View
                         }
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
-                        .background(Color.blue)
+                        .background(Color("Clay"))
                         .cornerRadius(10)
                         
                         // used for alignment

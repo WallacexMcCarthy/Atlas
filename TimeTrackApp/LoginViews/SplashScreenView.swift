@@ -26,7 +26,7 @@ struct SplashScreenView: View
         }else{
             ZStack
             {
-                Color.blue
+                Color("Beige")
                     .ignoresSafeArea(.all)
                 VStack
                 {
@@ -41,7 +41,7 @@ struct SplashScreenView: View
                         Image("icon")
                         Text("Time Track")
                             .font(Font.custom("Baskerville-Bold", size: 26))
-                            .foregroundColor(.black.opacity(0.80))
+                            .foregroundColor(Color("Clay").opacity(0.98))
                     }
                     .scaleEffect(size)
                     .opacity(ocacity)

@@ -17,77 +17,81 @@ struct SocialView: View
     @State var messages : [String] = ["Welcome to the Help Desk. \n If you need to report a bug, type \"report a bug\""]
     var body: some View
     {
-        VStack
+        ZStack
         {
-            HStack
+            
+            VStack
             {
-                Text("Help Desk")
-                    .font(.largeTitle)
-                    .bold()
-                Image(systemName: "buble.left.fill")
-                    .font(.system(size: 26))
-                    .foregroundColor(Color.blue)
-                
-            }
-            ScrollView()
-            {
-                ForEach(messages, id: \.self)
+                HStack
                 {
-                    message in
-                    if message.contains("[USER]")
+                    Text("Help Desk")
+                        .font(.largeTitle)
+                        .bold()
+                    Image(systemName: "buble.left.fill")
+                        .font(.system(size: 26))
+                        .foregroundColor(Color("Clay"))
+                    
+                }
+                ScrollView()
+                {
+                    ForEach(messages, id: \.self)
                     {
-                        let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
-
-                        HStack
+                        message in
+                        if message.contains("[USER]")
                         {
-                            Spacer()
-                            Text(newMessage)
-                                .padding()
-                                .foregroundColor(Color.white)
-                                .background(Color.blue.opacity(0.8))
-                                .cornerRadius(10)
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, 10)
+                            let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
 
-                        }
-                    } else
-                    {
-                        HStack
+                            HStack
+                            {
+                                Spacer()
+                                Text(newMessage)
+                                    .padding()
+                                    .foregroundColor(Color.white)
+                                    .background(Color.blue.opacity(0.8))
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 16)
+                                    .padding(.bottom, 10)
+
+                            }
+                        } else
                         {
-                            Text(message)
-                                .padding()
-                                .background(Color.gray.opacity(0.15))
-                                .cornerRadius(10)
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, 10)
-                            Spacer()
+                            HStack
+                            {
+                                Text(message)
+                                    .padding()
+                                    .background(Color.gray.opacity(0.15))
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 16)
+                                    .padding(.bottom, 10)
+                                Spacer()
+                            }
                         }
                     }
+                    .rotationEffect(.degrees(180))
                 }
                 .rotationEffect(.degrees(180))
-            }
-            .rotationEffect(.degrees(180))
-            .background(Color.gray.opacity(0.10))
-            HStack
-            {
-                TextField("Question or Request", text: $messageText)
-                    .padding()
-                    .background(Color.green.opacity(0.1))
-                    .cornerRadius(10)
-                    .onSubmit
-                    {
+                .background(Color.gray.opacity(0.10))
+                HStack
+                {
+                    TextField("Question or Request", text: $messageText)
+                        .padding()
+                        .background(Color.green.opacity(0.1))
+                        .cornerRadius(10)
+                        .onSubmit
+                        {
+                            sendMessage(message: messageText)
+                        }
+                    Button{
                         sendMessage(message: messageText)
+                    }label: {
+                        Image(systemName: "paperplane.fill")
+                            .foregroundColor(Color.blue.opacity(1))
                     }
-                Button{
-                    sendMessage(message: messageText)
-                }label: {
-                    Image(systemName: "paperplane.fill")
-                        .foregroundColor(Color.blue.opacity(1))
+                    .font(.system(size: 26))
+                    .padding(.horizontal, 10)
                 }
-                .font(.system(size: 26))
-                .padding(.horizontal, 10)
-            }
-            .padding()
+                .padding()
+        }
         }
         
         
