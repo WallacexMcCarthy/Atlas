@@ -14,6 +14,7 @@ import SwiftUI
 struct ProfileView: View {
     @State private var toAttendanceView = false
     @State private var toConfirmationView = false
+    @State private var logout = false
     @State var studentInfo: Users
     @State private var identityChecked = false
     @State private var passwordError = 0;
@@ -24,6 +25,9 @@ struct ProfileView: View {
         }else if toConfirmationView
         {
             ProfileConfirmationView()
+        }else if logout
+        {
+            LoginView()
         }else
         {
             
@@ -84,6 +88,14 @@ struct ProfileView: View {
                         Button("Return to Attendance")
                         {
                             toAttendanceView = true
+                        }
+                        .foregroundColor(Color("DarkBlue"))
+                        .frame(width: 300, height: 50)
+                        .background(Color("Clay"))
+                        .cornerRadius(10)
+                        Button("Logout")
+                        {
+                            logout = true
                         }
                         .foregroundColor(Color("DarkBlue"))
                         .frame(width: 300, height: 50)
