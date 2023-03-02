@@ -38,10 +38,14 @@ struct SplashScreenView: View
                         /*
                          Calls the logo and creates the text area with specific pararmeters.
                          */
-                        Image("icon")
-                        Text("Time Track")
+//                        Image("icon")
+                        Image(systemName: "map.circle")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Color("Clay"))
+                        Text("ATLAS")
                             .font(Font.custom("Baskerville-Bold", size: 26))
-                            .foregroundColor(Color("Clay").opacity(0.98))
+                            .foregroundColor(Color("DarkBlue").opacity(1))
                     }
                     .scaleEffect(size)
                     .opacity(ocacity)

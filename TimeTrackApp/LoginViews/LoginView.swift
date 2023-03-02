@@ -40,13 +40,22 @@ struct LoginView: View
                     VStack
                     {
                         // the only way i can get the logo at the top. This is how i am using spacing but ther is definatly a better way.
-                        Image("logo")
+//                        Image("logo")
+                        VStack{
+                            
+                            Image(systemName: "map.circle")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(Color("Clay"))
+                            Text("ATLAS SCHOOL")
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(Color("DarkBlue"))
+                        }
                         Text("")
                             .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
                         Text("")
-                            .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
-                        Text("")
-                            .padding()
+                            .padding().padding().padding().padding().padding().padding()
                         
                         
                     }
@@ -57,7 +66,8 @@ struct LoginView: View
                         /*
                          Creation of all of the textFields, buttosn and nagigationLinks.
                          */
-                        
+                        Spacer()
+                            .frame(height: 75)
                         Text("Login")
                             .font(.largeTitle)
                             .bold()
@@ -97,7 +107,7 @@ struct LoginView: View
                             .padding(.bottom, 10)
                         Text("Login Using a Personal Email")
                             .font(.title2)
-                            .padding(.bottom, 30)
+                            .padding(.bottom, 20)
                         TextField("Email Address", text: $username)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -130,9 +140,6 @@ struct LoginView: View
                         .background(Color("Clay"))
                         .cornerRadius(10)
                         
-                        // used for alignment
-                        Text("")
-                            .padding()
                         
                     }
                 }

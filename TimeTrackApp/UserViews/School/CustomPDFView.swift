@@ -15,10 +15,15 @@ struct CustomPDFView: View
     let displayedPDFURL : URL
     var body: some View
     {
-//        Text("\(title)")
-        PDFKitRepresentedView(documentURL: displayedPDFURL)
-            .accessibilityLabel("PDF from: \(displayedPDFURL)")
-            .accessibilityValue("PDF of: \(displayedPDFURL)")
+        ZStack
+        {
+            VStack
+            {
+                PDFKitRepresentedView(documentURL: displayedPDFURL)
+                    .accessibilityLabel("PDF from: \(displayedPDFURL)")
+                .accessibilityValue("PDF of: \(displayedPDFURL)")
+            }
+        }
     }
 }
 struct PDFKitRepresentedView : UIViewRepresentable

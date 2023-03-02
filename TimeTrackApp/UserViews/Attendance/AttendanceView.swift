@@ -70,9 +70,6 @@ struct AttendanceView: View
             {
                 ZStack
                 {
-                    
-                    Color.white
-                        .ignoresSafeArea(.all)
                     VStack {
                         Text("Recent Attendance Entries")
                             .font(.title)
@@ -131,10 +128,10 @@ struct AttendanceView: View
                             
                             
                             
+                            
                         }
                         
                     }
-                    
                 }
 //            .navigationTitle("Attandence")
                 
@@ -142,6 +139,7 @@ struct AttendanceView: View
                 .navigationBarHidden(true)
 //            .navigationBarBackButtonHidden()
             }
+    
         }
 
     }

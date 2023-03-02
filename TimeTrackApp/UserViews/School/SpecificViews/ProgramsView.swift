@@ -24,6 +24,7 @@ struct ProgramsView: View
                     NavigationLink("AP Programs", destination: CustomPDFView(displayedPDFURL: AP_Courses_URL))
                     NavigationLink("Concurrent Enrollment", destination: CustomPDFView(displayedPDFURL: Concurrent_Enrollment_URL))
                 }
+                
             }
         }
     }

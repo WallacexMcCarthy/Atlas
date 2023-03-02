@@ -27,48 +27,76 @@ struct ProfileView: View {
         }else
         {
             
-            VStack {
-                /*
-                 displays all of the user's data in a form.
-                 */
-                Form
-                {
-    //                Text("User Info")
-    //                    .font(Font.title)
-    //                    .bold()
-                    Image("\(studentInfo.imageLinkSource)")
-                    Text("Full Name: \(studentInfo.fullName)")
-                    Text("Birthdate: \(studentInfo.birthday)")
-                    Text("School: \(studentInfo.school)")
-                    Text("Grade: \(studentInfo.grade)")
-                    Text("Security Question: \(studentInfo.securityQuestion)")
-//                    Text("Security Answer: \(studentInfo.securityAnswer)")
-                    Text("Security Answer: *****")
-                    Text("Email: \(studentInfo.emailAddress)")
-                    
-                    // directs the user to a eddit profiel page
-                    Button("Edit User Profile Information")
-                    {
-                        toConfirmationView = true
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue.opacity(0.85))
-                    .cornerRadius(10)
-                    
-                    // directs the user back to AttendanceView
-                    Button("Return to Attendance")
-                    {
-                        toAttendanceView = true
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.blue.opacity(0.85))
-                    .cornerRadius(10)
-                    
-            }
+            ScrollView
+            {
                 
+                ZStack {
+                    
+                    /*
+                     displays all of the user's data in a form.
+                     */
+                    VStack
+                    {
+                        Spacer()
+                            .frame(height: 60)
+                        Text("User Info")
+                            .font(Font.title)
+                            .bold()
+                        VStack
+                        {
+                            Image("\(studentInfo.imageLinkSource)")
+                                .frame(width: 400, height: 300)
+                            Text("Full Name: \(studentInfo.fullName)")
+                                .frame(width: 400, height: 50)
+                                .background(Color("Beige"))
+                            Text("Birthdate: \(studentInfo.birthday)")
+                                .frame(width: 400, height: 50)
+                                .background(Color("Beige"))
+                            Text("School: \(studentInfo.school)")
+                                .frame(width: 400, height: 50)
+                                .background(Color("Beige"))
+                            Text("Grade: \(studentInfo.grade)")
+                                .frame(width: 400, height: 50)
+                                .background(Color("Beige"))
+                            Text("Security Question: \(studentInfo.securityQuestion)")
+                                .frame(width: 400, height: 50)
+                                .background(Color("Beige"))
+                        }
+    //                    Text("Security Answer: \(studentInfo.securityAnswer)")
+                        Text("Security Answer: *****")
+                            .frame(width: 400, height: 50)
+                            .background(Color("Beige"))
+                        Text("Email: \(studentInfo.emailAddress)")
+                            .frame(width: 400, height: 50)
+                            .background(Color("Beige"))
+                        
+                        // directs the user to a eddit profiel page
+                        Button("Edit User Profile Information")
+                        {
+                            toConfirmationView = true
+                        }
+                        .foregroundColor(Color("DarkBlue"))
+                        .frame(width: 300, height: 50)
+                        .background(Color("Clay"))
+                        .cornerRadius(10)
+                        
+                        // directs the user back to AttendanceView
+                        Button("Return to Attendance")
+                        {
+                            toAttendanceView = true
+                        }
+                        .foregroundColor(Color("DarkBlue"))
+                        .frame(width: 300, height: 50)
+                        .background(Color("Clay"))
+                        .cornerRadius(10)
+                        
+                    }
+                    .background(Color("Beige"))
+                    
+                }
             }
+            .background(Color("Beige"))
+            .ignoresSafeArea()
             
         }
     }

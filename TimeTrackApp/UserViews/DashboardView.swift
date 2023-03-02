@@ -56,6 +56,7 @@ struct DashboardView: View
 //                                            .font(.title3)
                                         Text("Announcements")
                                             .font(.largeTitle)
+                                            .bold()
                                         Image(announcements[buttonIndex].immageLinkSource)
                                             .resizable()
                                             .frame(width: 375, height: 200)

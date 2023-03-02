@@ -19,7 +19,8 @@ struct SocialView: View
     {
         ZStack
         {
-            
+            Color("Beige").opacity(1)
+                .ignoresSafeArea()
             VStack
             {
                 HStack
@@ -27,7 +28,7 @@ struct SocialView: View
                     Text("Help Desk")
                         .font(.largeTitle)
                         .bold()
-                    Image(systemName: "buble.left.fill")
+                    Image(systemName: "bubble.left.fill")
                         .font(.system(size: 26))
                         .foregroundColor(Color("Clay"))
                     
@@ -70,12 +71,12 @@ struct SocialView: View
                     .rotationEffect(.degrees(180))
                 }
                 .rotationEffect(.degrees(180))
-                .background(Color.gray.opacity(0.10))
+                .background(Color.gray.opacity(0.1))
                 HStack
                 {
                     TextField("Question or Request", text: $messageText)
                         .padding()
-                        .background(Color.green.opacity(0.1))
+                        .background(Color("DarkBlue").opacity(0.2))
                         .cornerRadius(10)
                         .onSubmit
                         {
@@ -85,7 +86,7 @@ struct SocialView: View
                         sendMessage(message: messageText)
                     }label: {
                         Image(systemName: "paperplane.fill")
-                            .foregroundColor(Color.blue.opacity(1))
+                            .foregroundColor(Color("Clay"))
                     }
                     .font(.system(size: 26))
                     .padding(.horizontal, 10)

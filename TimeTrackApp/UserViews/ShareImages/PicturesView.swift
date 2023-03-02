@@ -34,8 +34,11 @@ struct PicturesView: View
                     {
                         VStack
                         {
+                            Spacer()
+                                .frame(height: 70)
                             Text("Share a Picture")
                                 .font(.largeTitle)
+                                .bold()
                             ZStack(alignment: .bottomTrailing)
                             {
                                 HStack
@@ -98,7 +101,8 @@ struct PicturesView: View
                                             count += 1
                                         }
                                         .frame(width: 200, height: 30)
-                                        .background(Color.blue.opacity(0.5))
+                                        .background(Color("DarkBlue"))
+                                        .foregroundColor(Color.white)
                                         .cornerRadius(20)
                                     }
                                 }
@@ -236,11 +240,16 @@ struct PicturesView: View
                                 .background(Color.gray.opacity(0.1))
                         }
                         
+                        
                     }
+                    Spacer()
+                        .frame(height: 50)
                     
                 }
             }
         }
+        .background(Color("Beige"))
+        .ignoresSafeArea()
     }
     func transferImageInfo()
     {
