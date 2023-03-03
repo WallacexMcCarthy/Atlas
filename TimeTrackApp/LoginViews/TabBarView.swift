@@ -59,9 +59,6 @@ struct TabBarView: View
                 .accentColor(.red) // highlights the icon red if clicked.
                 .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
-//                Text("Copyright © 2023- All Rights Reserved")
-//                    .ignoresSafeArea()
-//                    .background(Color.white)
             }
         }
         

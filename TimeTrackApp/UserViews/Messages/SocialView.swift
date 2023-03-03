@@ -95,10 +95,6 @@ struct SocialView: View
         }
         }
         
-        
-        
-        
-        
 
     }
     func sendMessage(message : String)

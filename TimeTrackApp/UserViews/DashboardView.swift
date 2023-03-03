@@ -14,7 +14,7 @@ struct DashboardView: View
     let currentUserData = loadCurrentUserData()
     let impacts = loadMapData()
     let announcements = loadAnnouncementData()
-    @State private var buttonIndex = 0
+    @State private var buttonIndex = 4
     @State private var toMaps = false
     @State private var indexs = 0
     var body: some View {
@@ -63,6 +63,10 @@ struct DashboardView: View
                                             .background(Color("Beige").opacity(0.8))
                                             .ignoresSafeArea()
                                             .padding(.horizontal, 20)
+                                        
+                                            Text("Copyright © 2023- All Rights Reserved")
+                                                .ignoresSafeArea()
+                                                .font(.caption2)
                                         Text(announcements[buttonIndex].title)
                                             .frame(width: 330, height: 80)
                                             .padding(.horizontal, 30)
