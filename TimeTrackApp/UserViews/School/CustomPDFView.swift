@@ -8,10 +8,9 @@
 import SwiftUI
 
 import PDFKit
-
+// this struct will display the PDF or Photo in a sepetate page.
 struct CustomPDFView: View
 {
-//    let title : String
     let displayedPDFURL : URL
     var body: some View
     {
@@ -19,13 +18,18 @@ struct CustomPDFView: View
         {
             VStack
             {
+                // View call here with the specific parameter
                 PDFKitRepresentedView(documentURL: displayedPDFURL)
+                // ADA Complient for the Blind and Deaf  - Accessability
                     .accessibilityLabel("PDF from: \(displayedPDFURL)")
                 .accessibilityValue("PDF of: \(displayedPDFURL)")
             }
         }
     }
 }
+/**
+    Takes in a paraemeter as a url and displauys it on this screen. 
+ */
 struct PDFKitRepresentedView : UIViewRepresentable
 {
     let documentURL : URL

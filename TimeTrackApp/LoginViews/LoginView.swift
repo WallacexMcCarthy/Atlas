@@ -151,16 +151,18 @@ struct LoginView: View
     // Checks username and passsword to all of the usernames and passwordsd in the data files (UserData).
     func checkCredientals() -> Void
     {
-        
+        // Grabs all user data from the date folders.
         @State var userData = loadUserData()
+        // Grabs the current user data class to update who the current user is in real time.
         @State var currentUserData = loadCurrentUserData()
-        
+        // Goes through every user in the database and checks if the usernames and passwords match. IF they do not match then the user is not allowed entry and the respective box outline will appear.
         for index in 0 ... userData.count - 1
         {
             let usersUsername = String(userData[index].emailAddress)
             
             if(username == usersUsername)
             {
+                // updates values
                 indexValue = index
                 currentUserIndexValue = index
                 userUsername = usersUsername
@@ -169,7 +171,7 @@ struct LoginView: View
                 wrongUsername = 2
             }
         }
-        
+        // updates all values to the current user data set assuming that the user has inputed in their correct password and user name.
         if(userData[indexValue].password == password)
         {
             currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))

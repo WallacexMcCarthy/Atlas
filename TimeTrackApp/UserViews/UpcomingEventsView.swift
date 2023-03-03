@@ -32,6 +32,7 @@ struct UpcomingEventsView: View {
                          */
                         Section(header: Text("Upcoming Events"))
                         {
+                            // iterates through everything and displayes each event.
                             ForEach(impacts.indices)
                             {
                                 index in
