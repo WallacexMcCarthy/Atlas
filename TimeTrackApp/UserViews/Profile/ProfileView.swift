@@ -101,6 +101,8 @@ struct ProfileView: View {
                         .frame(width: 300, height: 50)
                         .background(Color("Clay"))
                         .cornerRadius(10)
+                        Spacer()
+                            .frame(height: 80)
                         
                     }
                     .background(Color("Beige"))
