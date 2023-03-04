@@ -21,6 +21,11 @@ struct LoginView: View
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
     @State private var showingCreateAccountScreen = false
+    @State private var showWebView = false
+    private let appleID = URL(string: "https://appleid.apple.com/sign-in")!
+    private let twitter = URL(string: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D")!
+    private let facebook = URL(string: "https://www.facebook.com/login/")!
+    private let google = URL(string: "https://accounts.google.com/v3/signin/identifier?dsh=S-167491447%3A1677947572963072&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWnogHcj9hlvvTDFd6I4lqZHGXZFw2XtrXHJdMXmkI3lkvA982RB1gAMxwIE86Minv1Zmd2b81H-wA")!
     var body: some View
     {
         NavigationView
@@ -74,32 +79,49 @@ struct LoginView: View
                         HStack
                         {
                             Button {
-                                
+                                showWebView.toggle()
                             } label: {
                                 Image("Apple_ID_Icon")
                                     .resizable()
                                     .frame(width: 75, height: 75)
                             }
+//                            .sheet(isPresented: $showWebView)
+//                            {
+//                                WebView(url: appleID)
+//                            }
                             Button {
-                                
+                                    showWebView.toggle()
                             } label: {
                                 Image("Facebook_Icon")
                                     .resizable()
                                     .frame(width: 75, height: 75)
                             }
+                            .sheet(isPresented: $showWebView)
+                            {
+                                WebView(url: facebook)
+                            }
                             Button {
+                                showWebView.toggle()
                                 
                             } label: {
                                 Image("Twitter_Icon")
                                     .resizable()
                                     .frame(width: 75, height: 75)
                             }
+                            .sheet(isPresented: $showWebView)
+                            {
+                                WebView(url: twitter)
+                            }
                             Button {
-                                
+                                    showWebView.toggle()
                             } label: {
                                 Image("Google_Icon")
                                     .resizable()
                                     .frame(width: 75, height: 75)
+                            }
+                            .sheet(isPresented: $showWebView)
+                            {
+                                WebView(url: google)
                             }
                         }
                         Text("or")
@@ -242,10 +264,7 @@ struct LoginView: View
 //        }
         
     }
-    
-    
 }
-
 struct ContentView_Previews: PreviewProvider
 {
     static var previews: some View
