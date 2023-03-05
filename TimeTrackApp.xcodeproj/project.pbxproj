@@ -47,6 +47,7 @@
 		2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */; };
 		2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */; };
 		29D040BA29B3AD440003893D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D040B929B3AD440003893D /* WebView.swift */; };
+		29D040BD29B413E70003893D /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29D040BC29B413E70003893D /* OpenAISwift */; };
 		29DDC35E28DB9D4B00FCC3F0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */; };
 		29DDC36128DC10DD00FCC3F0 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DDC36028DC10DD00FCC3F0 /* EventsView.swift */; };
 		29FE3B0D28DD4F220026B8E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE3B0C28DD4F220026B8E3 /* User.swift */; };
@@ -137,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D040BD29B413E70003893D /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +386,9 @@
 			dependencies = (
 			);
 			name = TimeTrackApp;
+			packageProductDependencies = (
+				29D040BC29B413E70003893D /* OpenAISwift */,
+			);
 			productName = TimeTrackApp;
 			productReference = 296764D128CCD65A0043A235 /* TimeTrackApp.app */;
 			productType = "com.apple.product-type.application";
@@ -456,6 +461,9 @@
 				Base,
 			);
 			mainGroup = 296764C828CCD65A0043A235;
+			packageReferences = (
+				29D040BB29B413E70003893D /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 296764D228CCD65A0043A235 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -704,6 +712,7 @@
 				DEVELOPMENT_TEAM = K87377775L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ATLAS;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -734,6 +743,7 @@
 				DEVELOPMENT_TEAM = K87377775L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ATLAS;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -865,6 +875,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29D040BB29B413E70003893D /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29D040BC29B413E70003893D /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29D040BB29B413E70003893D /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 296764C928CCD65A0043A235 /* Project object */;
 }

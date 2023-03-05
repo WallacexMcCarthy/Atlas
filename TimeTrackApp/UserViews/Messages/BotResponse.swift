@@ -10,6 +10,7 @@ var count = 0
 func getBotResponse(message: String) -> String
 {
     let tempMessage = message.lowercased()
+    
     if(count == 1)
     {
         count = 0
