@@ -7,10 +7,12 @@
 
 import Foundation
 var count = 0
+/**
+    This function will return a string that will be used in the chat bot to respond to the user.
+    */
 func getBotResponse(message: String) -> String
 {
     let tempMessage = message.lowercased()
-    
     if(count == 1)
     {
         count = 0
@@ -43,9 +45,13 @@ func getBotResponse(message: String) -> String
         return "Thank you for using the help desk!"
     }
     
-    else
+    else if tempMessage.contains("assistant")
     {
         return "A assistant will be right with you! \n Current wait time: 7 minutes. \n If you would like to end your request or exit this conversation type \"Close\"."
+    }
+    else
+    {
+        return ""
     }
     
 }

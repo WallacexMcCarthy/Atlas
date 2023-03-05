@@ -139,6 +139,9 @@ struct ProfileConfirmationView: View
         }
     
     }
+    /**
+        This function will check the password that the user entered to make sure that it matches the password that is stored in the database.
+        */
     func checkPassword(password : String)
     {
         var userData = loadCurrentUserData()
@@ -153,6 +156,9 @@ struct ProfileConfirmationView: View
         }
             
     }
+    /**
+        This function will append the data that the user entered into the text fields to the database.
+        */
     func appendData()
     {
         var userData = loadCurrentUserData()

@@ -13,8 +13,9 @@ import Foundation
 
 func loadAnnouncementData() -> [Announcments]
 {
+    // creates a new array that will be used to store the data.
     var announcementItems : [Announcments] = []
-    
+    // creates a new array that will be used to store the data.
     let title: [String] =
     [
         "Canyons District Students Rank No. 1 in Utah for Overall Testing Scores",
@@ -23,7 +24,7 @@ func loadAnnouncementData() -> [Announcments]
         "20 Canyons District seniors named National Merit Scholarship Program semifinalists",
         "Canyons to Promote Regular School Attendance with ‘Show Up’ Challenge"
     ]
-    
+    // creates a new array that will be used to store the data.
     let announcement: [String] =
     [
         "Canyons School District is the highest-ranked district in Utah for overall testing scores, according to Public School Review. The ranking is based on the percentage of schools within a District to have placed in the top 5 percent of all schools statewide for math and reading test scores.",
@@ -32,7 +33,7 @@ func loadAnnouncementData() -> [Announcments]
         "Twenty seniors from Canyons School District high schools have been named as 2023 National Merit Scholarship Program semifinalists and are in the running for nearly $28 million scholarships that will be awarded next spring. Hillcrest High boasts 13 National Merit semifinalists, placing it in the top three statewide for fielding the most National Merit semifinalists.",
         "Canyons is making a concerted effort this year to promote prompt and regular school attendance. When parents registered their children for school, they were encouraged to review “Show Up” attendance pledges at home. With September being School Attendance Awareness Month, schools are also launching attendance challenges with prizes for classrooms and grade levels that show the biggest attendance gains. Individual students will also get to compete for prizes by submitting social media videos and memes describing what showing up means to them, whether it’s at work and school, or for their friends, fellow students, and family. "
     ]
-    
+    // creates a new array that will be used to store the data.
     let immageLinkSource: [String] =
     [
         "0 - Canyons Rank",
@@ -41,7 +42,7 @@ func loadAnnouncementData() -> [Announcments]
         "3 - National Merit",
         "4 - Show Up"
     ]
-    
+    // creates a for loop that will loop through the array and add the data to the array.
     for index in 0 ..< title.count
     {
        

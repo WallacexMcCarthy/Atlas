@@ -12,14 +12,23 @@ import OpenAISwift
  This view will allow everyone who has access to this app to send and recieve messgae and pictures much like social media.
  */
 
+/**
+    This class will allow the user to send a message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
+    */
 final class ViewModel: ObservableObject {
     init() {}
     
     private var client: OpenAISwift?
     
+    /**
+        This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
+        */
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        client = OpenAISwift(authToken: "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")
     }
+    /**
+        This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
+        */
     func send(text: String, completion: @escaping (String) -> Void){
         client?.sendCompletion(with: text,
                                maxTokens: 500,
@@ -43,7 +52,7 @@ struct SocialView: View
 {
     @ObservedObject var viewModel = ViewModel()
     @State private var messageText = ""
-    @State var messages : [String] = ["Welcome to the Help Desk. \n If you need to report a bug, type \"report a bug\""]
+    @State var messages : [String] = ["Welcome to the Help Desk. \n If you need to report a bug, type \"report a bug\". \n If you would like to talk to an assistant please type \"Assistant\"."]
     var body: some View
     {
         ZStack
@@ -129,6 +138,11 @@ struct SocialView: View
         
 
     }
+    /**
+        This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
+        It will also check if the user is asking for the assistant and if so it will send the message to the assistant.
+        */
+        */
     func sendMessage(message : String)
     {
         guard !message.trimmingCharacters(in: .whitespaces).isEmpty else{
@@ -143,11 +157,17 @@ struct SocialView: View
         {
             withAnimation
             {
-//                messages.append(getBotResponse(message: message))
-                viewModel.send(text: message){
-                    response in
-                    DispatchQueue.main.async {
-                        self.messages.append(response)
+                let computer = getBotResponse(message: message)
+                if(computer != "")
+                {
+                    messages.append(computer)
+                }else
+                {
+                    viewModel.send(text: message){
+                        response in
+                        DispatchQueue.main.async {
+                            self.messages.append(response)
+                        }
                     }
                 }
             }

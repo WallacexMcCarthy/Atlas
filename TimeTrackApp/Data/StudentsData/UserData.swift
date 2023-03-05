@@ -10,11 +10,12 @@ import Foundation
 /*
  It calls the data file Users and uses the variabels creeated there to make an array and it will return an array that has new information. 
  */
-
+//struct Users : Identifiable
 var currentUserIndexValue = -1
 
 func loadUserData() -> [Users]
 {
+    // creates an array of the struct Users
     var userItems : [Users] = []
     
     let fullName : [String] =
@@ -79,7 +80,7 @@ func loadUserData() -> [Users]
         "link",
         "link"
     ]
-    
+    // for loop that will add the data to the array
     for index in 0 ..< 3
     {
        

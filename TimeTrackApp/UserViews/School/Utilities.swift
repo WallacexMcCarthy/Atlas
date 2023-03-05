@@ -7,7 +7,8 @@
 
 import Foundation
 
-
+// MARK: - URLS
+// All of the URLS for the PDFs and other documents
 let AB_Calendar_URL = Bundle.main.url(forResource: "AB-Calendar", withExtension: "pdf")!
 let Lunch_Schedule_URL = Bundle.main.url(forResource: "Lunch-Schedule", withExtension: "pdf")!
 let Weekday_Schedule_URL = Bundle.main.url(forResource: "School_Schedule", withExtension: "pdf")!

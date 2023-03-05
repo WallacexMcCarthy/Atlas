@@ -12,6 +12,7 @@ import SwiftUI
  */
 
 struct CreateAccountView: View {
+    
     @State private var displayLoginScreen = false
     @State private var displayFailure = false
     @State private var confirmationView = false
@@ -26,10 +27,13 @@ struct CreateAccountView: View {
     @State public var school = ""
     @State public var imageLink = ""
     var body: some View {
+        // if statement that will display the login view if the user clicks the button.
         if displayLoginScreen
         {
             LoginView()
-        }else if confirmationView
+        }
+        // if statement that will display the failure view if the user clicks the button.
+        else if confirmationView
         {
             LoginView()
         }else
@@ -39,6 +43,7 @@ struct CreateAccountView: View {
                 
                 ZStack
                 {
+                    // creates the background color of the view.
                     Color("Beige")
                         .ignoresSafeArea()
 
@@ -142,6 +147,7 @@ struct CreateAccountView: View {
         }
         }
     }
+    // function that will append the user data to the user data file.
     
     func appendData(name : String, email : String, grade: String, birthdate: String, school: String, securityQuestion: String, securityAnswer : String, password: String)
     {

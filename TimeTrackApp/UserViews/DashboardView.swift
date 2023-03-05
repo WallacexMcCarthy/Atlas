@@ -163,6 +163,9 @@ struct DashboardView: View
             
         }
     }
+    /**
+     This function is used to pass the index of the event to the EventsView
+     */
     func findIndex(index: Int)
     {
         indexs = index

@@ -47,7 +47,9 @@ struct ConfirmationView: View
     
     }
 }
-
+/**
+    This view will allow the user to enter the attendance data and then direct the user to the confirmation view.
+    */
 struct AttendanceView: View
 {
     @State private var toStudentProfile = false
@@ -162,6 +164,9 @@ struct AttendanceView: View
         }
 
     }
+    /** 
+        This function will return an array of attendance information that will be used to display the attendance information in the confirmation view.
+        */
     func getAttendanceInformation() -> [Attendance]
     {
         let formatter1 = DateFormatter()

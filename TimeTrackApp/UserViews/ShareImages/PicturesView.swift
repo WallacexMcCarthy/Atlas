@@ -251,6 +251,9 @@ struct PicturesView: View
         .background(Color("Beige"))
         .ignoresSafeArea()
     }
+    /**
+     This function transfers the image information from the image picker to the image view
+     */
     func transferImageInfo()
     {
         if(count != 0)
@@ -269,6 +272,9 @@ struct PicturesView: View
             changeProfileIamge = false
         }
     }
+    /**
+     This function opens the camera roll
+     */
     func pictureProperties()
     {
         if(count == 1)

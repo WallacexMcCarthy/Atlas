@@ -17,8 +17,9 @@ let currentLocation = Maps(title: "Current Location", details: "This is the curr
 
 func loadMapData() -> [Maps]
 {
+    // creates a new array that will be used to store the data.
     var mapsItems : [Maps] = []
-    
+    // creates a new array that will be used to store the data.
     let location : [CLLocationCoordinate2D] =
     [
         CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020),
@@ -56,6 +57,7 @@ func loadMapData() -> [Maps]
         CLLocationCoordinate2D(latitude: 37.67662440, longitude: -113.07125720),
         CLLocationCoordinate2D(latitude: 37.67662440, longitude: -113.07125720)
     ]
+    // creates a new array that will be used to store the data.
     let regions : [CLLocationCoordinate2D] =
     [
         CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020),
@@ -93,7 +95,7 @@ func loadMapData() -> [Maps]
         CLLocationCoordinate2D(latitude: 37.67662440, longitude: -113.07125720),
         CLLocationCoordinate2D(latitude: 37.67662440, longitude: -113.07125720)
     ]
-    
+    // creates a new array that will be used to store the data.
     let details : [String] =
     [
         "Home Football Game vs. Stansbury",
@@ -133,7 +135,7 @@ func loadMapData() -> [Maps]
 
         
     ]
-    
+    // creates a new array that will be used to store the data.
     let titles : [String] =
     [
         "Football Game",
@@ -172,8 +174,7 @@ func loadMapData() -> [Maps]
         "Threatre"
         
     ]
-
-    
+    // creates a new array that will be used to store the data.
     let year : [Int] =
     [
         2022,
@@ -211,7 +212,7 @@ func loadMapData() -> [Maps]
         2022,
         2022
     ]
-    
+    // creates a new array that will be used to store the data.
     let month : [Int] =
     [
         10,
@@ -249,7 +250,7 @@ func loadMapData() -> [Maps]
         9,
         9
     ]
-    
+    // creates a new array that will be used to store the data.
     let day : [Int] =
     [
         1,
@@ -287,7 +288,7 @@ func loadMapData() -> [Maps]
         29,
         30
     ]
-    
+    // creates a new array that will be used to store the data.
     let address : [String] =
     [
         "7350 S 900 E, Midvale, UT 84047",
@@ -326,7 +327,7 @@ func loadMapData() -> [Maps]
         "351 W University Blvd, Cedar City, UT 84720"
 
     ]
-    
+    // creates a new array that will be used to store the data.
     for index in 0 ..< 33
     {
         let currentRegion = MKCoordinateRegion (center: regions[index], span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)))
