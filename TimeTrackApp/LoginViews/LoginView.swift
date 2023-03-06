@@ -170,7 +170,7 @@ struct LoginView: View
             
         }
     }
-    // Checks username and passsword to all of the usernames and passwordsd in the data files (UserData).
+    // Checks username and passsword to all of the usernames and passwords in the data files (UserData).
     func checkCredientals() -> Void
     {
         // Grabs all user data from the date folders.

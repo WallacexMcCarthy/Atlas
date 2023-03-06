@@ -13,11 +13,11 @@ var count = 0
 func getBotResponse(message: String) -> String
 {
     let tempMessage = message.lowercased()
-    if(count == 1)
-    {
-        count = 0
-        return "Thank you for reporting this bug! A representitive will review it ASAP."
-    }
+//    if(count == 1)
+//    {
+//        count = 0
+//        return "Thank you for reporting this bug! A representitive will review it ASAP."
+//    }
     if tempMessage.contains("schedule")
     {
         if(tempMessage.contains("monday") || tempMessage.contains("tuesday") || tempMessage.contains("wednesday") || tempMessage.contains("thursday"))

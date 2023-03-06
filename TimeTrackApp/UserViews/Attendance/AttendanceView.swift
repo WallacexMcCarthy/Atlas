@@ -100,7 +100,7 @@ struct AttendanceView: View
                                     .padding(.bottom, 5)
                                 if (toConfirmationView)
                                 {
-                                    Text("\(selectedStartDate): \(reasonForAttendance)")
+                                    Text("ATTENDANCE REQUEST |  \(selectedStartDate): \(reasonForAttendance)")
                                         .padding(.bottom, 5)
                                 }
                                 

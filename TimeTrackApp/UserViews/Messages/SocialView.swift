@@ -24,7 +24,7 @@ final class ViewModel: ObservableObject {
         This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
         */
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        client = OpenAISwift(authToken: "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")
     }
     /**
         This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
@@ -141,7 +141,6 @@ struct SocialView: View
     /**
         This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
         It will also check if the user is asking for the assistant and if so it will send the message to the assistant.
-        */
         */
     func sendMessage(message : String)
     {
