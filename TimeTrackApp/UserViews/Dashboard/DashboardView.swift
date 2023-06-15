@@ -14,14 +14,18 @@ struct DashboardView: View
     let currentUserData = loadCurrentUserData()
     let impacts = loadMapData()
     let announcements = loadAnnouncementData()
+    @State var selectedDate: Date = Date()
     @State private var buttonIndex = 4
     @State private var toMaps = false
+    @State private var toEvent = false
     @State private var indexs = 0
     var body: some View {
         NavigationView
         {
-            
-            if toMaps
+            if toEvent
+            {
+                EventsView(with:loadEvent(date: selectedDate))
+            }else if toMaps
             {
                 EventsView(with:loadMapData()[indexs])
             }else
@@ -37,8 +41,31 @@ struct DashboardView: View
                         ScrollView
                         {
                             
-                            
-                            
+                            VStack() {
+                                
+                                Divider().frame(height: 1)
+                                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                                    .padding(.horizontal)
+                                    .datePickerStyle(.graphical)
+//                                    .onTapGesture(perform: {
+//                                        DispatchQueue.main
+//                                            .asyncAfter(deadline: .now() + 0.2)
+//                                        {
+//                                            toEvent = true
+//                                        }
+//                                    })
+                                Divider()
+                                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
+                                    .font(.system(size: 28))
+                                    .bold()
+                                    .foregroundColor(Color.accentColor)
+                                    .padding()
+                                    .animation(.spring(), value: selectedDate)
+                                    .frame(width: 500)
+//                                    .onChange( of: selectedDate, perform: {toEvent = true})
+                                    
+                                NavigationLink(selectedDate.formatted(date: .abbreviated, time: .omitted), destination: EventsView(with:loadEvent(date: selectedDate)))                            }
+                            .padding(.vertical, 100)
 //                            Section(header: Text("Announcements")
 //                                .font(.largeTitle))
 //

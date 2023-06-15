@@ -9,7 +9,7 @@ import MapKit
 
 
 // our current location which is just the coordinates for Hillcrest Highschool.
-let currentLocation = Maps(title: "Current Location", details: "This is the current location of the user", year: 2022, month: 9, day: 23, address: "7350 S 900 E, Midvale, UT 84047", location: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), regions: MKCoordinateRegion (center: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))))
+let currentLocation = Maps(title: "Current Location", details: "This is the current location of the user", year: 2022, month: 9, day: 23, address: "7350 S 900 E, Midvale, UT 84047", location: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), regions: MKCoordinateRegion (center: CLLocationCoordinate2D(latitude: 40.61843887, longitude: -111.86856020), span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))), date: Date())
 
 /*
  It calls the data file Maps and uses the variabels creeated there to make an array and it will return an array that has new information.
@@ -327,12 +327,48 @@ func loadMapData() -> [Maps]
         "351 W University Blvd, Cedar City, UT 84720"
 
     ]
+    let date : [Date] = [
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date(),
+        Date()
+    ]
     // creates a new array that will be used to store the data.
     for index in 0 ..< 33
     {
         let currentRegion = MKCoordinateRegion (center: regions[index], span: (MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)))
         
-        mapsItems.append(Maps(title: titles[index], details: details[index], year: year[index], month: month[index], day: day[index], address: address[index], location: location[index], regions: currentRegion))
+        mapsItems.append(Maps(title: titles[index], details: details[index], year: year[index], month: month[index], day: day[index], address: address[index], location: location[index], regions: currentRegion, date: date[index]))
     }
     
     return mapsItems
