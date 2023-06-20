@@ -23,5 +23,6 @@ struct Maps : Identifiable
     let address: String
     var location: CLLocationCoordinate2D
     var regions: MKCoordinateRegion
+    var date: Date
     
 }
