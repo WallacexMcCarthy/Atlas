@@ -144,6 +144,7 @@ struct SocialView: View
         */
     func sendMessage(message : String)
     {
+        print("imn")
         guard !message.trimmingCharacters(in: .whitespaces).isEmpty else{
             return
         }
@@ -171,7 +172,6 @@ struct SocialView: View
                 }
             }
         }
-        
         
     }
     

@@ -48,7 +48,7 @@ func loadUserData() -> [Users]
     
     let password: [String] =
     [
-        "dino",
+        "atlanta12",
         "t",
         "h"
     ]
