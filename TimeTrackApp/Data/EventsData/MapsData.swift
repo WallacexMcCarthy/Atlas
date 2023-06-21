@@ -19,6 +19,22 @@ func loadMapData() -> [Maps]
 {
     // creates a new array that will be used to store the data.
     var mapsItems : [Maps] = []
+    var dateOne = Date()
+    var dateTwo = Date()
+    var dateThree = Date()
+    let calendar = Calendar(identifier: .gregorian)
+    var components = DateComponents(year: 2023, month: 6, day: 17)
+    if let customDate = calendar.date(from: components) {
+        dateOne = customDate
+    }
+    components = DateComponents(year: 2023, month: 6, day: 16)
+    if let customDate = calendar.date(from: components) {
+        dateTwo = customDate
+    }
+    components = DateComponents(year: 2023, month: 6, day: 15)
+    if let customDate = calendar.date(from: components) {
+        dateThree = customDate
+    }
     // creates a new array that will be used to store the data.
     let location : [CLLocationCoordinate2D] =
     [
@@ -328,9 +344,9 @@ func loadMapData() -> [Maps]
 
     ]
     let date : [Date] = [
-        Date(),
-        Date(),
-        Date(),
+        dateOne,
+        dateTwo,
+        dateThree,
         Date(),
         Date(),
         Date(),

@@ -18,7 +18,7 @@ struct TabBarView: View
                 TabView
                     {
                         // creates a tab bar on the bottom of the screen that allows the user to click on differnt icons and those icons will direct the user to differnt views/ pages.
-                        DashboardView()
+                        DashboardView(calendar: Calendar(identifier: .gregorian))
                             .tabItem
                             {
                                 //Image("icon")
@@ -47,11 +47,11 @@ struct TabBarView: View
                                  Text("School Info")
                              }
                         
-                        AttendanceView()
+                        ProfileView(studentInfo: loadUserData()[0])
                              .tabItem
                              {
                                  Image(systemName: "person.badge.clock")
-                                 Text("Attendance")
+                                 Text("Profile")
                              }
                         
                     }
