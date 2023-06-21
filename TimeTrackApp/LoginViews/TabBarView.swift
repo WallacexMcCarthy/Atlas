@@ -26,7 +26,7 @@ struct TabBarView: View
                                 Text("Dashboard")
                             }
                         
-                        PicturesView()
+                        MainMessagesView()
                             .tabItem
                             {
                                 Image(systemName: "person.3.fill")
@@ -53,6 +53,7 @@ struct TabBarView: View
                                  Image(systemName: "person.badge.clock")
                                  Text("Profile")
                              }
+
                         
                     }
                     .background(Color.white)

@@ -1,4 +1,4 @@
-//
+ //
 //  ContentView.swift
 //  TimeTrackApp
 //
@@ -6,8 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
-
+class FirebaseManager: NSObject {
+    
+    let firestore: Firestore
+    
+    static let shared = FirebaseManager()
+    
+    override init() {
+        FirebaseApp.configure()
+        
+        self.firestore = Firestore.firestore()
+        
+        super.init()
+    }
+    
+}
 
 struct LoginView: View
 {
@@ -15,13 +30,18 @@ struct LoginView: View
     @State public var userUsername = ""
     @State var isNavigationBarHidden: Bool = true
     @State var isAcvive: Bool = true
-    @State private var username = ""
-    @State private var password = ""
+    @State var email = ""
+    @State var password = ""
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
     @State private var showingCreateAccountScreen = false
     @State private var showWebView = false
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     private let appleID = URL(string: "https://appleid.apple.com/sign-in")!
     private let twitter = URL(string: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D")!
     private let facebook = URL(string: "https://www.facebook.com/login/")!
@@ -130,7 +150,7 @@ struct LoginView: View
                         Text("Login Using a Personal Email")
                             .font(.title2)
                             .padding(.bottom, 20)
-                        TextField("Email Address", text: $username)
+                        TextField("Email Address", text: $email)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.07))
@@ -154,6 +174,7 @@ struct LoginView: View
                         {
                             // allows access to past login
 //                            something fucked
+                            createNewAccount()
                             checkCredientals()
 //                            showingLoginScreen = true
                         }
@@ -170,7 +191,7 @@ struct LoginView: View
             
         }
     }
-    // Checks username and passsword to all of the usernames and passwords in the data files (UserData).
+    // Checks email and passsword to all of the usernames and passwords in the data files (UserData).
     func checkCredientals() -> Void
     {
         // Grabs all user data from the date folders.
@@ -182,7 +203,7 @@ struct LoginView: View
         {
             let usersUsername = String(userData[index].emailAddress)
             
-            if(username == usersUsername)
+            if(email == usersUsername)
             {
                 // updates values
                 indexValue = index
@@ -207,63 +228,19 @@ struct LoginView: View
         {
             showingLoginScreen = false
         }
-    
-        
-        
-//        for index in 0 ... userData.count - 1
-//        {
-//            let usersUsername = userData[index].emailAddress
-//            let usersPassword = userData[index].password
-//
-//            if(username == usersUsername)
-//            {
-//                if(password == usersPassword)
-//                {
-//                    currentUserData.append(CurrentUsers(fullName: userData[index].fullName, securityQuestion:  userData[index].securityQuestion, securityAnswer:  userData[index].securityAnswer, emailAddress:  userData[index].emailAddress, password:  userData[index].password, grade:  userData[index].grade, birthday:  userData[index].birthday, school:  userData[index].school, imageLinkSource:  userData[index].imageLinkSource))
-//                    showingLoginScreen = true
-//                } else
-//                {
-//                    wrongPassword = 2
-//
-//                }
-//            } else
-//            {
-//                wrongUsername = 2
-//
-//            }
-//
-//
-//
-//        }
-        
-//        ForEach(userData.indices, id: \.self)
-//        {
-//            index in
-//            var userUsername = userData[index].emailAddress
-//            var userPassword = userData[index].password
-//
-//            if(username == userUsername && password == userPassword)
-//            {
-//                userData
-//            }
-//        }
-        
-//        if (username == userData[1].emailAddress)
-//        {
-//            if (password == userData[1].password)
-//            {
-//                showingLoginScreen = true
-//
-//            }else
-//            {
-//                wrongPassword = 2
-//            }
-//        }else
-//        {
-//            wrongUsername = 2
-//        }
-        
     }
+    
+    private func createNewAccount() {
+        Auth.auth().createUser(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("failed", err)
+                return
+            }
+            
+            print("success \(result?.user.uid ?? "") ")
+        }
+    }
+    
 }
 struct ContentView_Previews: PreviewProvider
 {

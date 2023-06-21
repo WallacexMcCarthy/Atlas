@@ -26,7 +26,7 @@
 		29420EC529A9016F000FDE9C /* CTE_Classes.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EC429A9016F000FDE9C /* CTE_Classes.pdf */; };
 		29420EC729A90223000FDE9C /* Sterling_Scholar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EC629A90223000FDE9C /* Sterling_Scholar.pdf */; };
 		29420EC929A902B4000FDE9C /* AP_Courses.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29420EC829A902B4000FDE9C /* AP_Courses.pdf */; };
-		29420ECB29AA8BA8000FDE9C /* PicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420ECA29AA8BA8000FDE9C /* PicturesView.swift */; };
+		29420ECB29AA8BA8000FDE9C /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420ECA29AA8BA8000FDE9C /* MainMessagesView.swift */; };
 		29420ECE29AA9712000FDE9C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29420ECD29AA9712000FDE9C /* ImagePicker.swift */; };
 		296764D528CCD65A0043A235 /* TimeTrackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */; };
 		296764D728CCD65A0043A235 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296764D628CCD65A0043A235 /* LoginView.swift */; };
@@ -103,7 +103,7 @@
 		29420EC429A9016F000FDE9C /* CTE_Classes.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTE_Classes.pdf; sourceTree = "<group>"; };
 		29420EC629A90223000FDE9C /* Sterling_Scholar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sterling_Scholar.pdf; sourceTree = "<group>"; };
 		29420EC829A902B4000FDE9C /* AP_Courses.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AP_Courses.pdf; sourceTree = "<group>"; };
-		29420ECA29AA8BA8000FDE9C /* PicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesView.swift; sourceTree = "<group>"; };
+		29420ECA29AA8BA8000FDE9C /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		29420ECD29AA9712000FDE9C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		296764D128CCD65A0043A235 /* TimeTrackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296764D428CCD65A0043A235 /* TimeTrackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackAppApp.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		29420ECC29AA8C2F000FDE9C /* ShareImages */ = {
 			isa = PBXGroup;
 			children = (
-				29420ECA29AA8BA8000FDE9C /* PicturesView.swift */,
+				29420ECA29AA8BA8000FDE9C /* MainMessagesView.swift */,
 				29420ECD29AA9712000FDE9C /* ImagePicker.swift */,
 			);
 			path = ShareImages;
@@ -549,7 +549,7 @@
 			files = (
 				2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */,
 				944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */,
-				29420ECB29AA8BA8000FDE9C /* PicturesView.swift in Sources */,
+				29420ECB29AA8BA8000FDE9C /* MainMessagesView.swift in Sources */,
 				29D040BA29B3AD440003893D /* WebView.swift in Sources */,
 				29DDC36128DC10DD00FCC3F0 /* EventsView.swift in Sources */,
 				29FE3B1228DE52AB0026B8E3 /* AttendanceConfirmationView.swift in Sources */,
