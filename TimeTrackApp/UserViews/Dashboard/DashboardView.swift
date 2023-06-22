@@ -107,7 +107,7 @@ struct DashboardView: View
                                                             ZStack {
                                                                 if calendar.isDate(date, inSameDayAs: selectedDate) {
                                                                     Capsule()
-                                                                        .fill(Color("CardColor2"))
+                                                                        .fill(Color.blue)
                                                                 }
                                                             }
                                                         )
@@ -341,12 +341,24 @@ struct swipeGesture: UIViewRepresentable {
                         VStack(alignment: .leading, spacing: 12) {
                             Text(task.title)
                                 .font(.title2).bold()
+                                .foregroundColor(Color.black)
 
                             Text(task.description)
                                 .font(.callout)
+                                .foregroundColor(Color.black.opacity(0.8))
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(task.date.formatted(date: .omitted, time: .shortened))
+                        VStack{
+                            Text(task.date.formatted(date: .omitted, time: .shortened))
+                                .foregroundColor(Color.blue)
+                            Spacer()
+                                .frame(height: 30)
+                            NavigationLink("Visit Event", destination: EventsView(with:loadMapData()[task.index]))
+                                .foregroundColor(Color.black)
+                                .frame(width: 100, height: 25)
+                                .background(Color.blue)
+                                .cornerRadius(5)
+                        }
                     }
 
                     Divider()

@@ -26,7 +26,7 @@ struct EventsView: View {
         NavigationView {
             if toEvents
             {
-                Events()
+                DashboardView(calendar: Calendar(identifier: .gregorian))
             }else
             {
                 ZStack
@@ -36,7 +36,7 @@ struct EventsView: View {
                         
                         
                         Text(impact.title)
-                        Text("\(impact.month)/\(impact.day)/\(impact.year)")
+                        Text("\(impact.date.formatted())")
                         Text(impact.details)
                         // creates the map and calls the event region.
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
@@ -48,7 +48,7 @@ struct EventsView: View {
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
                         
-                        Button("Back to Events")
+                        Button("Back to Daskboard")
                         {
                             toEvents = true
                         }
