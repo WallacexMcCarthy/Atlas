@@ -10,14 +10,14 @@ import Firebase
 
 class FirebaseManager: NSObject {
     
-    let firestore: Firestore
+    let auth: Auth
     
     static let shared = FirebaseManager()
     
     override init() {
         FirebaseApp.configure()
         
-        self.firestore = Firestore.firestore()
+        self.auth = Auth.auth()
         
         super.init()
     }
@@ -37,10 +37,6 @@ struct LoginView: View
     @State private var showingLoginScreen = false
     @State private var showingCreateAccountScreen = false
     @State private var showWebView = false
-    
-    init() {
-        FirebaseApp.configure()
-    }
     
     private let appleID = URL(string: "https://appleid.apple.com/sign-in")!
     private let twitter = URL(string: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D")!
@@ -174,7 +170,7 @@ struct LoginView: View
                         {
                             // allows access to past login
 //                            something fucked
-                            createNewAccount()
+//                            loginUser()
                             checkCredientals()
 //                            showingLoginScreen = true
                         }
@@ -191,6 +187,34 @@ struct LoginView: View
             
         }
     }
+    
+    private func loginUser() {
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("Failed to login user:", err)
+                self.loginStatusMessage = "Failed to login user: \(err)"
+                return
+            }
+            
+            print("Successfully logged in as user: \(result?.user.uid ?? "")")
+            
+            self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
+        }
+    }
+    
+    @State var loginStatusMessage = ""
+    
+    private func createNewAccount() {
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, err in
+            if let err = err {
+                print("failed", err)
+                return
+            }
+            
+            print("success \(result?.user.uid ?? "") ")
+        }
+    }
+    
     // Checks email and passsword to all of the usernames and passwords in the data files (UserData).
     func checkCredientals() -> Void
     {
@@ -227,17 +251,6 @@ struct LoginView: View
         if(userUsername == "" || userUsername == " ")
         {
             showingLoginScreen = false
-        }
-    }
-    
-    private func createNewAccount() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, err in
-            if let err = err {
-                print("failed", err)
-                return
-            }
-            
-            print("success \(result?.user.uid ?? "") ")
         }
     }
     
