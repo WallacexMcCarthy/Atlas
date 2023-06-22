@@ -14,7 +14,7 @@ import MapKit
 
 struct EventsView: View {
     @State var impact : Maps
-    @State private var toDashboard: Bool = false
+    @State private var toEvents: Bool = false
     public var mapItems : [Maps]
     init (with impact: Maps)
     {
@@ -24,9 +24,9 @@ struct EventsView: View {
     var body: some View
     {
         NavigationView {
-            if toDashboard
+            if toEvents
             {
-                DashboardView()
+                DashboardView(calendar: Calendar(identifier: .gregorian))
             }else
             {
                 ZStack
@@ -36,7 +36,7 @@ struct EventsView: View {
                         
                         
                         Text(impact.title)
-                        Text("\(impact.month)/\(impact.day)/\(impact.year)")
+                        Text("\(impact.date.formatted())")
                         Text(impact.details)
                         // creates the map and calls the event region.
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
@@ -48,9 +48,9 @@ struct EventsView: View {
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
                         
-                        Button("Back to Dashboard")
+                        Button("Back to Daskboard")
                         {
-                            toDashboard = true
+                            toEvents = true
                         }
                         .frame(width: 300, height: 50)
                         .background(Color.blue.opacity(0.15))

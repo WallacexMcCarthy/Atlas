@@ -62,103 +62,112 @@ struct AttendanceView: View
     var body: some View {
         NavigationView
         {
-            if toStudentProfile == true
-            {
-                ProfileView(studentInfo: loadUserData()[0])
-            }else if toConfirmationView == true && 0 == 1
-            {
-                AttendanceConfirmationView()
-            }else
-            {
-                ScrollView
+            if #available(iOS 16.0, *) {
+                if toStudentProfile == true
                 {
-                    ZStack
+                    ProfileView(studentInfo: loadUserData()[0])
+                }else if toConfirmationView == true && 0 == 1
+                {
+                    AttendanceConfirmationView()
+                }else
+                {
+                    ScrollView
                     {
-                        Color("Beige")
-                            .ignoresSafeArea()
-                        VStack {
-                            Text("Attendance")
-                                .font(.title)
-                                .bold()
-                                .padding(30)
-                            
-                            Section(header: Text("Recent Attendance Entries")
-                                .font(Font.title3)
-                                .bold()
-                                .padding(.bottom, 5)
-                            )
-                            {
-                                Text("01/12/2023: Abasent periods: 5, 7, 8")
-                                    .padding(.bottom, 5)
-                                Text("01/20/2023: Tardy periods: 2")
-                                    .padding(.bottom, 5)
-                                Text("01/28/2023: Tardy periods: 1, 4")
-                                    .padding(.bottom, 5)
-                                Text("02/07/2023: Truent periods: 8")
-                                    .padding(.bottom, 5)
-                                Text("02/14/2023: Abasent periods: 2, 3")
-                                    .padding(.bottom, 5)
-                                if (toConfirmationView)
-                                {
-                                    Text("ATTENDANCE REQUEST |  \(selectedStartDate): \(reasonForAttendance)")
-                                        .padding(.bottom, 5)
-                                }
+                        ZStack
+                        {
+                            Color("Beige")
+                                .ignoresSafeArea()
+                            VStack {
+                                Text("Attendance")
+                                    .font(.title)
+                                    .bold()
+                                    .padding(30)
                                 
-                                
-                                Section(header: Text("Enter Attendance Data")
+                                Section(header: Text("Recent Attendance Entries")
                                     .font(Font.title3)
                                     .bold()
-                                    .padding()
+                                    .padding(.bottom, 5)
                                 )
                                 {
-                                    //                                Text("Enter Attendance")
-                                    //                                    .font(.largeTitle)
-                                    //                                    .bold()
-                                    DatePicker("Select start date:", selection: $selectedStartDate, displayedComponents: [.date])
-                                        .padding(.leading)
-                                        .padding(.horizontal, 40)
-                                    DatePicker("Select end date:", selection: $selectedEndDate, displayedComponents: [.date])
-                                        .padding(.leading)
-                                        .padding(.horizontal, 40)
-                                    Text("Details:")
-                                        .font(.title3)
+                                    VStack{
+                                        Text("01/12/2023: Abasent periods: 5, 7, 8")
+                                        Text("01/12/2023: Abasent periods: 5, 7, 8")
+                                        Text("01/12/2023: Abasent periods: 5, 7, 8")
+                                    }
+                                    .frame(maxHeight: 50)
+                                    .padding(.bottom, 5)
+                                    Text("01/20/2023: Tardy periods: 2")
+                                        .padding(.bottom, 5)
+                                    Text("01/28/2023: Tardy periods: 1, 4")
+                                        .padding(.bottom, 5)
+                                    Text("02/07/2023: Truent periods: 8")
+                                        .padding(.bottom, 5)
+                                    Text("02/14/2023: Abasent periods: 2, 3")
+                                        .padding(.bottom, 5)
+                                    if (toConfirmationView)
+                                    {
+                                        Text("ATTENDANCE REQUEST |  \(selectedStartDate): \(reasonForAttendance)")
+                                            .padding(.bottom, 5)
+                                    }
+                                    
+                                    
+                                    Section(header: Text("Enter Attendance Data")
+                                        .font(Font.title3)
+                                        .bold()
                                         .padding()
-                                    TextField("Reason for Abasence or Tardy", text: $reasonForAttendance)
-                                        .padding()
+                                    )
+                                    {
+                                        //                                Text("Enter Attendance")
+                                        //                                    .font(.largeTitle)
+                                        //                                    .bold()
+                                        DatePicker("Select start date:", selection: $selectedStartDate, displayedComponents: [.date])
+                                            .padding(.leading)
+                                            .padding(.horizontal, 40)
+                                        DatePicker("Select end date:", selection: $selectedEndDate, displayedComponents: [.date])
+                                            .padding(.leading)
+                                            .padding(.horizontal, 40)
+                                        Text("Details:")
+                                            .font(.title3)
+                                            .padding()
+                                        TextField("Reason for Abasence or Tardy", text: $reasonForAttendance)
+                                            .padding()
+                                            .frame(width: 300, height: 50)
+                                            .background(Color.black.opacity(0.07))
+                                            .cornerRadius(10)
+                                        Spacer()
+                                            .frame(height: 20)
+                                        Button("Update Attendance")
+                                        {
+                                            toConfirmationView = true
+                                        }
+                                        .foregroundColor(.white)
                                         .frame(width: 300, height: 50)
-                                        .background(Color.black.opacity(0.07))
+                                        .background(Color("Clay"))
                                         .cornerRadius(10)
-                                    Spacer()
-                                        .frame(height: 20)
-                                    Button("Update Attendance")
-                                    {
-                                        toConfirmationView = true
+                                        Spacer()
+                                            .frame(height: 30)
+                                        Button("User Profile")
+                                        {
+                                            toStudentProfile = true
+                                        }
+                                        .foregroundColor(.white)
+                                        .frame(width: 300, height: 50)
+                                        .background(Color("Clay"))
+                                        .cornerRadius(10)
                                     }
-                                    .foregroundColor(.white)
-                                    .frame(width: 300, height: 50)
-                                    .background(Color("Clay"))
-                                    .cornerRadius(10)
-                                    Spacer()
-                                        .frame(height: 30)
-                                    Button("User Profile")
-                                    {
-                                        toStudentProfile = true
-                                    }
-                                    .foregroundColor(.white)
-                                    .frame(width: 300, height: 50)
-                                    .background(Color("Clay"))
-                                    .cornerRadius(10)
                                 }
                             }
                         }
+                        //            .navigationTitle("Attandence")
+                        
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true)
                     }
-    //            .navigationTitle("Attandence")
-                    
-                    .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
+                    .background(Color("Beige"))
+                    //            .navigationBarBackButtonHidden()
                 }
-                .background(Color("Beige"))
-//            .navigationBarBackButtonHidden()
+            } else {
+                // Fallback on earlier versions
             }
     
         }

@@ -19,6 +19,22 @@ func loadMapData() -> [Maps]
 {
     // creates a new array that will be used to store the data.
     var mapsItems : [Maps] = []
+    var dateOne = Date()
+    var dateTwo = Date()
+    var dateThree = Date()
+    let calendar = Calendar(identifier: .gregorian)
+    var components = DateComponents(year: 2023, month: 6, day: 17)
+    if let customDate = calendar.date(from: components) {
+        dateOne = customDate
+    }
+    components = DateComponents(year: 2023, month: 6, day: 16)
+    if let customDate = calendar.date(from: components) {
+        dateTwo = customDate
+    }
+    components = DateComponents(year: 2023, month: 6, day: 15)
+    if let customDate = calendar.date(from: components) {
+        dateThree = customDate
+    }
     // creates a new array that will be used to store the data.
     let location : [CLLocationCoordinate2D] =
     [
@@ -328,40 +344,40 @@ func loadMapData() -> [Maps]
 
     ]
     let date : [Date] = [
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date(),
-        Date()
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*15, since: Date.now),
+        Date(timeInterval: 60*25, since: Date.now),
+        Date(timeInterval: 60*35, since: Date.now),
+        Date(timeInterval: 60*45, since: Date.now),
+        Date(timeInterval: 60*55, since: Date.now),
+        Date(timeInterval: 60*60, since: Date.now),
+        Date(timeInterval: 60*5*60, since: Date.now),
+        Date(timeInterval: 60*15*60, since: Date.now),
+        Date(timeInterval: 60*25*60, since: Date.now),
+        Date(timeInterval: 60*35*60, since: Date.now),
+        Date(timeInterval: 60*45*60, since: Date.now),
+        Date(timeInterval: 60*5*30, since: Date.now),
+        Date(timeInterval: 60*15*30, since: Date.now),
+        Date(timeInterval: 60*25*30, since: Date.now),
+        Date(timeInterval: 60*35*30, since: Date.now),
+        Date(timeInterval: 60*45*30, since: Date.now),
+        Date(timeInterval: 60*55*30, since: Date.now),
+        Date(timeInterval: 60*60*30, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now),
+        Date(timeInterval: 60*5, since: Date.now)
     ]
     // creates a new array that will be used to store the data.
     for index in 0 ..< 33
