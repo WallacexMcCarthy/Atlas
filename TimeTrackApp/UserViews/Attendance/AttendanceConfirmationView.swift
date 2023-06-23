@@ -11,23 +11,20 @@ import SwiftUI
  This view is not in use at the moment.
  */
 struct AttendanceConfirmationView: View {
-    @State private var toAttendanceView = false
-    @State private var attendanceInfo = AttendanceView().getAttendanceInformation()
+    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @State private var textes = "Hello"
+    @State private var counter = 0
+
     var body: some View {
-        if toAttendanceView
-        {
-            AttendanceView()
-        }else
-        {
-            Form
-            {
-//                Text(attendanceInfo[2].startDate)
-                Button("Confirm")
-                {
-                    toAttendanceView = true
-                }
-            }
+        VStack{
+            Text("\(textes)")
         }
+        .onReceive(timer, perform: {
+            _ in
+            counter += 1
+            if(counter > 5){
+                textes = "Big"}
+        })
     }
 }
 

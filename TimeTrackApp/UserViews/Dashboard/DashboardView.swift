@@ -13,6 +13,8 @@ var textsss = "hello"
 
 struct DashboardView: View
 {
+    
+    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     let userData = loadUserData()
     let currentUserData = loadCurrentUserData()
     let impacts = loadMapData()
@@ -52,16 +54,69 @@ struct DashboardView: View
                 EventsView(with:loadMapData()[indexs])
             }else
             {
+                
                 ZStack
                 {
                     Color("Beige")
                         .ignoresSafeArea()
+                    VStack{
+                        
+                    }
+                    
                     
                     VStack
                     {
                         ScrollView{
                             VStack {
                                         ScrollView() {
+                                            VStack
+                                            {
+
+                                                    
+                                                VStack{
+                    //                                        Text(" Wellcome \(userData[currentUserIndexValue].fullName)")
+                    //                                            .font(.title3)
+                                                    Text("Announcements")
+                                                        .font(.largeTitle)
+                                                        .bold()
+                                                    Image(announcements[buttonIndex].immageLinkSource)
+                                                        .resizable()
+                                                        .frame(width: 375, height: 200)
+                                                        .background(Color("Beige").opacity(0.8))
+                                                        .ignoresSafeArea()
+                                                        .padding(.horizontal, 20)
+
+
+                                                        Text("Copyright © 2023- All Rights Reserved")
+                                                            .ignoresSafeArea()
+                                                            .font(.caption2)
+                                                    Text(announcements[buttonIndex].title)
+                                                        .frame(width: 330, height: 80)
+                                                        .padding(.horizontal, 30)
+                                                        .cornerRadius(10)
+                                                        .font(.title3)
+                                                        .background(Color("Beige").opacity(0.8))
+                                                        .ignoresSafeArea()
+
+                                                    Text(announcements[buttonIndex].announcment)
+                                                        .frame(width: 330, height: 300)
+                                                        .padding(.horizontal, 30)
+                                                        .cornerRadius(10)
+                                                        .background(Color("Beige").opacity(0.8))
+                                                        .ignoresSafeArea()
+                                                        .lineLimit(nil)
+                                                }
+                                                .onReceive(timer, perform: {
+                                                    _ in
+                                                    if(buttonIndex <= 0)
+                                                    {
+                                                        buttonIndex = announcementsCount
+                                                    }else
+                                                    {
+                                                        buttonIndex = buttonIndex - 1
+                                                    }
+                                                })
+                                                
                                             HStack {
                                                 VStack(alignment: .center, spacing: 10) {
                                                     Text(Date().formatted(date: .abbreviated, time: .omitted))
@@ -167,60 +222,22 @@ struct DashboardView: View
                                             
                                             TasksView()
                                         }
+                                            
                         }
-                            VStack
-                            {
-
-                                    Text("\(textsss)")
-                                VStack{
-                                    Text(" ")
-                                        .padding(5)
-    //                                        Text(" Wellcome \(userData[currentUserIndexValue].fullName)")
-    //                                            .font(.title3)
-                                    Text("Announcements")
-                                        .font(.largeTitle)
-                                        .bold()
-                                    Image(announcements[buttonIndex].immageLinkSource)
-                                        .resizable()
-                                        .frame(width: 375, height: 200)
-                                        .background(Color("Beige").opacity(0.8))
-                                        .ignoresSafeArea()
-                                        .padding(.horizontal, 20)
-
-                                    swipeGesture()
-
-                                        Text("Copyright © 2023- All Rights Reserved")
-                                            .ignoresSafeArea()
-                                            .font(.caption2)
-                                    Text(announcements[buttonIndex].title)
-                                        .frame(width: 330, height: 80)
-                                        .padding(.horizontal, 30)
-                                        .cornerRadius(10)
-                                        .font(.title3)
-                                        .background(Color("Beige").opacity(0.8))
-                                        .ignoresSafeArea()
-
-                                    Text(announcements[buttonIndex].announcment)
-                                        .frame(width: 330, height: 300)
-                                        .padding(.horizontal, 30)
-                                        .cornerRadius(10)
-                                        .background(Color("Beige").opacity(0.8))
-                                        .ignoresSafeArea()
-                                        .lineLimit(nil)
-                                }
-                                Section(header: Text("Upcoming Events").font(.title).frame(width: 400, height: 50).background(Color("Beige").opacity(0.8)))
-                                {
-                                    ForEach(impacts.indices)
-                                    {
-                                        index in
-
-                                        NavigationLink("\(impacts[index].title)", destination: EventsView(with:loadMapData()[index]))
-                                            .frame(width: 330, height: 50)
-                                            .background(Color("Clay"))
-                                            .cornerRadius(20)
-                                            .foregroundColor(Color("DarkBlue"))
-                                    }
-                                }
+                            
+//                                Section(header: Text("Upcoming Events").font(.title).frame(width: 400, height: 50).background(Color("Beige").opacity(0.8)))
+//                                {
+//                                    ForEach(impacts.indices)
+//                                    {
+//                                        index in
+//
+//                                        NavigationLink("\(impacts[index].title)", destination: EventsView(with:loadMapData()[index]))
+//                                            .frame(width: 330, height: 50)
+//                                            .background(Color("Clay"))
+//                                            .cornerRadius(20)
+//                                            .foregroundColor(Color("DarkBlue"))
+//                                    }
+//                                }
 
 
 
@@ -318,7 +335,7 @@ struct swipeGesture: UIViewRepresentable {
             HStack(alignment: .top, spacing: 25) {
                 VStack(spacing: 10) {
                     Button(action: {
-
+                        
                     }, label: {
                         Image(systemName: task.doneFlag ? "checkmark" : "")
                             .font(.caption)
