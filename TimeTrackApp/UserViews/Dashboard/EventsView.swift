@@ -26,7 +26,7 @@ struct EventsView: View {
         NavigationView {
             if toEvents
             {
-                DashboardView(calendar: Calendar(identifier: .gregorian))
+                DashboardView()
             }else
             {
                 ZStack

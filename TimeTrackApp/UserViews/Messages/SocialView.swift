@@ -57,8 +57,6 @@ struct SocialView: View
     {
         ZStack
         {
-            Color("Beige").opacity(1)
-                .ignoresSafeArea()
             VStack
             {
                 HStack
@@ -132,6 +130,7 @@ struct SocialView: View
                 .padding()
         }
         }
+        .background(Color.black.opacity(0.05))
         .onAppear{
             viewModel.setup()
         }
