@@ -18,7 +18,7 @@ struct TabBarView: View
                 TabView
                     {
                         // creates a tab bar on the bottom of the screen that allows the user to click on differnt icons and those icons will direct the user to differnt views/ pages.
-                        DashboardView(calendar: Calendar(identifier: .gregorian))
+                        DashboardView()
                             .tabItem
                             {
                                 //Image("icon")

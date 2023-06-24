@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
         
 class MainMessagesViewModel: ObservableObject {
+    @State private var toSocialView = true
     
     @Published var errorMessage = ""
     @Published var chatUser: ChatUser?
@@ -161,37 +162,32 @@ struct MainMessagesView: View {
     }
     
     private var messagesView: some View {
-        ScrollView {
-            ForEach(vm.recentMessages) { recentMessage in
+        NavigationView {
+            ScrollView {
                 VStack {
                     Button {
-                        let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMessage.fromId ? recentMessage.toId : recentMessage.fromId
-                        self.chatUser = .init(data: [FirebaseConstants.email: recentMessage.email, FirebaseConstants.uid: uid])
-                        self.chatLogViewModel.chatUser = self.chatUser
-                        self.chatLogViewModel.fetchMessages()
-                        self.shouldNavigateToChatLogView.toggle()
                     } label: {
                         HStack(spacing: 16) {
-//                            Image(systemName: "person.fill")
-//                                .font(.system(size: 32))
-//                                 .padding(8)
-//                                .overlay(RoundedRectangle(cornerRadius: 44)
-//                                            .stroke(Color(.label), lineWidth: 1)
-//                                )
+    //                            Image(systemName: "person.fill")
+    //                                .font(.system(size: 32))
+    //                                 .padding(8)
+    //                                .overlay(RoundedRectangle(cornerRadius: 44)
+    //                                            .stroke(Color(.label), lineWidth: 1)
+    //                                )
                             
                             
                             VStack(alignment: .leading, spacing: 8) {
-                                Text(recentMessage.email)
+                                Text("AI Assistant")
                                     .font(.system(size: 16, weight: .bold))
                                     .foregroundColor(Color(.label))
                                     .multilineTextAlignment(.leading)
-                                Text(recentMessage.text)
+                                Text("Welcome to the Help Desk")
                                     .font(.system(size: 14))
                                     .foregroundColor(Color(.lightGray))
                             }
                             Spacer()
                             
-                            Text(recentMessage.timeAgo)
+                            Text("")
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundColor(Color(.label))
                         }
@@ -200,7 +196,46 @@ struct MainMessagesView: View {
                         .padding(.vertical, 8)
                 }.padding(.horizontal)
                 
-            }.padding(.bottom, 50)
+                ForEach(vm.recentMessages) { recentMessage in
+                    VStack {
+                        Button {
+                            let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMessage.fromId ? recentMessage.toId : recentMessage.fromId
+                            self.chatUser = .init(data: [FirebaseConstants.email: recentMessage.email, FirebaseConstants.uid: uid])
+                            self.chatLogViewModel.chatUser = self.chatUser
+                            self.chatLogViewModel.fetchMessages()
+                            self.shouldNavigateToChatLogView.toggle()
+                        } label: {
+                            HStack(spacing: 16) {
+    //                            Image(systemName: "person.fill")
+    //                                .font(.system(size: 32))
+    //                                 .padding(8)
+    //                                .overlay(RoundedRectangle(cornerRadius: 44)
+    //                                            .stroke(Color(.label), lineWidth: 1)
+    //                                )
+                                
+                                
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(recentMessage.email)
+                                        .font(.system(size: 16, weight: .bold))
+                                        .foregroundColor(Color(.label))
+                                        .multilineTextAlignment(.leading)
+                                    Text(recentMessage.text)
+                                        .font(.system(size: 14))
+                                        .foregroundColor(Color(.lightGray))
+                                }
+                                Spacer()
+                                
+                                Text(recentMessage.timeAgo)
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundColor(Color(.label))
+                            }
+                        }
+                        Divider()
+                            .padding(.vertical, 8)
+                    }.padding(.horizontal)
+                    
+                }.padding(.bottom, 50)
+            }
         }
     }
     

@@ -49,6 +49,7 @@
 		2976F2E82A3F82330071CF22 /* ButtonPressedActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F2E72A3F82330071CF22 /* ButtonPressedActions.swift */; };
 		2976F2EA2A43B44B0071CF22 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F2E92A43B44B0071CF22 /* TaskViewModel.swift */; };
 		2976F2EC2A43B4B10071CF22 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F2EB2A43B4B10071CF22 /* Task.swift */; };
+		2976F3252A476E420071CF22 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3242A476E420071CF22 /* CalenderView.swift */; };
 		2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */; };
 		2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */; };
 		2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */; };
@@ -144,6 +145,7 @@
 		2976F2E72A3F82330071CF22 /* ButtonPressedActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressedActions.swift; sourceTree = "<group>"; };
 		2976F2E92A43B44B0071CF22 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		2976F2EB2A43B4B10071CF22 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2976F3242A476E420071CF22 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountConfirmationView.swift; sourceTree = "<group>"; };
 		2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationView.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				29420ECC29AA8C2F000FDE9C /* ShareImages */,
 				29420EA429A8599B000FDE9C /* School */,
 				29DDC35D28DB9D4B00FCC3F0 /* MapView.swift */,
+				2976F3242A476E420071CF22 /* CalenderView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				52D56B4D2A44F41B00F5D2DD /* ChatUser.swift in Sources */,
 				29420E9F29A85545000FDE9C /* CustomPDFView.swift in Sources */,
 				2967650C28CD5B410043A235 /* SocialView.swift in Sources */,
+				2976F3252A476E420071CF22 /* CalenderView.swift in Sources */,
 				29FE3B1C28DF96DE0026B8E3 /* Announcement.swift in Sources */,
 				52D56B502A44FA2200F5D2DD /* CreateNewMessageView.swift in Sources */,
 				29420EB729A8EAF1000FDE9C /* PolicyView.swift in Sources */,
