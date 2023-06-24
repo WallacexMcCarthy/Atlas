@@ -42,15 +42,15 @@ func loadUserData() -> [Users]
     let emailAddress: [String] =
     [
         "Vislawath.21@gmail.com",
-        "T",
-        "H"
+        "science@gmail.com",
+        "biology@gmail.com"
     ]
     
     let password: [String] =
     [
         "atlanta12",
-        "t",
-        "h"
+        "science12",
+        "weber12"
     ]
     
     let grade: [String] =

@@ -8,22 +8,6 @@
 import SwiftUI
 import Firebase
 
-class FirebaseManager: NSObject {
-    
-    let auth: Auth
-    
-    static let shared = FirebaseManager()
-    
-    override init() {
-        FirebaseApp.configure()
-        
-        self.auth = Auth.auth()
-        
-        super.init()
-    }
-    
-}
-
 struct LoginView: View
 {
     @State public var indexValue = -1
@@ -170,8 +154,8 @@ struct LoginView: View
                         {
                             // allows access to past login
 //                            something fucked
-//                            loginUser()
                             checkCredientals()
+                            loginUser()
 //                            showingLoginScreen = true
                         }
                         .foregroundColor(.white)
