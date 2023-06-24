@@ -23,6 +23,7 @@ struct DashboardView: View
     @State private var toMaps = false
     @State private var toEvent = false
     @State private var indexs = 0
+    @State private var linesLimit = 10
     //
     @StateObject var taskModel: TaskViewModel = TaskViewModel()
         
@@ -57,8 +58,6 @@ struct DashboardView: View
                 
                 ZStack
                 {
-                    Color("Beige")
-                        .ignoresSafeArea()
                     VStack{
                         
                     }
@@ -79,32 +78,55 @@ struct DashboardView: View
                                                     Text("Announcements")
                                                         .font(.largeTitle)
                                                         .bold()
-                                                    Image(announcements[buttonIndex].immageLinkSource)
-                                                        .resizable()
-                                                        .frame(width: 375, height: 200)
-                                                        .background(Color("Beige").opacity(0.8))
-                                                        .ignoresSafeArea()
-                                                        .padding(.horizontal, 20)
+                                                    HStack{
+                                                        Spacer()
+                                                            .frame(width: 20)
+                                                        ZStack{
+                                                            Rectangle()
+                                                                .frame(width: 370, height: 450)
+                                                                .cornerRadius(20)
+                                                                .foregroundColor(Color.blue.opacity(0.32))                                                          .shadow(color: .blue, radius: 5, x : 0, y : 5)
+                                                            VStack{
+                                                                Image(announcements[buttonIndex].immageLinkSource)
+                                                                    .resizable()
+                                                                    .scaledToFit()
+                                                                    .background(Color("Beige").opacity(0.8))
+                                                                    .ignoresSafeArea()
+                                                                    .padding(.horizontal, 20)
+    //                                                                .cornerRadius(70)
+                                                                Text("Copyright © 2023- All Rights Reserved")
+                                                                    .ignoresSafeArea()
+                                                                    .font(.caption2)
+                                                            Text(announcements[buttonIndex].title)
+                                                                .frame(width: 330, height: 80)
+                                                                .padding(.horizontal, 30)
+                                                                .cornerRadius(10)
+                                                                .font(.title3)
+                                                                .ignoresSafeArea()
+                                                                Text(announcements[buttonIndex].announcment)
+                                                                    .frame(width: 330)
+                                                                    .padding(.horizontal, 30)
+                                                                    .cornerRadius(10)
+                                                                    .ignoresSafeArea()
+                                                                    .lineLimit(linesLimit)
+                                                                Button{
+                                                                    linesLimit = 50
+                                                                }label: {
+                                                                    Text("Read More")
+                                                                }
+                                                                
+                                                            }
+                                                            
+                                                        }
+                                                            
+                                                        Spacer()
+                                                            .frame(width: 20)
+                                                    }
 
 
-                                                        Text("Copyright © 2023- All Rights Reserved")
-                                                            .ignoresSafeArea()
-                                                            .font(.caption2)
-                                                    Text(announcements[buttonIndex].title)
-                                                        .frame(width: 330, height: 80)
-                                                        .padding(.horizontal, 30)
-                                                        .cornerRadius(10)
-                                                        .font(.title3)
-                                                        .background(Color("Beige").opacity(0.8))
-                                                        .ignoresSafeArea()
+                                                        
 
-                                                    Text(announcements[buttonIndex].announcment)
-                                                        .frame(width: 330, height: 300)
-                                                        .padding(.horizontal, 30)
-                                                        .cornerRadius(10)
-                                                        .background(Color("Beige").opacity(0.8))
-                                                        .ignoresSafeArea()
-                                                        .lineLimit(nil)
+                                                    
                                                 }
                                                 .onReceive(timer, perform: {
                                                     _ in
@@ -119,10 +141,14 @@ struct DashboardView: View
                                                 
                                             HStack {
                                                 VStack(alignment: .center, spacing: 10) {
-                                                    Text(Date().formatted(date: .abbreviated, time: .omitted))
-                                                        .foregroundColor(.gray)
+                                                    HStack{
+                                                        Spacer()
+                                                            .frame(width: 10)
+                                                        Text(Date().formatted(date: .abbreviated, time: .omitted))
+                                                            .foregroundColor(.gray)
+                                                    }
                                                     
-                                                    Text("Today")
+                                                    Text("  Today")
                                                         .font(.title.bold())
                                                 }
                                                 
@@ -243,6 +269,7 @@ struct DashboardView: View
 
                             }
                         }
+                        .background(Color.gray.opacity(0.05))
                 }
             }
             

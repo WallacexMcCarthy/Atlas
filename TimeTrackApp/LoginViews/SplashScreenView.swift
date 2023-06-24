@@ -26,8 +26,6 @@ struct SplashScreenView: View
         }else{
             ZStack
             {
-                Color("Beige")
-                    .ignoresSafeArea(.all)
                 VStack
                 {
                     VStack
@@ -81,6 +79,8 @@ struct SplashScreenView: View
                         }
                     }
                 }
+                .background(Color.white)
+                .ignoresSafeArea()
             }
             
         }

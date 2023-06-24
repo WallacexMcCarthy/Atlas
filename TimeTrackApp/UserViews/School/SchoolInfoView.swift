@@ -64,6 +64,24 @@ struct SchoolInfoView: View
                                     .frame(width: 20)
                             }
                         }
+                        VStack{
+                            HStack{
+                                Button{
+                                    
+                                }label: {
+                                    Rectangle()
+                                        .frame(width: 125, height: 60)
+                                        .foregroundColor(Color.blue)
+                                }
+                                Spacer()
+                                    .frame(width: 20)
+                                Rectangle()
+                                    .frame(width: 125, height: 60)
+                            }
+                            HStack{
+                                
+                            }
+                        }
                         HStack
                         {
                             Text("Schedules: ")
