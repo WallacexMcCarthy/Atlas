@@ -19,147 +19,233 @@ struct SchoolInfoView: View
             {
                 ZStack
                 {
-                    Color("Beige")
-                        .ignoresSafeArea()
+                    Rectangle()
+                        .frame(width: 370, height: 480)
+                        .cornerRadius(20)
+                        .foregroundColor(Color.white)                                                          .shadow(color: .black, radius: 5, x : 0, y : 4)
+                        .position(x: 196, y: 291)
+                    
                     VStack
                     {
-                        Text("School Info")
-                            .bold()
-                            .font(.largeTitle)
+                        if #available(iOS 16.1, *) {
+                            Text("School Info")
+                                .bold()
+                                .font(.largeTitle)
+                        } else {
+                            // Fallback on earlier versions
+                        }
                         Image("InfoPic")
                             .resizable()
+                            .frame(width: 344, height: 229)
                         .scaledToFit()
                         VStack
                         {
-                            HStack
+                            VStack
                             {
-                                Text("Address: ")
+                                Text("Address                                                     ")
                                     .font(.title2.bold())
-                                Text("7350 S 900 E, Midvale, UT 84047")
+                                Spacer()
+                                    .frame(height: 2)
+                                Text("7350 S 900 E, Midvale, UT 84047                 ")
                             }
-                            HStack
+                            Spacer()
+                                .frame(height: 5)
+                            VStack
                             {
-                                Text("Phone:      ")
+                                Spacer()
+                                    .frame(width: 20)
+                                Text("Phone                                                         ")
                                     .font(.title2.bold())
-                                Text("(801) 826-6000")
+                                Spacer()
+                                    .frame(height: 2)
+                                Text("(801) 826-6000                                                 ")
                                 Spacer()
                                     .frame(width: 130)
                             }
-                            HStack
+                            VStack
                             {
-                                Text("Office Hours:     ")
+                                Spacer()
+                                    .frame(width: 16)
+                                Text("Office Hours                                           ")
                                     .font(.title2.bold())
-                                Text("Monday – Friday \n 7 a.m. – 3:00 p.m.")
+                                Spacer()
+                                    .frame(height: 2)
+                                Text("Monday – Friday, 7 a.m. – 3:00 p.m.             ")
                                 Spacer()
                                     .frame(width: 50)
                             }
+                            Spacer()
+                                .frame(height: 6)
                             HStack
                             {
+                                Spacer()
+                                    .frame(width: 14)
                                 Text("Website: ")
                                     .font(.title2.bold())
                                 Text("https://hhs.canyonsdistrict.org")
                                     .foregroundColor(Color("DarkBlue"))
-                                    .background(Color("Beige"))
+//                                    .background(Color("Beige"))
                                 Spacer()
-                                    .frame(width: 20)
+                                    .frame(width: 10)
                             }
                         }
+                        
+                        Spacer()
+                            .frame(height: 35)
                         VStack{
                             HStack{
-                                Button{
-                                    
+                                NavigationLink{
+                                    SchedulesView()
                                 }label: {
-                                    Rectangle()
-                                        .frame(width: 125, height: 60)
-                                        .foregroundColor(Color.blue)
+                                    VStack{
+                                        Image(systemName: "clock")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                            .frame(height: 8)
+                                        Text("Schedules")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
                                 }
-                                Spacer()
-                                    .frame(width: 20)
-                                Rectangle()
-                                    .frame(width: 125, height: 60)
-                            }
-                            HStack{
                                 
+                                Spacer()
+                                    .frame(width: 10)
+                                
+                                NavigationLink{
+                                    CustomPDFView(displayedPDFURL: School_Disclosure_URL)
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "newspaper")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                            .frame(height: 8)
+                                        Text("Disclosures")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
                             }
-                        }
-                        HStack
-                        {
-                            Text("Schedules: ")
-                                .font(.title2.bold())
-                            NavigationLink("School Schedules", destination: SchedulesView())
-                            .frame(width: 230, height: 25)
-                            .background(Color("Clay"))
-                            .foregroundColor(Color.black)
-                            .cornerRadius(20)
-                        }
-                        HStack
-                        {
-                            Text("Discloure:   ")
-                                .font(.title2.bold())
-                            NavigationLink("School Discloure", destination: CustomPDFView(displayedPDFURL: School_Disclosure_URL))
-                            .frame(width: 230, height: 25)
-                            .background(Color("Clay"))
-                            .foregroundColor(Color.black)
-                            .cornerRadius(20)
-                        }
-                        HStack
-                        {
-                            Text("Policies:      ")
-                                .font(.title2.bold())
-                            NavigationLink("School Policies", destination: PolicyView())
-                            .frame(width: 230, height: 25)
-                            .background(Color("Clay"))
-                            .foregroundColor(Color.black)
-                            .cornerRadius(20)
-                        }
-                        HStack
-                        {
-                            Text("Programs:  ")
-                                .font(.title2.bold())
-                            NavigationLink("School Programs", destination: ProgramsView())
-                            .frame(width: 230, height: 25)
-                            .background(Color("Clay"))
-                            .foregroundColor(Color.black)
-                            .cornerRadius(20)
-                        }
-                        HStack
-                        {
-                            Text("Activities:  ")
-                                .font(.title2.bold())
-                            NavigationLink("School Activities", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                            .frame(width: 230, height: 25)
-                            .background(Color("Clay"))
-                            .foregroundColor(Color.black)
-                            .cornerRadius(20)
-                        }
-                        VStack
-                        {
-                            HStack
-                            {
-                                Text("Recources:  ")
-                                    .font(.title2.bold())
-                                NavigationLink("School Recources", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                                .frame(width: 230, height: 25)
-                                .background(Color("Clay"))
-                                .foregroundColor(Color.black)
-                                .cornerRadius(20)
-                            }
-                            HStack
-                            {
-                                Text("Counseling:  ")
-                                    .font(.title2.bold())
-                                NavigationLink("School Counseling", destination: CustomPDFView(displayedPDFURL: AB_Calendar_URL))
-                                .frame(width: 230, height: 25)
-                                .background(Color("Clay"))
-                                .foregroundColor(Color.black)
-                                .cornerRadius(20)
-                            }
-                        }
                             
+                            
+                            HStack{
+                                NavigationLink{
+                                    PolicyView()
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "doc.append")
+                                            .resizable()
+                                            .frame(width: 26, height: 30)
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                            .frame(height: 8)
+                                        Text("Policies")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 10)
+                                
+                                NavigationLink{
+                                    PolicyView()
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "square.3.layers.3d")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                            .frame(height: 8)
+                                        Text("Programs")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
+                            }
+                            
+                            HStack{
+                                NavigationLink{
+                                    PolicyView()
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "figure.run")
+                                            .resizable()
+                                            .frame(width: 26, height: 30)
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                            .frame(height: 8)
+                                        Text("Activities")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 10)
+                                
+                                NavigationLink{
+                                    CustomPDFView(displayedPDFURL: AB_Calendar_URL)
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "gearshape")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                        Spacer()
+                                            .frame(height: 10)
+                                        Text("Resources")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
+                            }
+                            
+                            HStack{
+                                NavigationLink{
+                                    SchedulesView()
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "person.2")
+                                            .resizable()
+                                            .frame(width: 35, height: 25)
+                                        Spacer()
+                                            .frame(height: 10)
+                                        Text("Counseling")
+                                            .font((.title3))
+                                    }
+                                    .frame(width: 170, height: 90)
+                                    .background(Color("AzureBlue"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(5)
+                                }
+                            }
+                        }
                     }
                 }
             }
-        .background(Color("Beige"))
+            .background(Color.black.opacity(0.05))
         }
     }
 }
