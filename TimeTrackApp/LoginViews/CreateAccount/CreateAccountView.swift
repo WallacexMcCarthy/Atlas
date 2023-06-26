@@ -38,113 +38,119 @@ struct CreateAccountView: View {
             LoginView()
         }else
         {
-            VStack
-            {
-                
-                ZStack
+            ScrollView() {
+                VStack
                 {
-                    // creates the background color of the view.
-                    Color("Beige")
-                        .ignoresSafeArea()
-
-                    VStack
-                    {
-                        Text("Create Account")
-                            .font(.largeTitle)
-                            .bold()
-                            .padding().padding()
-                        Text("")
-                            .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
-                        Text("")
-                            .padding().padding().padding().padding().padding().padding().padding()
-                    }
                     
-                    VStack
+                    ZStack
                     {
-                        // Creates the text fields that the user can type in.
-                        VStack
-                        {
-                            TextField("Full Name", text: $fullName)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.07))
-                                .cornerRadius(10)
-                            TextField("Email Address", text: $emailAddress)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.07))
-                                .cornerRadius(10)
-                            TextField("Grade", text: $grade)
-                                .keyboardType(.numberPad)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.07))
-                                .cornerRadius(10)
-                        }
-                        TextField("Birthday (00/00/0000)", text: $birthdate)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("School", text: $school)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Security Question", text: $securityQuestion)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Security Answer", text: $securityAnswer)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Password", text: $password)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        TextField("Confirm Password", text: $checkPassword)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
+                        // creates the background color of the view.
+                        
                         
                         VStack
                         {
-                            if displayFailure
+                            Text("Create Account")
+                                .font(.largeTitle)
+                                .bold()
+                                .padding().padding()
+                            Text("")
+                                .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
+                            Text("")
+                                .padding().padding().padding().padding().padding().padding().padding()
+                            Spacer()
+                                .frame(height: 20)
+                        }
+                        
+                        
+                        
+                        
+                        VStack
+                        {
+                            // Creates the text fields that the user can type in.
+                            VStack
                             {
-                                Text("Passwords do not match!")
-                                    .font(Font.title3)
-                                    .foregroundColor(.red)
+                                TextField("Full Name", text: $fullName)
+                                    .padding()
+                                    .frame(width: 300, height: 50)
+                                    .background(Color.black.opacity(0.07))
+                                    .cornerRadius(10)
+                                TextField("Email Address", text: $emailAddress)
+                                    .padding()
+                                    .frame(width: 300, height: 50)
+                                    .background(Color.black.opacity(0.07))
+                                    .cornerRadius(10)
+                                TextField("Grade", text: $grade)
+                                    .keyboardType(.numberPad)
+                                    .padding()
+                                    .frame(width: 300, height: 50)
+                                    .background(Color.black.opacity(0.07))
+                                    .cornerRadius(10)
                             }
-                            // the button that will bring the user to the confirmation create account view.
-                            Button("Create Account")
+                            TextField("Birthday (00/00/0000)", text: $birthdate)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("School", text: $school)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Security Question", text: $securityQuestion)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Security Answer", text: $securityAnswer)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Password", text: $password)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            TextField("Confirm Password", text: $checkPassword)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            
+                            VStack
                             {
-                                if checkPassword == password
+                                if displayFailure
                                 {
-                                    confirmationView = true
-                                    appendData(name: fullName, email: emailAddress, grade: grade, birthdate: birthdate, school: school, securityQuestion: securityQuestion, securityAnswer: securityAnswer, password: password)
-                                }else
-                                {
-                                    displayFailure = true
+                                    Text("Passwords do not match!")
+                                        .font(Font.title3)
+                                        .foregroundColor(.red)
                                 }
+                                // the button that will bring the user to the confirmation create account view.
+                                Button("Create Account")
+                                {
+                                    if checkPassword == password
+                                    {
+                                        confirmationView = true
+                                        appendData(name: fullName, email: emailAddress, grade: grade, birthdate: birthdate, school: school, securityQuestion: securityQuestion, securityAnswer: securityAnswer, password: password)
+                                    }else
+                                    {
+                                        displayFailure = true
+                                    }
+                                }
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 50)
+                                .background(Color("AzureBlue"))
+                                .cornerRadius(10)
+                                
                             }
-                            .foregroundColor(.white)
-                            .frame(width: 300, height: 50)
-                            .background(Color("Clay"))
-                            .cornerRadius(10)
+                            
                             
                         }
-                        
-
                     }
                 }
-               
+            }
                 
-        }
+//                 .background(Color.black.opacity(0.05))
         }
     }
     // function that will append the user data to the user data file.

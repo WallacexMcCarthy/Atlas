@@ -38,139 +38,138 @@ struct LoginView: View
                 CreateAccountView()
             }else
             {
-                ZStack
-                {
-                    Color("Beige")
-                        .ignoresSafeArea()
-                    VStack
+                ScrollView() {
+                    ZStack
                     {
-                        // the only way i can get the logo at the top. This is how i am using spacing but ther is definatly a better way.
-//                        Image("logo")
-                        VStack{
+                        VStack
+                        {
+                            // the only way i can get the logo at the top. This is how i am using spacing but ther is definatly a better way.
+                            //                        Image("logo")
+                            VStack{
+                                
+                                Image(systemName: "map.circle")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(Color("AzureBlue"))
+                                Text("ATLAS SCHOOL")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(Color("DarkBlue"))
+                            }
+                            Text("")
+                                .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
+                            Text("")
+                                .padding().padding().padding().padding().padding().padding()
                             
-                            Image(systemName: "map.circle")
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .foregroundColor(Color("Clay"))
-                            Text("ATLAS SCHOOL")
+                            
+                        }
+                        .navigationBarHidden(true)
+                        
+                        VStack
+                        {
+                            /*
+                             Creation of all of the textFields, buttosn and nagigationLinks.
+                             */
+                            Spacer()
+                                .frame(height: 75)
+                            Text("Login")
                                 .font(.largeTitle)
                                 .bold()
-                                .foregroundColor(Color("DarkBlue"))
-                        }
-                        Text("")
-                            .padding().padding().padding().padding().padding().padding().padding().padding().padding().padding()
-                        Text("")
-                            .padding().padding().padding().padding().padding().padding()
-                        
-                        
-                    }
-                    .navigationBarHidden(true)
-                    
-                    VStack
-                    {
-                        /*
-                         Creation of all of the textFields, buttosn and nagigationLinks.
-                         */
-                        Spacer()
-                            .frame(height: 75)
-                        Text("Login")
-                            .font(.largeTitle)
-                            .bold()
-                        HStack
-                        {
-                            Button {
-                                showWebView.toggle()
-                            } label: {
-                                Image("Apple_ID_Icon")
-                                    .resizable()
-                                    .frame(width: 75, height: 75)
-                            }
-//                            .sheet(isPresented: $showWebView)
-//                            {
-//                                WebView(url: appleID)
-//                            }
-                            Button {
+                            HStack
+                            {
+                                Button {
                                     showWebView.toggle()
-                            } label: {
-                                Image("Facebook_Icon")
-                                    .resizable()
-                                    .frame(width: 75, height: 75)
-                            }
-                            .sheet(isPresented: $showWebView)
-                            {
-                                WebView(url: facebook)
-                            }
-                            Button {
-                                showWebView.toggle()
-                                
-                            } label: {
-                                Image("Twitter_Icon")
-                                    .resizable()
-                                    .frame(width: 75, height: 75)
-                            }
-                            .sheet(isPresented: $showWebView)
-                            {
-                                WebView(url: twitter)
-                            }
-                            Button {
+                                } label: {
+                                    Image("Apple_ID_Icon")
+                                        .resizable()
+                                        .frame(width: 75, height: 75)
+                                }
+                                //                            .sheet(isPresented: $showWebView)
+                                //                            {
+                                //                                WebView(url: appleID)
+                                //                            }
+                                Button {
                                     showWebView.toggle()
-                            } label: {
-                                Image("Google_Icon")
-                                    .resizable()
-                                    .frame(width: 75, height: 75)
+                                } label: {
+                                    Image("Facebook_Icon")
+                                        .resizable()
+                                        .frame(width: 75, height: 75)
+                                }
+                                .sheet(isPresented: $showWebView)
+                                {
+                                    WebView(url: facebook)
+                                }
+                                Button {
+                                    showWebView.toggle()
+                                    
+                                } label: {
+                                    Image("Twitter_Icon")
+                                        .resizable()
+                                        .frame(width: 75, height: 75)
+                                }
+                                .sheet(isPresented: $showWebView)
+                                {
+                                    WebView(url: twitter)
+                                }
+                                Button {
+                                    showWebView.toggle()
+                                } label: {
+                                    Image("Google_Icon")
+                                        .resizable()
+                                        .frame(width: 75, height: 75)
+                                }
+                                .sheet(isPresented: $showWebView)
+                                {
+                                    WebView(url: google)
+                                }
                             }
-                            .sheet(isPresented: $showWebView)
+                            Text("or")
+                                .padding(.top, 30)
+                                .padding(.bottom, 10)
+                            Text("Login Using a Personal Email")
+                                .font(.title2)
+                                .padding(.bottom, 20)
+                            TextField("Email Address", text: $email)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            // if the password is wrong, it will be highlighted with a red border.
+                                .border(.red, width: CGFloat(wrongUsername))
+                            // a SecureField does not allow the user to visuallt see that they are typing.
+                            SecureField("Password", text: $password)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.07))
+                                .cornerRadius(10)
+                            // if the password is wrong it will be highlighted with a red border.
+                                .border(.red, width: CGFloat(wrongPassword))
+                            Button("Create Account")
                             {
-                                WebView(url: google)
+                                showingCreateAccountScreen = true
                             }
-                        }
-                        Text("or")
-                            .padding(.top, 30)
-                            .padding(.bottom, 10)
-                        Text("Login Using a Personal Email")
-                            .font(.title2)
-                            .padding(.bottom, 20)
-                        TextField("Email Address", text: $email)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        // if the password is wrong, it will be highlighted with a red border.
-                            .border(.red, width: CGFloat(wrongUsername))
-                        // a SecureField does not allow the user to visuallt see that they are typing.
-                        SecureField("Password", text: $password)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(Color.black.opacity(0.07))
-                            .cornerRadius(10)
-                        // if the password is wrong it will be highlighted with a red border.
-                            .border(.red, width: CGFloat(wrongPassword))
-                        Button("Create Account")
-                        {
-                            showingCreateAccountScreen = true
-                        }
                             .foregroundColor(Color("DarkBlue"))
-                        Button("Login")
-                        {
-                            // allows access to past login
-//                            something fucked
-                            checkCredientals()
-                            loginUser()
-//                            showingLoginScreen = true
+                            Button("Login")
+                            {
+                                // allows access to past login
+                                //                            something fucked
+                                checkCredientals()
+                                loginUser()
+                                //                            showingLoginScreen = true
+                            }
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 50)
+                            .background(Color("AzureBlue"))
+                            .cornerRadius(10)
+                            
+                            
                         }
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color("Clay"))
-                        .cornerRadius(10)
-                        
-                        
                     }
                 }
             }
-            
-            
         }
     }
+    
     
     private func loginUser() {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, err in

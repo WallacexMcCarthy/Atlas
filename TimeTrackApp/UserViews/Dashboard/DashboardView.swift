@@ -54,7 +54,7 @@ struct DashboardView: View
                                     Rectangle()
                                         .frame(width: 370, height: 320)
                                         .cornerRadius(20)
-                                        .foregroundColor(Color.blue.opacity(0.32))                                                          .shadow(color: .blue, radius: 5, x : 0, y : 5)
+                                        .foregroundColor(Color.blue.opacity(0.50))                                                          .shadow(color: .blue, radius: 5, x : 0, y : 5)
                                     VStack{
                                         Image(announcements[buttonIndex].immageLinkSource)
                                             .resizable()
@@ -66,12 +66,14 @@ struct DashboardView: View
                                         Text("Copyright © 2023- All Rights Reserved")
                                             .ignoresSafeArea()
                                             .font(.caption2)
+                                            .foregroundColor(Color.white)
                                         Text(announcements[buttonIndex].title)
                                             .frame(width: 330, height: 80)
                                             .padding(.horizontal, 30)
                                             .cornerRadius(10)
                                             .font(.title3)
                                             .ignoresSafeArea()
+                                            .foregroundColor(Color.white)
                                         
                                         
                                     }
@@ -80,6 +82,8 @@ struct DashboardView: View
                                     
                                 }
                             VStack{
+                                Spacer()
+                                    .frame(height: 30)
                                 Text(announcements[buttonIndex].announcment)
                                     .frame(width: 330)
                                     .padding(.horizontal, 30)
@@ -100,6 +104,7 @@ struct DashboardView: View
                         })
                     }
                 }
+                .background(Color.black.opacity(0.05))
             }
             
         }

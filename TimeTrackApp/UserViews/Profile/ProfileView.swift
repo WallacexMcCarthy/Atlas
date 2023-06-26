@@ -277,7 +277,7 @@ struct ProfileView: View {
                                                             ForEach(attendaceInfo) { info in
                                                                 VStack{
                                                                     ZStack{
-                                                                        Text(")
+                                                                        Text("")
                                                                             .padding()
                                                                             .frame(width: 350, height: 40)
                                                                             .background(Color.black.opacity(0.07))
