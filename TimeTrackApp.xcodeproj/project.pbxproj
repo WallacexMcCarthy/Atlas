@@ -50,6 +50,8 @@
 		2976F2EA2A43B44B0071CF22 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F2E92A43B44B0071CF22 /* TaskViewModel.swift */; };
 		2976F2EC2A43B4B10071CF22 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F2EB2A43B4B10071CF22 /* Task.swift */; };
 		2976F3252A476E420071CF22 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3242A476E420071CF22 /* CalenderView.swift */; };
+		2976F3272A492CCD0071CF22 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3262A492CCD0071CF22 /* Attendance.swift */; };
+		2976F3292A492D550071CF22 /* AttendancesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3282A492D550071CF22 /* AttendancesData.swift */; };
 		2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */; };
 		2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */; };
 		2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */; };
@@ -146,6 +148,8 @@
 		2976F2E92A43B44B0071CF22 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		2976F2EB2A43B4B10071CF22 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2976F3242A476E420071CF22 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		2976F3262A492CCD0071CF22 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
+		2976F3282A492D550071CF22 /* AttendancesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendancesData.swift; sourceTree = "<group>"; };
 		2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountConfirmationView.swift; sourceTree = "<group>"; };
 		2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationView.swift; sourceTree = "<group>"; };
@@ -390,6 +394,8 @@
 				944B28F128DA0D9A003C52DD /* EventsData */,
 				29FE3B1A28DF96BD0026B8E3 /* AnnouncementData */,
 				29FE3B0B28DD4EE20026B8E3 /* StudentsData */,
+				2976F3262A492CCD0071CF22 /* Attendance.swift */,
+				2976F3282A492D550071CF22 /* AttendancesData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -651,6 +657,7 @@
 				2967650628CD5A290043A235 /* SchoolInfoView.swift in Sources */,
 				29FE3B1E28DF96EC0026B8E3 /* AnnouncementData.swift in Sources */,
 				52D56B6F2A46855100F5D2DD /* ChatMessage.swift in Sources */,
+				2976F3272A492CCD0071CF22 /* Attendance.swift in Sources */,
 				29FE3B0D28DD4F220026B8E3 /* User.swift in Sources */,
 				2967650428CD5A180043A235 /* DashboardView.swift in Sources */,
 				52D56B4D2A44F41B00F5D2DD /* ChatUser.swift in Sources */,
@@ -672,6 +679,7 @@
 				29420ECE29AA9712000FDE9C /* ImagePicker.swift in Sources */,
 				29420EA329A855A5000FDE9C /* Utilities.swift in Sources */,
 				2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */,
+				2976F3292A492D550071CF22 /* AttendancesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

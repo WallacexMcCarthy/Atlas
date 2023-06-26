@@ -52,6 +52,7 @@ struct ProfileView: View {
     @State private var boxFourText = "Attendace Four Test"
     @State private var boxFiveName = "chevron.up"
     @State private var boxFiveText = "Attendace Five Test"
+    @State private var attendaceInfo = loadAttendanceData()
     var body: some View {
         if toAttendanceView
         {
@@ -273,211 +274,80 @@ struct ProfileView: View {
                                                             .padding(.bottom, 5)
                                                         )
                                                         {
-                                                            VStack{
-                                                                ZStack{
-                                                                    TextField("Attendace One", text: $boxOneText)
-                                                                        .padding()
-                                                                        .frame(width: 350, height: 40)
-                                                                        .background(Color.black.opacity(0.07))
-                                                                        .cornerRadius(2)
-                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
-                                                                        .disabled(true)
-                                                                    HStack{
-                                                                        Spacer()
-                                                                            .frame(width: 300)
-                                                                        Button{
-                                                                            if(boxOneName == "chevron.up"){
-                                                                                boxOneName = "chevron.down"
-                                                                            }else{
-                                                                                boxOneName = "chevron.up"
-                                                                            }
+                                                            ForEach(attendaceInfo) { info in
+                                                                VStack{
+                                                                    ZStack{
+                                                                        Text(")
+                                                                            .padding()
+                                                                            .frame(width: 350, height: 40)
+                                                                            .background(Color.black.opacity(0.07))
+                                                                            .cornerRadius(2)
+                                                                            .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
                                                                             
-                                                                        } label: {
-                                                                            Image(systemName: "\(boxOneName)")
-                                                                              .resizable()
-                                                                              .scaleEffect(0.24)
-                                                                              .foregroundColor(Color.black)
+                                                                        HStack{
+                                                                            Spacer()
+                                                                                .frame(width: 300)
+                                                                            Button{
+                                                                                if(boxOneName == "chevron.up"){
+                                                                                    boxOneName = "chevron.down"
+                                                                                }else{
+                                                                                    boxOneName = "chevron.up"
+                                                                                }
+                                                                                
+                                                                            } label: {
+                                                                                Image(systemName: "\(boxOneName)")
+                                                                                  .resizable()
+                                                                                  .scaleEffect(0.24)
+                                                                                  .foregroundColor(Color.black)
+                                                                            }
                                                                         }
+                                                                        
                                                                     }
                                                                     
                                                                 }
-                                                                
-                                                            }
-                                                            .frame(maxHeight: 50)
-                                                            .padding(.bottom, 5)
-                                                            if(boxOneName == "chevron.down"){
-                                                                ScrollView{
+                                                                .frame(maxHeight: 50)
+                                                                .padding(.bottom, 5)
+                                                                if(boxOneName == "chevron.down"){
+                                                                    ScrollView{
+                                                                        VStack{
+                                                                            Spacer()
+                                                                            HStack{
+                                                                                Spacer()
+                                                                                    .frame(width: 10)
+                                                                                Text("Absences: ")
+                                                                                Spacer()
+                                                                            }
+                                                                            Spacer()
+                                                                            HStack{
+                                                                                Spacer()
+                                                                                    .frame(width: 10)
+                                                                                Text("Absent Periods: ")
+                                                                                Spacer()
+                                                                            }
+                                                                            Spacer()
+                                                                            HStack{
+                                                                                Spacer()
+                                                                                    .frame(width: 10)
+                                                                                Text("Tardies: ")
+                                                                                Spacer()
+                                                                            }
+                                                                            Spacer()
+                                                                            HStack{
+                                                                                Spacer()
+                                                                                    .frame(width: 10)
+                                                                                Text("Tardie Periods: ")
+                                                                                Spacer()
+                                                                            }
+                                                                            Spacer()
+                                                                        }
+                                                                        .frame(width: 350, height: 200)
+                                                                    }
+                                                                    .background(Color.black.opacity(0.05))
+                                                                    .frame(width: 350, height: 200)
+                                                                    .cornerRadius(5)
                                                                     
                                                                 }
-                                                                .background(Color.black)
-                                                                .frame(width: 350, height: 200)
-                                                                .cornerRadius(5)
-                                                                
                                                             }
-//                                                            VStack{
-//                                                                ZStack{
-//                                                                    TextField("Attendace Two", text: $boxTwoText)
-//                                                                        .padding()
-//                                                                        .frame(width: 350, height: 40)
-//                                                                        .background(Color.black.opacity(0.07))
-//                                                                        .cornerRadius(2)
-//                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
-//                                                                        .disabled(true)
-//                                                                    HStack{
-//                                                                        Spacer()
-//                                                                            .frame(width: 300)
-//                                                                        Button{
-//                                                                            if(boxTwoName == "chevron.up"){
-//                                                                                boxTwoName = "chevron.down"
-//                                                                            }else{
-//                                                                                boxTwoName = "chevron.up"
-//                                                                            }
-//
-//                                                                        } label: {
-//                                                                            Image(systemName: "\(boxTwoName)")
-//                                                                              .resizable()
-//                                                                              .scaleEffect(0.24)
-//                                                                              .foregroundColor(Color.black)
-//                                                                        }
-//                                                                    }
-//
-//                                                                }
-//
-//                                                            }
-//                                                            .frame(maxHeight: 50)
-//                                                            .padding(.bottom, 5)
-//                                                            if(boxTwoName == "chevron.down"){
-//                                                                ScrollView{
-//
-//                                                                }
-//                                                                .background(Color.black)
-//                                                                .frame(width: 350, height: 200)
-//                                                                .cornerRadius(5)
-//
-//                                                            }
-//                                                            VStack{
-//                                                                ZStack{
-//                                                                    TextField("Attendace Three", text: $boxThreeText)
-//                                                                        .padding()
-//                                                                        .frame(width: 350, height: 40)
-//                                                                        .background(Color.black.opacity(0.07))
-//                                                                        .cornerRadius(2)
-//                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
-//                                                                        .disabled(true)
-//                                                                    HStack{
-//                                                                        Spacer()
-//                                                                            .frame(width: 300)
-//                                                                        Button{
-//                                                                            if(boxThreeName == "chevron.up"){
-//                                                                                boxThreeName = "chevron.down"
-//                                                                            }else{
-//                                                                                boxThreeName = "chevron.up"
-//                                                                            }
-//
-//                                                                        } label: {
-//                                                                            Image(systemName: "\(boxThreeName)")
-//                                                                              .resizable()
-//                                                                              .scaleEffect(0.24)
-//                                                                              .foregroundColor(Color.black)
-//                                                                        }
-//                                                                    }
-//
-//                                                                }
-//
-//                                                            }
-//                                                            .frame(maxHeight: 50)
-//                                                            .padding(.bottom, 5)
-//                                                            if(boxThreeName == "chevron.down"){
-//                                                                ScrollView{
-//
-//                                                                }
-//                                                                .background(Color.black)
-//                                                                .frame(width: 350, height: 200)
-//                                                                .cornerRadius(5)
-//
-//                                                            }
-//                                                            VStack{
-//                                                                ZStack{
-//                                                                    TextField("Attendace Four", text: $boxFourText)
-//                                                                        .padding()
-//                                                                        .frame(width: 350, height: 40)
-//                                                                        .background(Color.black.opacity(0.07))
-//                                                                        .cornerRadius(2)
-//                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
-//                                                                        .disabled(true)
-//                                                                    HStack{
-//                                                                        Spacer()
-//                                                                            .frame(width: 300)
-//                                                                        Button{
-//                                                                            if(boxFourName == "chevron.up"){
-//                                                                                boxFourName = "chevron.down"
-//                                                                            }else{
-//                                                                                boxFourName = "chevron.up"
-//                                                                            }
-//
-//                                                                        } label: {
-//                                                                            Image(systemName: "\(boxFourName)")
-//                                                                              .resizable()
-//                                                                              .scaleEffect(0.24)
-//                                                                              .foregroundColor(Color.black)
-//                                                                        }
-//                                                                    }
-//
-//                                                                }
-//
-//                                                            }
-//                                                            .frame(maxHeight: 50)
-//                                                            .padding(.bottom, 5)
-//                                                            if(boxFourName == "chevron.down"){
-//                                                                ScrollView{
-//
-//                                                                }
-//                                                                .background(Color.black)
-//                                                                .frame(width: 350, height: 200)
-//                                                                .cornerRadius(5)
-//
-//                                                            }
-//                                                            VStack{
-//                                                                ZStack{
-//                                                                    TextField("Attendace Five", text: $boxFiveText)
-//                                                                        .padding()
-//                                                                        .frame(width: 350, height: 40)
-//                                                                        .background(Color.black.opacity(0.07))
-//                                                                        .cornerRadius(2)
-//                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
-//                                                                        .disabled(true)
-//                                                                    HStack{
-//                                                                        Spacer()
-//                                                                            .frame(width: 300)
-//                                                                        Button{
-//                                                                            if(boxFiveName == "chevron.up"){
-//                                                                                boxFiveName = "chevron.down"
-//                                                                            }else{
-//                                                                                boxFiveName = "chevron.up"
-//                                                                            }
-//
-//                                                                        } label: {
-//                                                                            Image(systemName: "\(boxFiveName)")
-//                                                                              .resizable()
-//                                                                              .scaleEffect(0.24)
-//                                                                              .foregroundColor(Color.black)
-//                                                                        }
-//                                                                    }
-//
-//                                                                }
-//
-//                                                            }
-//                                                            .frame(maxHeight: 50)
-//                                                            .padding(.bottom, 5)
-//                                                            if(boxFiveName == "chevron.down"){
-//                                                                ScrollView{
-//
-//                                                                }
-//                                                                .background(Color.black)
-//                                                                .frame(width: 350, height: 200)
-//                                                                .cornerRadius(5)
-//
-//                                                            }
                                                             Text("01/20/2023: Tardy periods: 2")
                                                                 .padding(.bottom, 5)
                                                             Text("01/28/2023: Tardy periods: 1, 4")
