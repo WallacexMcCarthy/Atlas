@@ -25,19 +25,19 @@ struct TabBarView: View
                                 Image(systemName: "house")
                                 Text("Dashboard")
                             }
-                        
-                        MainMessagesView()
+                        CalenderView(calendar: Calendar(identifier: .gregorian))
+
                             .tabItem
                             {
                                 Image(systemName: "person.3.fill")
-                                Text("Social")
+                                Text("Calender")
                             }
                         
-                        SocialView()
+                        MainMessagesView()
                              .tabItem
                              {
                                  Image(systemName: "text.bubble.fill")
-                                 Text("Help Desk")
+                                 Text("Messages")
                              }
                         
                         SchoolInfoView()

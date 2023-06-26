@@ -14,7 +14,9 @@ var textsss = "hello"
 struct DashboardView: View
 {
     
-    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @State var start = Date()
+    @StateObject var updaterViewModel = UpdaterViewModel()
+    let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
     let userData = loadUserData()
     let currentUserData = loadCurrentUserData()
     let impacts = loadMapData()
@@ -48,8 +50,6 @@ struct DashboardView: View
                                 .font(.largeTitle)
                                 .bold()
                             HStack{
-                                Spacer()
-                                    .frame(width: 20)
                                 ZStack{
                                     Rectangle()
                                         .frame(width: 370, height: 320)
@@ -72,25 +72,20 @@ struct DashboardView: View
                                             .cornerRadius(10)
                                             .font(.title3)
                                             .ignoresSafeArea()
-                                        Text(announcements[buttonIndex].announcment)
-                                            .frame(width: 330)
-                                            .padding(.horizontal, 30)
-                                            .cornerRadius(10)
-                                            .ignoresSafeArea()
-                                            .lineLimit(linesLimit)
-                                        Button{
-                                            linesLimit = 50
-                                        }label: {
-                                            Text("Read More")
-                                        }
+                                        
                                         
                                     }
                                     
+                                    }
+                                    
                                 }
-                                
-                                
-                                Spacer()
-                                    .frame(width: 20)
+                            VStack{
+                                Text(announcements[buttonIndex].announcment)
+                                    .frame(width: 330)
+                                    .padding(.horizontal, 30)
+                                    .cornerRadius(10)
+                                    .ignoresSafeArea()
+                                    .lineLimit(50)
                             }
                         }
                         .onReceive(timer, perform: {
@@ -111,7 +106,24 @@ struct DashboardView: View
         
     }
 }
+class UpdaterViewModel: ObservableObject {
+    @Published var index: Int = 0
+    @Published var now: Date = Date()
 
+    var timer: Timer?
+    init() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            self.refresh()
+        })
+    }
+    deinit {
+        timer?.invalidate()
+    }
+    func refresh() {
+        index += 1
+        now = Date()
+    }
+}
 
 
     struct DashboardView_Previews: PreviewProvider {
