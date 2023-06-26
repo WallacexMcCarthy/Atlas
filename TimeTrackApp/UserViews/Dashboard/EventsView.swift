@@ -47,27 +47,12 @@ struct EventsView: View {
                         }
                             .frame(height: 600)
                             .ignoresSafeArea(.all)
-                        
-                        Button("Back to Daskboard")
-                        {
-                            toEvents = true
-                        }
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue.opacity(0.15))
-                        .foregroundColor(Color.black)
-                        .cornerRadius(20)
-                        .ignoresSafeArea()
-    //                    {
-    //
-    //                        MapMarker(coordinate: impact.location, tint: Color.blue)
-    //                    }
-                                            }
+                                                                    }
                 }
 //                .navigationTitle("Event Map")
             }
             
         }
-        .navigationBarHidden(true)
     }
     
 }
