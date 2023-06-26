@@ -201,7 +201,7 @@ struct swipeGesture: UIViewRepresentable {
         LazyVStack(spacing: 10) {
                     if let tasks = taskModel.filteredTasks {
                         if tasks.isEmpty {
-                            Text("No Task")
+                            Text("No Upcoming Events")
                                 .font(.system(size: 16))
                                 .fontWeight(.light)
                                 .offset(y: 100)

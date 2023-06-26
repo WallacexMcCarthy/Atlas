@@ -100,6 +100,7 @@ struct MainMessagesView: View {
     @State var shouldShowLogOutOptions = false
     
     @State var shouldNavigateToChatLogView = false
+    @State var shouldNavigateToAIChatLogView = false
     
     @ObservedObject var vm = MainMessagesViewModel()
     
@@ -152,6 +153,9 @@ struct MainMessagesView: View {
 //                    ChatLogView(chatUser: self.chatUser)
                     ChatLogView(vm: chatLogViewModel)
                 }
+                NavigationLink("", isActive: $shouldNavigateToAIChatLogView) {
+                    SocialView()
+                }
                 customNavBar
                 messagesView
             }
@@ -166,6 +170,7 @@ struct MainMessagesView: View {
             ScrollView {
                 VStack {
                     Button {
+                        shouldNavigateToAIChatLogView.toggle()
                     } label: {
                         HStack(spacing: 16) {
     //                            Image(systemName: "person.fill")
