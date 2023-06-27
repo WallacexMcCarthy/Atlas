@@ -32,15 +32,17 @@ struct CalenderView: View
             VStack{
                 HStack {
                     VStack(alignment: .center, spacing: 10) {
+                        
+                        
+                        Text("  Calender")
+                            .font(.title.bold())
+                        
                         HStack{
                             Spacer()
                                 .frame(width: 10)
-                            Text(Date().formatted(date: .abbreviated, time: .omitted))
-                                .foregroundColor(.gray)
+//                            Text("\(Date().formatted(date: .abbreviated, time: .omitted))")
+//                                .foregroundColor(.gray)
                         }
-                        
-                        Text("  Today")
-                            .font(.title.bold())
                     }
                     
                     Spacer()
@@ -59,7 +61,7 @@ struct CalenderView: View
                             }
                         }) {
                             VStack(spacing: 10) {
-                                Text(dayFormatter.string(from: date))
+                                Text("\(dayFormatter.string(from: date))")
                                     .font(.system(size: 15))
                                     .fontWeight(.semibold)
                                 

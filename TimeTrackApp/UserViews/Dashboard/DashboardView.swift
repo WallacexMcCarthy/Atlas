@@ -25,7 +25,7 @@ struct DashboardView: View
     @State private var toMaps = false
     @State private var toEvent = false
     @State private var indexs = 0
-    @State private var linesLimit = 10
+    @State private var linesLimit = 5
     @State private var seeMoreActive = false;
     @State private var readMoreText = "Read More"
     
@@ -48,9 +48,13 @@ struct DashboardView: View
                         
                         
                         VStack{
-                            Text("Dashboard")
-                                .font(.largeTitle)
-                                .bold()
+                            HStack{
+                                Text("Dashboard")
+                                    .font(.largeTitle)
+                                    .bold()
+                                Spacer()
+                                    .frame(width: 140)
+                            }
                             HStack{
                                 ZStack{
                                     Rectangle()
