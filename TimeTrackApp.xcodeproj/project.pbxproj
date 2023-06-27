@@ -52,6 +52,8 @@
 		2976F3252A476E420071CF22 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3242A476E420071CF22 /* CalenderView.swift */; };
 		2976F3272A492CCD0071CF22 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3262A492CCD0071CF22 /* Attendance.swift */; };
 		2976F3292A492D550071CF22 /* AttendancesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F3282A492D550071CF22 /* AttendancesData.swift */; };
+		2976F32D2A4B0F1F0071CF22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F32C2A4B0F1F0071CF22 /* Post.swift */; };
+		2976F32F2A4B0F4E0071CF22 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976F32E2A4B0F4E0071CF22 /* PostView.swift */; };
 		2992F27228E3852600DC69AA /* CreateAccountConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */; };
 		2999BEC02954C3D900DEF6F6 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */; };
 		2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */; };
@@ -150,6 +152,8 @@
 		2976F3242A476E420071CF22 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		2976F3262A492CCD0071CF22 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		2976F3282A492D550071CF22 /* AttendancesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendancesData.swift; sourceTree = "<group>"; };
+		2976F32C2A4B0F1F0071CF22 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2976F32E2A4B0F4E0071CF22 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		2992F27128E3852600DC69AA /* CreateAccountConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountConfirmationView.swift; sourceTree = "<group>"; };
 		2999BEBF2954C3D800DEF6F6 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		2999BEC129560D3C00DEF6F6 /* ProfileConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationView.swift; sourceTree = "<group>"; };
@@ -347,6 +351,8 @@
 				2976F2E52A3BB9D10071CF22 /* Events.swift */,
 				2976F2E92A43B44B0071CF22 /* TaskViewModel.swift */,
 				2976F2EB2A43B4B10071CF22 /* Task.swift */,
+				2976F32C2A4B0F1F0071CF22 /* Post.swift */,
+				2976F32E2A4B0F4E0071CF22 /* PostView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -637,10 +643,12 @@
 			files = (
 				2999BEC229560D3C00DEF6F6 /* ProfileConfirmationView.swift in Sources */,
 				52D56B532A454DF400F5D2DD /* ChatLogView.swift in Sources */,
+				2976F32F2A4B0F4E0071CF22 /* PostView.swift in Sources */,
 				944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */,
 				29420ECB29AA8BA8000FDE9C /* MainMessagesView.swift in Sources */,
 				29D040BA29B3AD440003893D /* WebView.swift in Sources */,
 				29DDC36128DC10DD00FCC3F0 /* EventsView.swift in Sources */,
+				2976F32D2A4B0F1F0071CF22 /* Post.swift in Sources */,
 				29FE3B1228DE52AB0026B8E3 /* AttendanceConfirmationView.swift in Sources */,
 				29FE3B0F28DD4F320026B8E3 /* UserData.swift in Sources */,
 				296764D728CCD65A0043A235 /* LoginView.swift in Sources */,
