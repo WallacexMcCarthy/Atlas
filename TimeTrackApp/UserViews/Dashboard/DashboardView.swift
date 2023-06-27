@@ -110,11 +110,11 @@ struct DashboardView: View
                                         if(seeMoreActive == true){
                                             seeMoreActive = false
                                             linesLimit = 5
-                                            readMoreText = "Read Less"
+                                            readMoreText = "Read More"
                                         }else{
                                             seeMoreActive = true
                                             linesLimit = 50
-                                            readMoreText = "Read More"
+                                            readMoreText = "Read Less"
                                         }
                                         
                                     }label: {

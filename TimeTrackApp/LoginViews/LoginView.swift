@@ -153,7 +153,8 @@ struct LoginView: View
                             {
                                 // allows access to past login
                                 //                            something fucked
-                                checkCredientals()
+//                                checkCredientals()
+                                showingLoginScreen = true
                                 loginUser()
                                 //                            showingLoginScreen = true
                             }
@@ -222,17 +223,17 @@ struct LoginView: View
             }
         }
         // updates all values to the current user data set assuming that the user has inputed in their correct password and user name.
-        do {
-            if(userData[indexValue].password == password)
-            {
-                currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))
-                showingLoginScreen = true
-            }
-        } catch
-        {
-            wrongPassword = 2
-        }
-        
+//        do {
+//            if(userData[indexValue].password == password)
+//            {
+//                currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))
+//                showingLoginScreen = true
+//            }
+//        } catch
+//        {
+//            wrongPassword = 2
+//        }
+//
         if(userUsername == "" || userUsername == " ")
         {
             showingLoginScreen = false

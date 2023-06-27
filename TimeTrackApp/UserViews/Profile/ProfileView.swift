@@ -83,12 +83,12 @@ struct ProfileView: View {
                                     ZStack{
                                         Capsule()
                                             .frame(width: 350, height: 51)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(.blue)
                                         HStack{
                                             Spacer()
                                                 .frame(width: spacingLeft)
                                             Capsule().frame(width: 175, height: 50)
-                                                .foregroundColor(.black.opacity(0.3))
+                                                .foregroundColor(.white.opacity(0.3))
                                             Spacer()
                                                 .frame(width: spacingRight)
                                         }
@@ -98,11 +98,13 @@ struct ProfileView: View {
                                             Text("Profile")
                                                 .font(.title2)
                                                 .bold()
+                                                .foregroundColor(.white)
                                             Spacer()
                                                 .frame(width: 85)
                                             Text("Attendance")
                                                 .font(.title2)
                                                 .bold()
+                                                .foregroundColor(.white)
                                         }
                                     }
                                 }
@@ -171,7 +173,7 @@ struct ProfileView: View {
                                         VStack
                                         {
                                             ZStack {
-                                                
+
                                                 Button{
                                                     
                                                 } label: {
@@ -217,8 +219,11 @@ struct ProfileView: View {
                                                     }
                                                     Spacer()
                                                         .frame(height: 100)
+                    
                                                 }
                                             }
+        
+                                            
                                             VStack{
                                                 Spacer()
                                                     .frame(height: 25)
@@ -227,7 +232,7 @@ struct ProfileView: View {
                                                         .frame(width: 30)
                                                     Text("Full Name: ")
                                                     Spacer()
-                                                    Text("Wallace McCarthy")
+                                                    Text("Dheeraj Vislawath")
                                                         .padding()
                                                         .frame(width: 200, height: 40)
                                                         .background(Color.black.opacity(0.07))
@@ -294,7 +299,7 @@ struct ProfileView: View {
                                                     .frame(width: 30)
                                                 Text("Email: ")
                                                 Spacer()
-                                                Text("wallace@gmail.com")
+                                                Text("dheerajv@gmail.com")
                                                     .padding()
                                                     .frame(width: 200, height: 40)
                                                     .background(Color.black.opacity(0.07))
@@ -305,24 +310,24 @@ struct ProfileView: View {
                                                     .frame(width: 30)
                                             }
                                             Spacer()
-                                                .frame(height: 80)
+                                                .frame(height: 60)
                                             
                                             // directs the user to a eddit profiel page
                                             Button("Edit User Profile Information")
                                             {
     //                                            toConfirmationView = true
                                             }
-                                            .frame(width: 300, height: 50)
+                                            .frame(width: 350, height: 50)
                                             .background(Color.blue)
                                             .cornerRadius(10)
                                             .foregroundColor(Color.white)
                                             Spacer()
-                                                .frame(height: 20)
+                                                .frame(height: 10)
                                             Button("Logout")
                                             {
                                                 logout = true
                                             }
-                                            .frame(width: 300, height: 50)
+                                            .frame(width: 350, height: 50)
                                             .background(Color.blue)
                                             .cornerRadius(10)
                                             .foregroundColor(Color.white)
@@ -345,10 +350,10 @@ struct ProfileView: View {
                                                 {
                                                     
                                                     VStack {
-                                                        Text("Attendance")
-                                                            .font(.title)
-                                                            .bold()
-                                                            .padding(30)
+//                                                        Text("Attendance")
+//                                                            .font(.title)
+//                                                            .bold()
+//                                                            .padding(30)
                                                         
                                                         Section(header: Text("Recent Attendance Entries")
                                                             .font(Font.title3)
@@ -435,11 +440,13 @@ struct ProfileView: View {
                                                                     .padding(.bottom, 5)
                                                             }
                                                             
+                                                            Spacer()
+                                                                .frame(height: 20)
                                                             
                                                             Section(header: Text("Enter Attendance Data")
                                                                 .font(Font.title3)
                                                                 .bold()
-                                                                .padding()
+//                                                                .padding()
                                                             )
                                                             {
                                                                 //                                Text("Enter Attendance")
@@ -451,23 +458,25 @@ struct ProfileView: View {
                                                                 DatePicker("Select end date:", selection: $selectedEndDate, displayedComponents: [.date])
                                                                     .padding(.leading)
                                                                     .padding(.horizontal, 40)
-                                                                Text("Details:")
-                                                                    .font(.title3)
+//                                                                Text("Details:")
+//                                                                    .font(.title3)
+//                                                                    .padding()
+                                                                Spacer()
+                                                                    .frame(height: 30)
+                                                                TextField("Reason for Absence or Tardy", text: $reasonForAttendance)
                                                                     .padding()
-                                                                TextField("Reason for Abasence or Tardy", text: $reasonForAttendance)
-                                                                    .padding()
-                                                                    .frame(width: 300, height: 50)
+                                                                    .frame(width: 350, height: 50)
                                                                     .background(Color.black.opacity(0.07))
                                                                     .cornerRadius(10)
                                                                 Spacer()
-                                                                    .frame(height: 20)
+                                                                    .frame(height: 10)
                                                                 Button("Update Attendance")
                                                                 {
                                                                     toConfirmationView = true
                                                                 }
                                                                 .foregroundColor(.white)
-                                                                .frame(width: 300, height: 50)
-                                                                .background(Color("Clay"))
+                                                                .frame(width: 350, height: 50)
+                                                                .background(Color.blue)
                                                                 .cornerRadius(10)
                                                                 Spacer()
                                                                     .frame(height: 30)
