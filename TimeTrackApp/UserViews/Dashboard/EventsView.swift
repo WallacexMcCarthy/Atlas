@@ -31,13 +31,33 @@ struct EventsView: View {
             {
                 ZStack
                 {
-                    
                     VStack {
                         
-                        
-                        Text(impact.title)
-                        Text("\(impact.date.formatted())")
-                        Text(impact.details)
+                        ZStack{
+                            Rectangle()
+                                .frame(width: 370, height: 320)
+                                .cornerRadius(20)
+                                .foregroundColor(Color.blue.opacity(0.50))                        .shadow(color: .blue, radius: 5, x : 0, y : 5)
+                            VStack{
+                                Image(systemName: "camera")
+                                    .resizable()
+                                    .frame(width: 200, height: 150)
+                                    .ignoresSafeArea()
+                                    .padding(.horizontal, 20)
+                                Text(impact.title)
+                                    .ignoresSafeArea()
+                                    .font(.caption2)
+                                    .foregroundColor(Color.white)
+                                Text("\(impact.date.formatted())")
+                                    .ignoresSafeArea()
+                                    .font(.caption2)
+                                    .foregroundColor(Color.white)
+                                Text(impact.details)
+                                    .ignoresSafeArea()
+                                    .font(.caption2)
+                                    .foregroundColor(Color.white)
+                            }
+                        }
                         // creates the map and calls the event region.
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                         {
@@ -45,7 +65,7 @@ struct EventsView: View {
                             // fix ****************************************
                             MapMarker(coordinate: pin.regions.center, tint: Color.red.opacity(0.8))
                         }
-                            .frame(height: 600)
+                            .frame(height: 400)
                             .ignoresSafeArea(.all)
                                                                     }
                 }
