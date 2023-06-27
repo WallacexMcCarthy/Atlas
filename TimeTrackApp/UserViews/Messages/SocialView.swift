@@ -24,7 +24,7 @@ final class ViewModel: ObservableObject {
         This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
         */
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        client = OpenAISwift(authToken: "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")
     }
     /**
         This function will send the message to the OpenAI API and then recieve a response from the API and then display the response in the chat.
@@ -66,7 +66,7 @@ struct SocialView: View
                         .bold()
                     Image(systemName: "bubble.left.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color("Clay"))
+                        .foregroundColor(Color.blue)
                     
                 }
                 ScrollView()
@@ -122,7 +122,7 @@ struct SocialView: View
                         sendMessage(message: messageText)
                     }label: {
                         Image(systemName: "paperplane.fill")
-                            .foregroundColor(Color("Clay"))
+                            .foregroundColor(Color.blue)
                     }
                     .font(.system(size: 26))
                     .padding(.horizontal, 10)
