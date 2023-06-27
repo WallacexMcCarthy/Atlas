@@ -27,6 +27,7 @@ class ChatLogViewModel: ObservableObject {
     var chatUser: ChatUser?
     
     init(chatUser: ChatUser?) {
+        print(chatUser?.email)
         self.chatUser = chatUser
         
         fetchMessages()
@@ -76,6 +77,7 @@ class ChatLogViewModel: ObservableObject {
         guard let fromId = FirebaseManager.shared.auth.currentUser?.uid
             else { return }
         print(fromId)
+        print(chatUser?.uid)
         guard let toId = chatUser?.uid else { return }
         print(toId)
         let document = FirebaseManager.shared.firestore.collection("messages")
@@ -284,9 +286,6 @@ private struct DescriptionPlaceholder: View {
 
 struct ChatLogView_Previews: PreviewProvider {
     static var previews: some View {
-//        NavigationView {
-//            ChatLogView(chatUser: .init(data: ["uid": "hK59cZI4jQZkKAQ024dYxyB6juJ3", "email": "science@gmail.com"]))
-//        }
         MainMessagesView()
     }
 }
