@@ -159,6 +159,7 @@ struct ProfileView: View {
                                                     .clipShape(Circle())
                                                     .overlay(Circle().stroke( Color.blue, lineWidth: 5))
                                             }
+                                            .disabled(true) 
                                             VStack {
                                                 HStack{
                                                     Spacer()
@@ -175,7 +176,6 @@ struct ProfileView: View {
                                                           .clipShape(Circle())
                                                           .overlay(Circle().stroke( Color.white, lineWidth: 3))
                                                     }
-                                                    .disabled(true)
                                                 }
                                                 Spacer()
                                                     .frame(height: 100)
