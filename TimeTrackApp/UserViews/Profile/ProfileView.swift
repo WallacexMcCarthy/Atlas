@@ -53,6 +53,12 @@ struct ProfileView: View {
     @State private var boxFiveName = "chevron.up"
     @State private var boxFiveText = "Attendace Five Test"
     @State private var attendaceInfo = loadAttendanceData()
+    // Image Picker
+    @State var imageSelectedOne = UIImage()
+    @State var newImagePickerOne = false
+    @State var changeProfileIamge = false
+    @State var openCameraRoll = false
+
     var body: some View {
         if toAttendanceView
         {
@@ -71,28 +77,34 @@ struct ProfileView: View {
                             Spacer()
                         .frame(height: 50)
                             ZStack {
-                                Capsule()
-                                    .frame(width: 350, height: 51)
-                                    .foregroundColor(.white)
-                                HStack{
+                                VStack{
                                     Spacer()
-                                        .frame(width: spacingLeft)
-                                    Capsule().frame(width: 175, height: 50)
-                                        .foregroundColor(.black.opacity(0.3))
-                                    Spacer()
-                                        .frame(width: spacingRight)
-                                }
-                                HStack{
-                                    Spacer()
-                                        .frame(width: 30)
-                                    Text("Profile")
-                                        .font(.title2)
-                                        .bold()
-                                    Spacer()
-                                        .frame(width: 85)
-                                    Text("Attendance")
-                                        .font(.title2)
-                                        .bold()
+                                        .frame(height: 20)
+                                    ZStack{
+                                        Capsule()
+                                            .frame(width: 350, height: 51)
+                                            .foregroundColor(.white)
+                                        HStack{
+                                            Spacer()
+                                                .frame(width: spacingLeft)
+                                            Capsule().frame(width: 175, height: 50)
+                                                .foregroundColor(.black.opacity(0.3))
+                                            Spacer()
+                                                .frame(width: spacingRight)
+                                        }
+                                        HStack{
+                                            Spacer()
+                                                .frame(width: 30)
+                                            Text("Profile")
+                                                .font(.title2)
+                                                .bold()
+                                            Spacer()
+                                                .frame(width: 85)
+                                            Text("Attendance")
+                                                .font(.title2)
+                                                .bold()
+                                        }
+                                    }
                                 }
                             }
                             .scaleEffect(isPressed ? 1.05 : 1.0)
@@ -124,6 +136,12 @@ struct ProfileView: View {
                                 }
                             }
                         }
+                // image picker below
+                .sheet(isPresented: $openCameraRoll)
+                {
+                    ImagePicker(selectedImage: $imageSelectedOne, sourceType: .photoLibrary)
+                    
+                }
                 .ignoresSafeArea()
 //                .background(Color("Beige"))
 
@@ -142,111 +160,175 @@ struct ProfileView: View {
                             {
                                 
                                 Spacer()
-                                    .frame(height: 30)
+                                    .frame(height: 45)
                                 if(isProfile){
-                                    VStack
-                                    {
-                                        ZStack {
-                                            Button{
+                                    ZStack {
+                                        Rectangle()
+                                            .frame(width: 370, height: 480)
+                                            .cornerRadius(20)
+                                            .foregroundColor(Color.white)                                                          .shadow(color: .black, radius: 5, x : 0, y : 4)
+                                            .position(x: 196, y: 221)
+                                        VStack
+                                        {
+                                            ZStack {
                                                 
-                                            } label: {
-                                                Image("\(studentInfo.imageLinkSource)")
-                                                    .resizable()
-                                                    .frame(width: 140, height: 140)
-                                                    .foregroundColor(.white)
+                                                Button{
                                                     
-                                                    .background(Color.green)
-                                                    .clipShape(Circle())
-                                                    .overlay(Circle().stroke( Color.blue, lineWidth: 5))
-                                            }
-                                            .disabled(true) 
-                                            VStack {
-                                                HStack{
-                                                    Spacer()
-                                                        .frame(width: 100)
-                                                    Button{
+                                                } label: {
+                                                    if(changeProfileIamge)
+                                                    {
+                                                        Image(uiImage: imageSelectedOne)
+                                                            .resizable()
+                                                            .frame(width: 140, height: 140)
+                                                            .foregroundColor(.white)
                                                         
-                                                    } label: {
-                                                        Image(systemName: "camera")
-                                                          .resizable()
-                                                          .frame(width: 15, height: 15)
-                                                          .foregroundColor(.white)
-                                                          .padding(15)
-                                                          .background(Color.green)
-                                                          .clipShape(Circle())
-                                                          .overlay(Circle().stroke( Color.white, lineWidth: 3))
+                                                            .clipShape(Circle())
+                                                            .overlay(Circle().stroke( Color.blue, lineWidth: 5))
+                                                    }else{
+                                                        Image("\(studentInfo.imageLinkSource)")
+                                                            .resizable()
+                                                            .frame(width: 140, height: 140)
+                                                            .foregroundColor(.white)
+                                                        
+                                                            .clipShape(Circle())
+                                                            .overlay(Circle().stroke( Color.blue, lineWidth: 5))
+                                                    
                                                     }
                                                 }
-                                                Spacer()
-                                                    .frame(height: 100)
+                                                .disabled(true)
+                                                VStack {
+                                                    HStack{
+                                                        Spacer()
+                                                            .frame(width: 100)
+                                                        Button{
+                                                            // image Picker
+                                                            changeProfileIamge = true
+                                                                                                   openCameraRoll = true
+                                                        } label: {
+                                                            Image(systemName: "camera")
+                                                                .resizable()
+                                                                .frame(width: 15, height: 15)
+                                                                .foregroundColor(.white)
+                                                                .padding(15)
+                                                                .background(Color.green)
+                                                                .clipShape(Circle())
+                                                                .overlay(Circle().stroke( Color.white, lineWidth: 3))
+                                                        }
+                                                    }
+                                                    Spacer()
+                                                        .frame(height: 100)
+                                                }
                                             }
-                                        }
-                                        HStack{
-                                            Text("Full Name: ")
-                                            TextField("Full Name", text: $fullName)
-                                                .padding()
-                                                .frame(width: 250, height: 40)
-                                                .background(Color.black.opacity(0.07))
-                                                .cornerRadius(10)
-                                                .disabled(true)
-                                        }
-                                        HStack{
-                                            Text("Date of Birth:")
-                                            TextField("Full Name", text: $fullName)
-                                                .padding()
-                                                .frame(width: 250, height: 40)
-                                                .background(Color.black.opacity(0.07))
-                                                .cornerRadius(10)
-                                                .disabled(true)
-                                        }
-                                        Text("School: \(studentInfo.school)")
-                                            .frame(width: 400, height: 50)
-                                            .background(Color("Beige"))
-                                        Text("Grade: \(studentInfo.grade)")
-                                            .frame(width: 400, height: 50)
-                                            .background(Color("Beige"))
-                                        Text("Security Question: \(studentInfo.securityQuestion)")
-                                            .frame(width: 400, height: 50)
-                                            .background(Color("Beige"))
+                                            VStack{
+                                                Spacer()
+                                                    .frame(height: 25)
+                                                HStack{
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                    Text("Full Name: ")
+                                                    Spacer()
+                                                    Text("Wallace McCarthy")
+                                                        .padding()
+                                                        .frame(width: 200, height: 40)
+                                                        .background(Color.black.opacity(0.07))
+                                                        .cornerRadius(10)
+                                                        .disabled(true)
+                                                    
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                }
+                                                Spacer()
+                                                    .frame(height: 15)
+                                                HStack{
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                    Text("Date of Birth: ")
+                                                    Spacer()
+                                                    Text("09/12/2005")
+                                                        .padding()
+                                                        .frame(width: 200, height: 40)
+                                                        .background(Color.black.opacity(0.07))
+                                                        .cornerRadius(10)
+                                                    
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                    
+                                                }
+                                                Spacer()
+                                                    .frame(height: 15)
+                                                HStack{
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                    Text("School: ")
+                                                    Spacer()
+                                                    Text("Hillcrest Highschool")
+                                                        .padding()
+                                                        .frame(width: 200, height: 40)
+                                                        .background(Color.black.opacity(0.07))
+                                                        .cornerRadius(10)
+                                                    
+                                                    Spacer()
+                                                        .frame(width: 30)
+                                                }
+                                                Spacer()
+                                                    .frame(height: 15)
+                                            }
+                                            HStack{
+                                                Spacer()
+                                                    .frame(width: 30)
+                                                Text("Grade: ")
+                                                Spacer()
+                                                Text("12th Grade")
+                                                    .padding()
+                                                    .frame(width: 200, height: 40)
+                                                    .background(Color.black.opacity(0.07))
+                                                    .cornerRadius(10)
+                                                
+                                                Spacer()
+                                                    .frame(width: 30)
+                                            }
+                                            Spacer()
+                                                .frame(height: 15)
+                                            HStack{
+                                                Spacer()
+                                                    .frame(width: 30)
+                                                Text("Email: ")
+                                                Spacer()
+                                                Text("wallace@gmail.com")
+                                                    .padding()
+                                                    .frame(width: 200, height: 40)
+                                                    .background(Color.black.opacity(0.07))
+                                                    .foregroundColor(Color.black)
+                                                    .cornerRadius(10)
+                                                
+                                                Spacer()
+                                                    .frame(width: 30)
+                                            }
+                                            Spacer()
+                                                .frame(height: 80)
+                                            
+                                            // directs the user to a eddit profiel page
+                                            Button("Edit User Profile Information")
+                                            {
+    //                                            toConfirmationView = true
+                                            }
+                                            .frame(width: 300, height: 50)
+                                            .background(Color.blue)
+                                            .cornerRadius(10)
+                                            .foregroundColor(Color.white)
+                                            Spacer()
+                                                .frame(height: 20)
+                                            Button("Logout")
+                                            {
+                                                logout = true
+                                            }
+                                            .frame(width: 300, height: 50)
+                                            .background(Color.blue)
+                                            .cornerRadius(10)
+                                            .foregroundColor(Color.white)
+                                            
                                     }
-                //                    Text("Security Answer: \(studentInfo.securityAnswer)")
-                                    Text("Security Answer: *****")
-                                        .frame(width: 400, height: 50)
-                                        .background(Color("Beige"))
-                                    Text("Email: \(studentInfo.emailAddress)")
-                                        .frame(width: 400, height: 50)
-                                        .background(Color("Beige"))
-                                    
-                                    // directs the user to a eddit profiel page
-                                    Button("Edit User Profile Information")
-                                    {
-                                        toConfirmationView = true
                                     }
-                                    .foregroundColor(Color("DarkBlue"))
-                                    .frame(width: 300, height: 50)
-                                    .background(Color("Clay"))
-                                    .cornerRadius(10)
-                                    
-                                    // directs the user back to AttendanceView
-                                    Button("Return to Attendance")
-                                    {
-                                        toAttendanceView = true
-                                    }
-                                    .foregroundColor(Color("DarkBlue"))
-                                    .frame(width: 300, height: 50)
-                                    .background(Color("Clay"))
-                                    .cornerRadius(10)
-                                    Button("Logout")
-                                    {
-                                        logout = true
-                                    }
-                                    .foregroundColor(Color("DarkBlue"))
-                                    .frame(width: 300, height: 50)
-                                    .background(Color("Clay"))
-                                    .cornerRadius(10)
-                                    Spacer()
-                                        .frame(height: 80)
-                                    
                                 }else{
                                     if #available(iOS 16.0, *) {
                                         if toStudentProfile == true
@@ -261,8 +343,7 @@ struct ProfileView: View {
                                             {
                                                 ZStack
                                                 {
-                                                    Color("Beige")
-                                                        .ignoresSafeArea()
+                                                    
                                                     VStack {
                                                         Text("Attendance")
                                                             .font(.title)
@@ -275,88 +356,79 @@ struct ProfileView: View {
                                                             .padding(.bottom, 5)
                                                         )
                                                         {
-                                                            ForEach(attendaceInfo) { info in
-                                                                VStack{
-                                                                    ZStack{
-                                                                        Text("")
-                                                                            .padding()
-                                                                            .frame(width: 350, height: 40)
-                                                                            .background(Color.black.opacity(0.07))
-                                                                            .cornerRadius(2)
-                                                                            .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
+                                                            VStack{
+                                                                ZStack{
+                                                                    Text("")
+                                                                        .padding()
+                                                                        .frame(width: 350, height: 40)
+                                                                        .background(Color.black.opacity(0.07))
+                                                                        .cornerRadius(2)
+                                                                        .overlay(Rectangle().stroke( Color.black, lineWidth: 1).cornerRadius(5))
+                                                                        
+                                                                    HStack{
+                                                                        Spacer()
+                                                                            .frame(width: 300)
+                                                                        Button{
+                                                                            if(boxOneName == "chevron.up"){
+                                                                                boxOneName = "chevron.down"
+                                                                            }else{
+                                                                                boxOneName = "chevron.up"
+                                                                            }
                                                                             
+                                                                        } label: {
+                                                                            Image(systemName: "\(boxOneName)")
+                                                                              .resizable()
+                                                                              .scaleEffect(0.24)
+                                                                              .foregroundColor(Color.black)
+                                                                        }
+                                                                    }
+                                                                    
+                                                                }
+                                                                
+                                                            }
+                                                            .frame(maxHeight: 50)
+                                                            .padding(.bottom, 5)
+                                                            if(boxOneName == "chevron.down"){
+                                                                ScrollView{
+                                                                    VStack{
+                                                                        Spacer()
                                                                         HStack{
                                                                             Spacer()
-                                                                                .frame(width: 300)
-                                                                            Button{
-                                                                                if(boxOneName == "chevron.up"){
-                                                                                    boxOneName = "chevron.down"
-                                                                                }else{
-                                                                                    boxOneName = "chevron.up"
-                                                                                }
-                                                                                
-                                                                            } label: {
-                                                                                Image(systemName: "\(boxOneName)")
-                                                                                  .resizable()
-                                                                                  .scaleEffect(0.24)
-                                                                                  .foregroundColor(Color.black)
-                                                                            }
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                }
-                                                                .frame(maxHeight: 50)
-                                                                .padding(.bottom, 5)
-                                                                if(boxOneName == "chevron.down"){
-                                                                    ScrollView{
-                                                                        VStack{
-                                                                            Spacer()
-                                                                            HStack{
-                                                                                Spacer()
-                                                                                    .frame(width: 10)
-                                                                                Text("Absences: ")
-                                                                                Spacer()
-                                                                            }
-                                                                            Spacer()
-                                                                            HStack{
-                                                                                Spacer()
-                                                                                    .frame(width: 10)
-                                                                                Text("Absent Periods: ")
-                                                                                Spacer()
-                                                                            }
-                                                                            Spacer()
-                                                                            HStack{
-                                                                                Spacer()
-                                                                                    .frame(width: 10)
-                                                                                Text("Tardies: ")
-                                                                                Spacer()
-                                                                            }
-                                                                            Spacer()
-                                                                            HStack{
-                                                                                Spacer()
-                                                                                    .frame(width: 10)
-                                                                                Text("Tardie Periods: ")
-                                                                                Spacer()
-                                                                            }
+                                                                                .frame(width: 10)
+                                                                            Text("Absences: ")
                                                                             Spacer()
                                                                         }
-                                                                        .frame(width: 350, height: 200)
+                                                                        Spacer()
+                                                                        HStack{
+                                                                            Spacer()
+                                                                                .frame(width: 10)
+                                                                            Text("Absent Periods: ")
+                                                                            Spacer()
+                                                                        }
+                                                                        Spacer()
+                                                                        HStack{
+                                                                            Spacer()
+                                                                                .frame(width: 10)
+                                                                            Text("Tardies: ")
+                                                                            Spacer()
+                                                                        }
+                                                                        Spacer()
+                                                                        HStack{
+                                                                            Spacer()
+                                                                                .frame(width: 10)
+                                                                            Text("Tardie Periods: ")
+                                                                            Spacer()
+                                                                        }
+                                                                        Spacer()
                                                                     }
-                                                                    .background(Color.black.opacity(0.05))
                                                                     .frame(width: 350, height: 200)
-                                                                    .cornerRadius(5)
-                                                                    
                                                                 }
+                                                                .background(Color.black.opacity(0.05))
+                                                                .frame(width: 350, height: 200)
+                                                                .cornerRadius(5)
+                                                                
                                                             }
-                                                            Text("01/20/2023: Tardy periods: 2")
-                                                                .padding(.bottom, 5)
-                                                            Text("01/28/2023: Tardy periods: 1, 4")
-                                                                .padding(.bottom, 5)
-                                                            Text("02/07/2023: Truent periods: 8")
-                                                                .padding(.bottom, 5)
-                                                            Text("02/14/2023: Abasent periods: 2, 3")
-                                                                .padding(.bottom, 5)
+
                                                             if (toConfirmationView)
                                                             {
                                                                 Text("ATTENDANCE REQUEST |  \(selectedStartDate): \(reasonForAttendance)")
@@ -399,24 +471,15 @@ struct ProfileView: View {
                                                                 .cornerRadius(10)
                                                                 Spacer()
                                                                     .frame(height: 30)
-                                                                Button("User Profile")
-                                                                {
-                                                                    toStudentProfile = true
-                                                                }
-                                                                .foregroundColor(.white)
-                                                                .frame(width: 300, height: 50)
-                                                                .background(Color("Clay"))
-                                                                .cornerRadius(10)
+                                                                
                                                             }
                                                         }
                                                     }
                                                 }
-                                                //            .navigationTitle("Attandence")
                                                 
                                                 .navigationBarBackButtonHidden(true)
                                                 .navigationBarHidden(true)
                                             }
-                                            .background(Color("Beige"))
                                             //            .navigationBarBackButtonHidden()
                                         }
                                     } else {
@@ -424,18 +487,12 @@ struct ProfileView: View {
                                     }
                                 }
                             }
-                            .background(Color("Beige"))
                             
                         }
                     }
-                    .background(Color("Beige"))
                 }
-                .background(Color("Beige"))
-            .ignoresSafeArea()
             }
             .ignoresSafeArea()
-            .background(Color("Beige"))
-            
         }
     }
     
