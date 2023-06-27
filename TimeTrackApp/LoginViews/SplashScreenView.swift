@@ -40,7 +40,7 @@ struct SplashScreenView: View
                         Image(systemName: "map.circle")
                             .resizable()
                             .frame(width: 100, height: 100)
-                            .foregroundColor(Color("Clay"))
+                            .foregroundColor(Color.blue)
                         Text("ATLAS")
                             .font(Font.custom("Baskerville-Bold", size: 26))
                             .foregroundColor(Color("DarkBlue").opacity(1))

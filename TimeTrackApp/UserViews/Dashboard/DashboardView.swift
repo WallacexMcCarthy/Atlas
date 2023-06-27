@@ -26,6 +26,8 @@ struct DashboardView: View
     @State private var toEvent = false
     @State private var indexs = 0
     @State private var linesLimit = 10
+    @State private var seeMoreActive = false;
+    @State private var readMoreText = "Read More"
     
     
     var body: some View {
@@ -46,7 +48,7 @@ struct DashboardView: View
                         
                         
                         VStack{
-                            Text("Announcements")
+                            Text("Dashboard")
                                 .font(.largeTitle)
                                 .bold()
                             HStack{
@@ -89,7 +91,21 @@ struct DashboardView: View
                                     .padding(.horizontal, 30)
                                     .cornerRadius(10)
                                     .ignoresSafeArea()
-                                    .lineLimit(50)
+                                    .lineLimit(linesLimit)
+                                Button{
+                                    if(seeMoreActive == true){
+                                        seeMoreActive = false
+                                        linesLimit = 5
+                                        readMoreText = "Read Less"
+                                    }else{
+                                        seeMoreActive = true
+                                        linesLimit = 50
+                                        readMoreText = "Read More"
+                                    }
+                                    
+                                }label: {
+                                    Text("\(readMoreText)")
+                                }
                             }
                         }
                         .onReceive(timer, perform: {
