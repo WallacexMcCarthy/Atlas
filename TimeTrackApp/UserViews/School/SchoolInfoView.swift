@@ -108,7 +108,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -130,7 +130,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -152,7 +152,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -174,7 +174,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -195,7 +195,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -216,7 +216,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -236,7 +236,7 @@ struct SchoolInfoView: View
                                             .font((.title3))
                                     }
                                     .frame(width: 170, height: 90)
-                                    .background(Color("AzureBlue"))
+                                    .background(Color.blue)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }

@@ -250,18 +250,24 @@ struct MainMessagesView: View {
         Button {
             shouldShowNewMessageScreen.toggle()
         } label: {
-            HStack {
-                Spacer()
-                Text("+ New Message")
-                    .font(.system(size: 16, weight: .bold))
-                Spacer()
-            }
-            .foregroundColor(.white)
-            .padding(.vertical)
+            VStack {
+                HStack {
+                    Spacer()
+                    Text(" + New Message             ")
+                        .font(.system(size: 16, weight: .bold))
+                    Spacer()
+                }
+                .foregroundColor(.white)
+                .padding(.vertical)
                 .background(Color.blue)
                 .cornerRadius(32)
+                //            .frame(width: 150, height: 100)
                 .padding(.horizontal)
                 .shadow(radius: 15)
+                
+                Spacer()
+                    .frame(height: 30)
+            }
         }
         .fullScreenCover(isPresented: $shouldShowNewMessageScreen) {
             CreateNewMessagesView(didSelectNewUser: { user in
@@ -272,6 +278,7 @@ struct MainMessagesView: View {
 //                self.chatLogViewModel.chatUser = user
 //                self.chatLogViewModel.fetchMessages()
             })
+
         }
     }
     

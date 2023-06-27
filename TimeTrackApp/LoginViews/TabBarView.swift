@@ -57,7 +57,7 @@ struct TabBarView: View
                         
                     }
                     .background(Color.white)
-                .accentColor(.red) // highlights the icon red if clicked.
+                .accentColor(Color("SeaBlue")) // highlights the icon red if clicked.
                 .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             }

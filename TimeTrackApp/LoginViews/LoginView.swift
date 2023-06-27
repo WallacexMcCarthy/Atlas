@@ -222,11 +222,13 @@ struct LoginView: View
             }
         }
         // updates all values to the current user data set assuming that the user has inputed in their correct password and user name.
-        if(userData[indexValue].password == password)
-        {
-            currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))
-            showingLoginScreen = true
-        }else
+        do {
+            if(userData[indexValue].password == password)
+            {
+                currentUserData.append(CurrentUsers(fullName: userData[indexValue].fullName, securityQuestion:  userData[indexValue].securityQuestion, securityAnswer:  userData[indexValue].securityAnswer, emailAddress:  userData[indexValue].emailAddress, password:  userData[indexValue].password, grade:  userData[indexValue].grade, birthday:  userData[indexValue].birthday, school:  userData[indexValue].school, imageLinkSource:  userData[indexValue].imageLinkSource))
+                showingLoginScreen = true
+            }
+        } catch
         {
             wrongPassword = 2
         }

@@ -57,6 +57,9 @@ class ChatLogViewModel: ObservableObject {
                                 print("added")
                             
                         }
+                        catch {
+                            print("failed")
+                        }
                     }
                 })
                 
@@ -72,9 +75,9 @@ class ChatLogViewModel: ObservableObject {
         print(chatText)
         guard let fromId = FirebaseManager.shared.auth.currentUser?.uid
             else { return }
-        
+        print(fromId)
         guard let toId = chatUser?.uid else { return }
-            
+        print(toId)
         let document = FirebaseManager.shared.firestore.collection("messages")
             .document(fromId)
             .collection(toId)
@@ -95,6 +98,7 @@ class ChatLogViewModel: ObservableObject {
             self.chatText = ""
             self.count += 1
         }
+        print("reached")
         
         let recipientMessageDocument = FirebaseManager.shared.firestore.collection("messages")
             .document(toId)
