@@ -340,7 +340,7 @@ struct ProfileView: View {
                                                 .foregroundColor(Color.white)
                                                 .sheet(isPresented: $showWebView)
                                                 {
-                                                    WebView(url: URL(string: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D")!)
+                                                    WebView(url: URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSczNJfaSSBDrXbDiq_0MFUrp5-p4l6ELufSwO3a5X8yHFQeBQ/viewform")!)
                                                 }
                                                 Spacer()
                                                     .frame(height: 10)

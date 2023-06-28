@@ -19,17 +19,32 @@ struct PostView: View {
                 .position(x: 196, y: 175)
             VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 8) {
+                        Spacer()
+                            .frame(width: 10)
                         Image(post.profileImageName)
                             .resizable()
                             .clipShape(Circle())
                             .frame(width: 50, height: 50)
                         Text(post.userName).font(.headline)
+                        Spacer()
+                        Button{
+                            Link("", destination: URL(string: "instagram.com")!)
+                        }label: {
+                            Image(systemName: "square.and.arrow.up")
+                                
+                        }
+                        Spacer()
+                            .frame(width: 15)
                     }.padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
+                HStack{
+                    Spacer()
+                        .frame(width:12)
                     Image(post.imageName)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 368, height: 180)
                         .clipped()
+                }
                     Text(post.text)
                         .lineLimit(nil)
                         .font(.system(size: 15))
