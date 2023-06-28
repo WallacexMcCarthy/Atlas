@@ -58,6 +58,7 @@ struct ProfileView: View {
     @State var newImagePickerOne = false
     @State var changeProfileIamge = false
     @State var openCameraRoll = false
+    @State var showWebView = false
 
     var body: some View {
         if toAttendanceView
@@ -328,14 +329,30 @@ struct ProfileView: View {
                                             .foregroundColor(Color.white)
                                             Spacer()
                                                 .frame(height: 10)
-                                            Button("Logout")
-                                            {
-                                                logout = true
+                                            VStack{
+                                                Button("Report a Bug")
+                                                {
+                                                    showWebView.toggle()
+                                                }
+                                                .frame(width: 350, height: 50)
+                                                .background(Color.blue)
+                                                .cornerRadius(10)
+                                                .foregroundColor(Color.white)
+                                                .sheet(isPresented: $showWebView)
+                                                {
+                                                    WebView(url: URL(string: "https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D")!)
+                                                }
+                                                Spacer()
+                                                    .frame(height: 10)
+                                                Button("Logout")
+                                                {
+                                                    logout = true
+                                                }
+                                                .frame(width: 350, height: 50)
+                                                .background(Color.blue)
+                                                .cornerRadius(10)
+                                                .foregroundColor(Color.white)
                                             }
-                                            .frame(width: 350, height: 50)
-                                            .background(Color.blue)
-                                            .cornerRadius(10)
-                                            .foregroundColor(Color.white)
                                             
                                     }
                                     }
