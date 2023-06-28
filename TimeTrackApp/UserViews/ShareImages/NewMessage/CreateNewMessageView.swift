@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 class CreateNewMessageViewModel: ObservableObject {
     @Published var users = [ChatUser]()
@@ -28,7 +29,7 @@ class CreateNewMessageViewModel: ObservableObject {
                     let data = snapshot.data()
                     let user = ChatUser(data: data)
                     print(user.email)
-                    print(user.uid)
+                    
                     if user.uid != FirebaseManager.shared.auth.currentUser?.uid {
                         self.users.append(.init(data: data))
                     }
@@ -56,6 +57,15 @@ struct CreateNewMessagesView: View {
                             didSelectNewUser(user)
                         } label: {
                             HStack(spacing: 16) {
+                                WebImage(url: URL(string: user.profileImageUrl))
+                                                                .resizable()
+                                                                .scaledToFill()
+                                                                .frame(width: 50, height: 50)
+                                                                .clipped()
+                                                                .cornerRadius(50)
+                                                                .overlay(RoundedRectangle(cornerRadius: 50)
+                                                                            .stroke(Color(.label), lineWidth: 2)
+                                                                )
                                 Text(user.email)
                                     .foregroundColor(Color(.label))
                                 Spacer()

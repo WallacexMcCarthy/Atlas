@@ -34,10 +34,9 @@ struct CalenderView: View
                     VStack(alignment: .center, spacing: 10) {
                         
                         
-                        Text("  Calender")
-                            .font(.title.bold())
-                        
                         HStack{
+                            Text("Calendar")
+                                .font(.largeTitle.bold())
                             Spacer()
                                 .frame(width: 10)
 //                            Text("\(Date().formatted(date: .abbreviated, time: .omitted))")

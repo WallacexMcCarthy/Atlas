@@ -23,17 +23,24 @@ struct SchoolInfoView: View
                         .frame(width: 370, height: 480)
                         .cornerRadius(20)
                         .foregroundColor(Color.white)                                                          .shadow(color: .black, radius: 5, x : 0, y : 4)
-                        .position(x: 196, y: 291)
+                        .position(x: 196, y: 306)
                     
                     VStack
                     {
                         if #available(iOS 16.1, *) {
-                            Text("School Info")
-                                .bold()
-                                .font(.largeTitle)
+                            HStack{
+                                Text("School Info")
+                                    .font(.largeTitle)
+                                    .bold()
+                                Spacer()
+                                    .frame(width: 180)
+                            }
                         } else {
                             // Fallback on earlier versions
                         }
+                        
+                       Spacer()
+                            .frame(height: 40)
                         Image("InfoPic")
                             .resizable()
                             .frame(width: 344, height: 229)
@@ -245,7 +252,7 @@ struct SchoolInfoView: View
                     }
                 }
             }
-            .background(Color.black.opacity(0.05))
+            .background(Color.white)
         }
     }
 }

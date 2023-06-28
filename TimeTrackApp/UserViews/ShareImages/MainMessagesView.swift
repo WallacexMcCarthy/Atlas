@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
+import SDWebImageSwiftUI
 
         
 class MainMessagesViewModel: ObservableObject {
@@ -24,7 +25,7 @@ class MainMessagesViewModel: ObservableObject {
         }
         
         fetchCurrentUser()
-        
+    
         fetchRecentMessages()
     }
     
@@ -89,7 +90,6 @@ class MainMessagesViewModel: ObservableObject {
             }
             
             self.chatUser = .init(data: data)
-            
         }
     }
 }
@@ -107,12 +107,19 @@ struct MainMessagesView: View {
     private var customNavBar: some View {
         VStack{
             HStack(spacing: 16) {
-                
-                Image(systemName: "person.fill")
-                    .font(.system(size: 34, weight: .heavy))
+                WebImage(url: URL(string: "https://captainkimo.s3.amazonaws.com/wp-content/uploads/2015/01/Sunset-Jupiter-Lighthouse-from-Dubois-Park.jpg"))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                                .clipped()
+                                .cornerRadius(50)
+                                .overlay(RoundedRectangle(cornerRadius: 44)
+                                            .stroke(Color(.label), lineWidth: 1)
+                                )
+                                .shadow(radius: 5)
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(chatUser?.email ?? "Dheeraj Vislawath")
+                    Text("Dheeraj Vislawath")
                         .font(.system(size: 24, weight: .bold))
                     
                     HStack {
@@ -144,6 +151,13 @@ struct MainMessagesView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack{
+                    Text("Messages")
+                        .font(.largeTitle)
+                        .bold()
+                    Spacer()
+                        .frame(width: 180)
+                }
                 NavigationLink("", isActive: $shouldNavigateToChatLogView) {
 //                    ChatLogView(chatUser: self.chatUser)
                     ChatLogView(vm: chatLogViewModel)
@@ -164,16 +178,22 @@ struct MainMessagesView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    Spacer()
+                        .frame(height: 7)
                     Button {
                         shouldNavigateToAIChatLogView.toggle()
                     } label: {
                         HStack(spacing: 16) {
-    //                            Image(systemName: "person.fill")
-    //                                .font(.system(size: 32))
-    //                                 .padding(8)
-    //                                .overlay(RoundedRectangle(cornerRadius: 44)
-    //                                            .stroke(Color(.label), lineWidth: 1)
-    //                                )
+                            WebImage(url: URL(string: "https://t3.ftcdn.net/jpg/03/22/38/32/360_F_322383277_xcXz1I9vOFtdk7plhsRQyjODj08iNSwB.jpg"))
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 50, height: 50)
+                                            .clipped()
+                                            .cornerRadius(50)
+                                            .overlay(RoundedRectangle(cornerRadius: 44)
+                                                        .stroke(Color(.label), lineWidth: 1)
+                                            )
+                                            .shadow(radius: 5)
                             
                             
                             VStack(alignment: .leading, spacing: 8) {
@@ -201,18 +221,21 @@ struct MainMessagesView: View {
                         Button {
                             
                             let uid = FirebaseManager.shared.auth.currentUser?.uid == recentMessage.fromId ? recentMessage.toId : recentMessage.fromId
-                            self.chatUser = .init(data: [FirebaseConstants.email: recentMessage.email, FirebaseConstants.uid: uid])
+                            self.chatUser = .init(data: [FirebaseConstants.email: recentMessage.email, FirebaseConstants.uid: uid, FirebaseConstants.profileImageUrl: recentMessage.profileImageUrl])
                             self.chatLogViewModel.chatUser = self.chatUser
                             self.chatLogViewModel.fetchMessages()
                             self.shouldNavigateToChatLogView.toggle()
                         } label: {
                             HStack {
-    //                            Image(systemName: "person.fill")
-    //                                .font(.system(size: 32))
-    //                                 .padding(8)
-    //                                .overlay(RoundedRectangle(cornerRadius: 44)
-    //                                            .stroke(Color(.label), lineWidth: 1)
-    //                                )
+                                WebImage(url: URL(string: recentMessage.profileImageUrl))
+                                                                .resizable()
+                                                                .scaledToFill()
+                                                                .frame(width: 50, height: 50)
+                                                                .clipped()
+                                                                .cornerRadius(50)
+                                                                .overlay(RoundedRectangle(cornerRadius: 50)
+                                                                            .stroke(Color(.label), lineWidth: 2)
+                                                                )
                                 
                                 
                                 VStack(alignment: .leading, spacing: 8) {
@@ -262,7 +285,7 @@ struct MainMessagesView: View {
                 .shadow(radius: 15)
                 
                 Spacer()
-                    .frame(height: 30)
+                    .frame(height: 15)
             }
         }
         .fullScreenCover(isPresented: $shouldShowNewMessageScreen) {
@@ -271,7 +294,7 @@ struct MainMessagesView: View {
 //                self.vm.fetchRecentMessages()
                 self.shouldNavigateToChatLogView.toggle()
                 self.chatUser = user
-//                self.chatLogViewModel.chatUser = user
+                self.chatLogViewModel.chatUser = user
 //                self.chatLogViewModel.fetchMessages()
             })
 

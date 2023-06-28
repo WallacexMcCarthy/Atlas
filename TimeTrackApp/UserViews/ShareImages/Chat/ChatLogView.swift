@@ -15,6 +15,7 @@ struct FirebaseConstants {
     static let text = "text"
     static let timestamp = "timestamp"
     static let email = "email"
+    static let profileImageUrl = "profileImageUrl"
 }
 
 class ChatLogViewModel: ObservableObject {
@@ -27,7 +28,6 @@ class ChatLogViewModel: ObservableObject {
     var chatUser: ChatUser?
     
     init(chatUser: ChatUser?) {
-        print(chatUser?.email)
         self.chatUser = chatUser
         
         fetchMessages()
@@ -100,7 +100,6 @@ class ChatLogViewModel: ObservableObject {
             self.chatText = ""
             self.count += 1
         }
-        print("reached")
         
         let recipientMessageDocument = FirebaseManager.shared.firestore.collection("messages")
             .document(toId)
@@ -132,7 +131,8 @@ class ChatLogViewModel: ObservableObject {
             FirebaseConstants.text: self.chatText,
             FirebaseConstants.fromId: uid,
             FirebaseConstants.toId: toId,
-            FirebaseConstants.email: chatUser.email
+            FirebaseConstants.email: chatUser.email,
+            FirebaseConstants.profileImageUrl: chatUser.profileImageUrl
         ] as [String : Any]
         
         document.setData(data) { error in

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import SDWebImageSwiftUI
 
 /*
  Shows the event thatwas clicked on in Dashboard View and it will display its coordiantes on a map as well as a little informatiomn about the event. 
@@ -35,29 +36,38 @@ struct EventsView: View {
                         
                         ZStack{
                             Rectangle()
-                                .frame(width: 370, height: 320)
+                                .frame(width: 370, height: 340)
                                 .cornerRadius(20)
                                 .foregroundColor(Color.blue.opacity(0.50))                        .shadow(color: .blue, radius: 5, x : 0, y : 5)
                             VStack{
-                                Image(systemName: "camera")
-                                    .resizable()
-                                    .frame(width: 200, height: 150)
-                                    .ignoresSafeArea()
-                                    .padding(.horizontal, 20)
-                                Text(impact.title)
-                                    .ignoresSafeArea()
-                                    .font(.caption2)
-                                    .foregroundColor(Color.white)
-                                Text("\(impact.date.formatted())")
-                                    .ignoresSafeArea()
-                                    .font(.caption2)
-                                    .foregroundColor(Color.white)
+                                VStack{
+                                    WebImage(url: URL(string: "https://image.maxpreps.io/qxcommentary/1/d/e/1deedf4e-b023-4b37-862a-39f2b81ade23_22222157_original.jpg?width=618&height=463&fit=bounds"))
+                                        .resizable()
+                                        .scaledToFit()
+                                        .ignoresSafeArea()
+                                        .padding(.horizontal, 15)
+                                }
+                                HStack {
+                                    Text(impact.title)
+                                        .ignoresSafeArea()
+    //                                    .font(.caption2)
+                                        .foregroundColor(Color.white)
+                                    Spacer()
+                                        .frame(width: 20)
+                                    Text("\(impact.date.formatted())")
+                                        .ignoresSafeArea()
+//                                        .font(.caption2)
+                                        .foregroundColor(Color.white)
+                                }
+
                                 Text(impact.details)
                                     .ignoresSafeArea()
-                                    .font(.caption2)
+//                                    .font(.caption2)
                                     .foregroundColor(Color.white)
                             }
                         }
+                        Spacer()
+                            .frame(height: 20)
                         // creates the map and calls the event region.
                         Map(coordinateRegion: $impact.regions, annotationItems: mapItems)
                         {

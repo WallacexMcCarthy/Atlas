@@ -63,7 +63,7 @@ struct DashboardView: View
                                         .font(.largeTitle)
                                         .bold()
                                     Spacer()
-                                        .frame(width: 140)
+                                        .frame(width: 180)
                                 }
                                 HStack{
                                     ZStack{
@@ -120,28 +120,12 @@ struct DashboardView: View
                                     }label: {
                                         Text("\(readMoreText)")
                                     }
-                                    Button{
-                                        newPost.toggle()
-                                    }label: {
-                                        VStack {
-                                            HStack {
-                                                Spacer()
-                                                Text(" + New Post             ")
-                                                    .font(.system(size: 16, weight: .bold))
-                                                Spacer()
-                                            }
-                                            .foregroundColor(.white)
-                                            .padding(.vertical)
-                                            .background(Color.blue)
-                                            .cornerRadius(32)
-                                            //            .frame(width: 150, height: 100)
-                                            .padding(.horizontal)
-                                            .shadow(radius: 15)
-                                            
-                                            Spacer()
-                                                .frame(height: 30)
-                                        }
-                                    }
+                                    
+                                    Divider()
+                                        .padding(.vertical, 8)
+                                        .padding(.horizontal, 20)
+                                    
+                                
                                     if(newPost){
                                         VStack(alignment: .leading, spacing: 8) {
                                             Button{
@@ -180,8 +164,19 @@ struct DashboardView: View
                                             
                                         }.listRowInsets(EdgeInsets())
                                     }
+                                    
+                                    Spacer()
+                                        .frame(height: 30)
+                                    
+        
+                                    Text("Community Posts")
+                                        .font(.title)
+                                        .bold()
+                                    
                                     ForEach(self.posts, id: \.id) {(post) in
                                         PostView(post: post,screenWidth: geometry.size.width)
+                                        Spacer()
+                                            .frame(height: 15)
                                     }
                                     
                                 }
@@ -206,16 +201,45 @@ struct DashboardView: View
                             
                         }
                     }
-                    .background(Color.black.opacity(0.05))
+                    .background(Color.white)
                     
                 }
                 
             }
             
         }
+        .overlay(
+            newPostButton, alignment: .bottom)
         
     }
+    
+    private var newPostButton: some View {
+        Button{
+            newPost.toggle()
+        }label: {
+            VStack {
+                HStack {
+                    Spacer()
+                    Text(" + New Post             ")
+                        .font(.system(size: 16, weight: .bold))
+                    Spacer()
+                }
+                .foregroundColor(.white)
+                .padding(.vertical)
+                .background(Color.blue)
+                .cornerRadius(32)
+                //            .frame(width: 150, height: 100)
+                .padding(.horizontal)
+                .shadow(radius: 15)
+                
+                Spacer()
+                    .frame(height: 15)
+            }
+        }
+    }
 }
+
+
 class UpdaterViewModel: ObservableObject {
     @Published var index: Int = 0
     @Published var now: Date = Date()

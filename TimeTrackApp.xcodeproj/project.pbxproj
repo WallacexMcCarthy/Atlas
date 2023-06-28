@@ -81,6 +81,7 @@
 		52D56B682A465C8700F5D2DD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 52D56B672A465C8700F5D2DD /* FirebaseStorage */; };
 		52D56B6A2A46643600F5D2DD /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D56B692A46643600F5D2DD /* RecentMessage.swift */; };
 		52D56B6F2A46855100F5D2DD /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D56B6E2A46855100F5D2DD /* ChatMessage.swift */; };
+		52D56B722A4B5D2B00F5D2DD /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 52D56B712A4B5D2B00F5D2DD /* SDWebImageSwiftUI */; };
 		944B28F328DA0E98003C52DD /* Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F228DA0E98003C52DD /* Maps.swift */; };
 		944B28F528DA0EC5003C52DD /* MapsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B28F428DA0EC5003C52DD /* MapsData.swift */; };
 		94979E6128DDFAFC00105B3C /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94979E6028DDFAFC00105B3C /* CreateAccountView.swift */; };
@@ -182,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D56B722A4B5D2B00F5D2DD /* SDWebImageSwiftUI in Frameworks */,
 				52D56B662A465C8700F5D2DD /* FirebaseMessaging in Frameworks */,
 				52D56B602A465C8700F5D2DD /* FirebaseFirestoreSwift in Frameworks */,
 				52D56B682A465C8700F5D2DD /* FirebaseStorage in Frameworks */,
@@ -506,6 +508,7 @@
 				52D56B632A465C8700F5D2DD /* FirebaseInAppMessagingSwift-Beta */,
 				52D56B652A465C8700F5D2DD /* FirebaseMessaging */,
 				52D56B672A465C8700F5D2DD /* FirebaseStorage */,
+				52D56B712A4B5D2B00F5D2DD /* SDWebImageSwiftUI */,
 			);
 			productName = TimeTrackApp;
 			productReference = 296764D128CCD65A0043A235 /* TimeTrackApp.app */;
@@ -582,6 +585,7 @@
 			packageReferences = (
 				29D040BB29B413E70003893D /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 				52D56B582A465C8700F5D2DD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				52D56B702A4B5D2B00F5D2DD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 296764D228CCD65A0043A235 /* Products */;
 			projectDirPath = "";
@@ -1030,6 +1034,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		52D56B702A4B5D2B00F5D2DD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1077,6 +1089,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52D56B582A465C8700F5D2DD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		52D56B712A4B5D2B00F5D2DD /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52D56B702A4B5D2B00F5D2DD /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
