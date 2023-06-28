@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostView: View {
     let post: Post
@@ -18,13 +19,19 @@ struct PostView: View {
                 .foregroundColor(Color.white)                                                          .shadow(color: .black, radius: 5, x : 0, y : 4)
                 .position(x: 196, y: 175)
             VStack(alignment: .leading, spacing: 8) {
+                    Spacer()
+                    .frame(height: 6)
                     HStack(spacing: 8) {
                         Spacer()
                             .frame(width: 10)
-                        Image(post.profileImageName)
+                        WebImage(url: URL(string: post.profileImageName))
                             .resizable()
-                            .clipShape(Circle())
+                            .scaledToFill()
                             .frame(width: 50, height: 50)
+                            .clipped()
+                            .cornerRadius(50)
+                            .overlay(RoundedRectangle(cornerRadius: 50)
+                                        .stroke(Color(.label), lineWidth: 2))
                         Text(post.userName).font(.headline)
                         Spacer()
                         Button{
@@ -39,11 +46,12 @@ struct PostView: View {
                 HStack{
                     Spacer()
                         .frame(width:12)
-                    Image(post.imageName)
+                    WebImage(url: URL(string: post.imageName))
                         .resizable()
                         .scaledToFill()
                         .frame(width: 368, height: 180)
                         .clipped()
+
                 }
                     Text(post.text)
                         .lineLimit(nil)

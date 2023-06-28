@@ -189,6 +189,7 @@ struct SchoolInfoView: View
                             
                             HStack{
                                 NavigationLink{
+//                                    WebView(url: URL(fileURLWithPath: "https://hhs.canyonsdistrict.org/clubs-and-organizations/") )
                                     PolicyView()
                                 }label: {
                                     VStack{

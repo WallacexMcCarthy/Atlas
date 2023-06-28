@@ -14,9 +14,9 @@ var textsss = "hello"
 struct DashboardView: View
 {
     var posts: [Post] = [
-            Post(id: 0, userName: "wallace@gmail.com", text: "Body of post 0", profileImageName: "Twitter_Icon", imageName: "0 - Canyons Rank"),
-            Post(id: 1, userName: "science@gmail.com", text: "Body of post 1", profileImageName: "Google_Icon", imageName: "1 - Canyons Safe"),
-            Post(id: 2, userName: "biology@gmail.com", text: "Body of post 2", profileImageName: "Apple_ID_Icon", imageName: "2 - CSD")
+            Post(id: 0, userName: "Robert Vialano", text: "     Dimennsional analysis quiz tomorrow! Make sure to show up early to complete the lab component.", profileImageName: "https://education.utah.edu/stem-initiatives/mssst-photos/bob.jpg", imageName: "https://www.acuitybrands.com/-/media/abl/shared-gallery/project-photos/hillcrest-high-school/photo-gallery-education-hillcrest-high-school-04.jpg"),
+            Post(id: 1, userName: "Bethanne Lenhart", text: "     Reading reports due next time!", profileImageName: "https://southogden.wsd.net/images/2021/06/10/0040_lenhart_bethanne_01.jpg", imageName: "https://englishlinx.com/images/High-School-Book-Report.png"),
+            Post(id: 2, userName: "Richard Foiles", text: "     Math poster making session coming up soon! Be prepared to plan out your trig posters.", profileImageName: "https://pictures.canyonsdistrict.org/SkyPics/NS32213.jpg", imageName: "https://mathequalslove.net/wp-content/uploads/2021/05/unit-circle-magnets-001-768x576.jpg")
         ]
     @State var start = Date()
     @StateObject var updaterViewModel = UpdaterViewModel()

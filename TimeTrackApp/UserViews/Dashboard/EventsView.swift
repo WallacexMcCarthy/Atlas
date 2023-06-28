@@ -33,20 +33,22 @@ struct EventsView: View {
                 ZStack
                 {
                     VStack {
-                        
+                        Spacer()
+                            .frame(height: 30)
                         ZStack{
                             Rectangle()
                                 .frame(width: 370, height: 340)
                                 .cornerRadius(20)
                                 .foregroundColor(Color.blue.opacity(0.50))                        .shadow(color: .blue, radius: 5, x : 0, y : 5)
                             VStack{
-                                VStack{
+                                Spacer()
+                                    .frame(height: 20)
                                     WebImage(url: URL(string: "https://image.maxpreps.io/qxcommentary/1/d/e/1deedf4e-b023-4b37-862a-39f2b81ade23_22222157_original.jpg?width=618&height=463&fit=bounds"))
                                         .resizable()
                                         .scaledToFit()
                                         .ignoresSafeArea()
                                         .padding(.horizontal, 15)
-                                }
+                                
                                 HStack {
                                     Text(impact.title)
                                         .ignoresSafeArea()
